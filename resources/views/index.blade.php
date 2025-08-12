@@ -62,10 +62,10 @@
                                     <span class="text-gray-500 text-xs">by PixelCraft Studios</span>
                                 </div>
                                 <div class="flex space-x-2">
-                                    <button onclick="playGame(1)" class="flex-1 btn-neon text-white py-2 px-4 rounded-lg font-semibold text-sm">
+                                    <a href="{{ url('/game') }}" class="flex-1 btn-neon text-white py-2 px-4 rounded-lg font-semibold text-sm">
                                         🎮 Play
-                                    </button>
-                                    <button onclick="viewGame('https://pixelcraft.itch.io/mystical-forest')" class="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded-lg font-semibold text-sm transition-colors">
+                                    </a>
+                                    <button class="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded-lg font-semibold text-sm transition-colors">
                                         👁 View
                                     </button>
                                 </div>
@@ -94,10 +94,10 @@
                                     <span class="text-gray-500 text-xs">by NeonDev</span>
                                 </div>
                                 <div class="flex space-x-2">
-                                    <button onclick="playGame(2)" class="flex-1 btn-neon text-white py-2 px-4 rounded-lg font-semibold text-sm">
+                                    <button class="flex-1 btn-neon text-white py-2 px-4 rounded-lg font-semibold text-sm">
                                         🎮 Play
                                     </button>
-                                    <button onclick="viewGame('https://neondev.itch.io/neon-runner')" class="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded-lg font-semibold text-sm transition-colors">
+                                    <button class="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded-lg font-semibold text-sm transition-colors">
                                         👁 View
                                     </button>
                                 </div>
@@ -105,128 +105,107 @@
                         </div>
 
                         <!-- Game Card 3 -->
-                        <div class="game-card rounded-xl overflow-hidden" data-category="puzzle" data-price="free">
+                        <div class="game-card rounded-xl overflow-hidden" data-category="action" data-price="paid">
                             <div class="relative">
-                                <img src="https://via.placeholder.com/300x200/059669/ffffff?text=Quantum+Puzzle" alt="Quantum Puzzle Box" class="game-thumbnail">
+                                <img src="https://via.placeholder.com/300x200/7c3aed/ffffff?text=Neon+Runner" alt="Neon Runner 2077" class="game-thumbnail">
                                 <div class="absolute top-3 right-3">
-                                    <span class="category-badge">Puzzle</span>
+                                    <span class="category-badge">Action</span>
                                 </div>
                                 <div class="absolute bottom-3 left-3">
-                                    <span class="text-green-400 font-bold text-sm bg-black/50 px-2 py-1 rounded">Free</span>
+                                    <span class="text-yellow-400 font-bold text-sm bg-black/50 px-2 py-1 rounded">$4.99</span>
                                 </div>
                             </div>
                             <div class="p-4">
-                                <h3 class="font-bold text-white mb-2 text-lg">Quantum Puzzle Box</h3>
-                                <p class="text-gray-400 text-sm mb-3 line-clamp-2">Mind-bending physics puzzles that challenge your understanding of space and time.</p>
+                                <h3 class="font-bold text-white mb-2 text-lg">Neon Runner 2077</h3>
+                                <p class="text-gray-400 text-sm mb-3 line-clamp-2">Fast-paced cyberpunk platformer with stunning neon aesthetics and electronic soundtrack.</p>
+                                <div class="flex items-center justify-between mb-3">
+                                    <div class="flex items-center space-x-1">
+                                        <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
+                                        <span class="text-yellow-400 font-bold">4.6</span>
+                                    </div>
+                                    <span class="text-gray-500 text-xs">by NeonDev</span>
+                                </div>
+                                <div class="flex space-x-2">
+                                    <button class="flex-1 btn-neon text-white py-2 px-4 rounded-lg font-semibold text-sm">
+                                        🎮 Play
+                                    </button>
+                                    <button class="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded-lg font-semibold text-sm transition-colors">
+                                        👁 View
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Asset Card 7 -->
+                        <div class="asset-card rounded-xl overflow-hidden" data-category="sprites" data-price="free">
+                            <div class="relative">
+                                <img src="https://via.placeholder.com/300x180/059669/ffffff?text=UI+Elements" alt="Game UI Elements" class="asset-thumbnail">
+                                <div class="price-tag" style="background: linear-gradient(45deg, #10b981, #059669);">FREE</div>
+                            </div>
+                            <div class="p-4">
+                                <h3 class="font-bold text-white mb-2 text-lg">Game UI Elements</h3>
+                                <p class="text-gray-400 text-sm mb-3 line-clamp-2">Koleksi lengkap button, panel, icon, dan elemen UI untuk game mobile dan desktop.</p>
+
+                                <div class="flex items-center justify-between mb-3">
+                                    <div class="flex items-center space-x-1">
+                                        <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
+                                        <span class="text-yellow-400 font-bold">4.8</span>
+                                    </div>
+                                    <span class="download-count">4.2k downloads</span>
+                                </div>
+                                <div class="flex space-x-2">
+                                    <button class="btn-success text-white py-2 px-4 rounded-lg font-semibold text-sm">
+                                         Download
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Asset Card 8 -->
+                        <div class="asset-card rounded-xl overflow-hidden" data-category="audio" data-price="premium">
+                            <div class="relative">
+                                <img src="https://via.placeholder.com/300x180/7c3aed/ffffff?text=SFX+Library" alt="Sound Effects Library" class="asset-thumbnail">
+                                <div class="price-tag">Rp.20.000</div>
+                            </div>
+                            <div class="p-4">
+                                <h3 class="font-bold text-white mb-2 text-lg">Sound Effects Library</h3>
+                                <p class="text-gray-400 text-sm mb-3 line-clamp-2">200+ sound effect berkualitas tinggi untuk berbagai genre game. Explosion, magic, UI sounds.</p>
+
                                 <div class="flex items-center justify-between mb-3">
                                     <div class="flex items-center space-x-1">
                                         <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
                                         <span class="text-yellow-400 font-bold">4.9</span>
                                     </div>
-                                    <span class="text-gray-500 text-xs">by Quantum Games</span>
+                                    <span class="download-count">2.7k downloads</span>
                                 </div>
                                 <div class="flex space-x-2">
-                                    <button onclick="playGame(3)" class="flex-1 btn-neon text-white py-2 px-4 rounded-lg font-semibold text-sm">
-                                        🎮 Play
-                                    </button>
-                                    <button onclick="viewGame('https://quantum.itch.io/puzzle-box')" class="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded-lg font-semibold text-sm transition-colors">
-                                        👁 View
+                                    <button class="btn-success text-white py-2 px-4 rounded-lg font-semibold text-sm">
+                                         Beli
                                     </button>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Game Card 4 -->
-                        <div class="game-card rounded-xl overflow-hidden" data-category="simulation" data-price="paid">
+                        <!-- Asset Card 9 -->
+                        <div class="asset-card rounded-xl overflow-hidden" data-category="templates" data-price="premium">
                             <div class="relative">
-                                <img src="https://via.placeholder.com/300x200/dc2626/ffffff?text=Farm+Sim" alt="Pixel Farm Simulator" class="game-thumbnail">
-                                <div class="absolute top-3 right-3">
-                                    <span class="category-badge">Simulation</span>
-                                </div>
-                                <div class="absolute bottom-3 left-3">
-                                    <span class="text-yellow-400 font-bold text-sm bg-black/50 px-2 py-1 rounded">$7.99</span>
-                                </div>
+                                <img src="https://via.placeholder.com/300x180/dc2626/ffffff?text=RPG+System" alt="RPG Game System" class="asset-thumbnail">
+                                <div class="price-tag">Rp.12.000</div>
                             </div>
                             <div class="p-4">
-                                <h3 class="font-bold text-white mb-2 text-lg">Pixel Farm Simulator</h3>
-                                <p class="text-gray-400 text-sm mb-3 line-clamp-2">Build and manage your dream farm in this charming pixel art simulation game.</p>
-                                <div class="flex items-center justify-between mb-3">
-                                    <div class="flex items-center space-x-1">
-                                        <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
-                                        <span class="text-yellow-400 font-bold">4.5</span>
-                                    </div>
-                                    <span class="text-gray-500 text-xs">by PixelFarm Co</span>
-                                </div>
-                                <div class="flex space-x-2">
-                                    <button onclick="playGame(4)" class="flex-1 btn-neon text-white py-2 px-4 rounded-lg font-semibold text-sm">
-                                        🎮 Play
-                                    </button>
-                                    <button onclick="viewGame('https://pixelfarm.itch.io/farm-simulator')" class="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded-lg font-semibold text-sm transition-colors">
-                                        👁 View
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
+                                <h3 class="font-bold text-white mb-2 text-lg">RPG Game System</h3>
+                                <p class="text-gray-400 text-sm mb-3 line-clamp-2">Sistem RPG lengkap dengan inventory, skill tree, quest system, dan character progression.</p>
 
-                        <!-- Game Card 5 -->
-                        <div class="game-card rounded-xl overflow-hidden" data-category="action" data-price="paid">
-                            <div class="relative">
-                                <img src="https://via.placeholder.com/300x200/1f2937/ffffff?text=Shadow+Knight" alt="Shadow Knight" class="game-thumbnail">
-                                <div class="absolute top-3 right-3">
-                                    <span class="category-badge">Action</span>
-                                </div>
-                                <div class="absolute bottom-3 left-3">
-                                    <span class="text-yellow-400 font-bold text-sm bg-black/50 px-2 py-1 rounded">$6.99</span>
-                                </div>
-                            </div>
-                            <div class="p-4">
-                                <h3 class="font-bold text-white mb-2 text-lg">Shadow Knight</h3>
-                                <p class="text-gray-400 text-sm mb-3 line-clamp-2">Epic action-platformer with fluid combat and dark atmospheric visuals.</p>
                                 <div class="flex items-center justify-between mb-3">
                                     <div class="flex items-center space-x-1">
                                         <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
-                                        <span class="text-yellow-400 font-bold">4.7</span>
+                                        <span class="text-yellow-400 font-bold">5.0</span>
                                     </div>
-                                    <span class="text-gray-500 text-xs">by Dark Studio</span>
+                                    <span class="download-count">340 downloads</span>
                                 </div>
                                 <div class="flex space-x-2">
-                                    <button onclick="playGame(5)" class="flex-1 btn-neon text-white py-2 px-4 rounded-lg font-semibold text-sm">
-                                        🎮 Play
-                                    </button>
-                                    <button onclick="viewGame('https://darkstudio.itch.io/shadow-knight')" class="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded-lg font-semibold text-sm transition-colors">
-                                        👁 View
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Game Card 6 -->
-                        <div class="game-card rounded-xl overflow-hidden" data-category="adventure" data-price="free">
-                            <div class="relative">
-                                <img src="https://via.placeholder.com/300x200/1e40af/ffffff?text=Space+Explorer" alt="Space Explorer" class="game-thumbnail">
-                                <div class="absolute top-3 right-3">
-                                    <span class="category-badge">Adventure</span>
-                                </div>
-                                <div class="absolute bottom-3 left-3">
-                                    <span class="text-green-400 font-bold text-sm bg-black/50 px-2 py-1 rounded">Free</span>
-                                </div>
-                            </div>
-                            <div class="p-4">
-                                <h3 class="font-bold text-white mb-2 text-lg">Space Explorer</h3>
-                                <p class="text-gray-400 text-sm mb-3 line-clamp-2">Explore vast galaxies and discover new planets in this space exploration game.</p>
-                                <div class="flex items-center justify-between mb-3">
-                                    <div class="flex items-center space-x-1">
-                                        <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
-                                        <span class="text-yellow-400 font-bold">4.4</span>
-                                    </div>
-                                    <span class="text-gray-500 text-xs">by Cosmic Games</span>
-                                </div>
-                                <div class="flex space-x-2">
-                                    <button onclick="playGame(6)" class="flex-1 btn-neon text-white py-2 px-4 rounded-lg font-semibold text-sm">
-                                        🎮 Play
-                                    </button>
-                                    <button onclick="viewGame('https://cosmic.itch.io/space-explorer')" class="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded-lg font-semibold text-sm transition-colors">
-                                        👁 View
+                                    <button class="btn-success text-white py-2 px-4 rounded-lg font-semibold text-sm">
+                                         Beli
                                     </button>
                                 </div>
                             </div>
@@ -253,170 +232,5 @@
             </div>
         </div>
     </div>
-
-    <script>
-        // Game data for modal functionality
-        const gameData = {
-            1: { title: "Mystical Forest Adventure", author: "PixelCraft Studios", url: "https://pixelcraft.itch.io/mystical-forest", description: "Explore a magical forest filled with secrets and creatures. A beautiful point-and-click adventure game." },
-            2: { title: "Neon Runner 2077", author: "NeonDev", url: "https://neondev.itch.io/neon-runner", description: "Fast-paced cyberpunk platformer with stunning neon aesthetics and electronic soundtrack." },
-            3: { title: "Quantum Puzzle Box", author: "Quantum Games", url: "https://quantum.itch.io/puzzle-box", description: "Mind-bending physics puzzles that challenge your understanding of space and time." },
-            4: { title: "Pixel Farm Simulator", author: "PixelFarm Co", url: "https://pixelfarm.itch.io/farm-simulator", description: "Build and manage your dream farm in this charming pixel art simulation game." },
-            5: { title: "Shadow Knight", author: "Dark Studio", url: "https://darkstudio.itch.io/shadow-knight", description: "Epic action-platformer with fluid combat and dark atmospheric visuals." },
-            6: { title: "Space Explorer", author: "Cosmic Games", url: "https://cosmic.itch.io/space-explorer", description: "Explore vast galaxies and discover new planets in this space exploration game." }
-        };
-
-        // Initialize
-        document.addEventListener('DOMContentLoaded', function() {
-            setupEventListeners();
-        });
-
-        function setupEventListeners() {
-            // Category filters
-            document.querySelectorAll('[data-category]').forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const category = this.dataset.category;
-                    filterByCategory(category);
-                });
-            });
-
-            // Filter buttons
-            document.querySelectorAll('[data-filter]').forEach(button => {
-                button.addEventListener('click', function() {
-                    // Remove active class from all buttons
-                    document.querySelectorAll('[data-filter]').forEach(btn => {
-                        btn.classList.remove('active');
-                    });
-                    // Add active class to clicked button
-                    this.classList.add('active');
-                    
-                    const filter = this.dataset.filter;
-                    filterGames(filter);
-                });
-            });
-
-            // Modal close
-            document.querySelector('.close-modal').addEventListener('click', closeModal);
-            document.getElementById('game-modal').addEventListener('click', function(e) {
-                if (e.target === this) closeModal();
-            });
-
-            // Search functionality
-            const searchInput = document.querySelector('input[type="text"]');
-            searchInput.addEventListener('input', function(e) {
-                searchGames(e.target.value);
-            });
-        }
-
-        function filterByCategory(category) {
-            const allCards = document.querySelectorAll('.game-card');
-            
-            allCards.forEach(card => {
-                if (category === 'all') {
-                    card.style.display = 'block';
-                } else {
-                    const cardCategory = card.dataset.category;
-                    if (cardCategory === category) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                }
-            });
-        }
-
-        function filterGames(filter) {
-            const allCards = document.querySelectorAll('.game-card');
-            
-            allCards.forEach(card => {
-                let show = false;
-                
-                switch (filter) {
-                    case 'free':
-                        show = card.dataset.price === 'free';
-                        break;
-                    case 'paid':
-                        show = card.dataset.price === 'paid';
-                        break;
-                    case 'new':
-                    case 'popular':
-                    case 'all':
-                    default:
-                        show = true;
-                        break;
-                }
-                
-                card.style.display = show ? 'block' : 'none';
-            });
-        }
-
-        function searchGames(query) {
-            const allCards = document.querySelectorAll('.game-card');
-            const searchTerm = query.toLowerCase();
-            
-            allCards.forEach(card => {
-                const title = card.querySelector('h3').textContent.toLowerCase();
-                const description = card.querySelector('.line-clamp-2').textContent.toLowerCase();
-                
-                if (!query.trim() || title.includes(searchTerm) || description.includes(searchTerm)) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-
-        function playGame(gameId) {
-            const game = gameData[gameId];
-            if (game) {
-                openModal(game);
-            }
-        }
-
-        function viewGame(url) {
-            window.open(url, '_blank');
-        }
-
-        function openModal(game) {
-            const modal = document.getElementById('game-modal');
-            const content = document.getElementById('modal-game-content');
-            
-            content.innerHTML = `
-                <div class="w-full h-full flex flex-col">
-                    <div class="p-4 border-b border-gray-700">
-                        <h2 class="text-xl font-bold text-white">${game.title}</h2>
-                        <p class="text-gray-400 text-sm">by ${game.author}</p>
-                    </div>
-                    <div class="flex-1 p-4">
-                        <div class="w-full h-full bg-gray-800 rounded-lg flex items-center justify-center">
-                            <div class="text-center">
-                                <div class="text-6xl mb-4">🎮</div>
-                                <h3 class="text-xl text-white mb-2">${game.title}</h3>
-                                <p class="text-gray-400 mb-4">${game.description}</p>
-                                <button onclick="window.open('${game.url}', '_blank')" class="btn-neon px-6 py-3 rounded-lg font-semibold">
-                                    Play on Itch.io
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `;
-            
-            modal.classList.add('active');
-        }
-
-        function closeModal() {
-            const modal = document.getElementById('game-modal');
-            modal.classList.remove('active');
-            document.getElementById('modal-game-content').innerHTML = '';
-        }
-
-        // Keyboard shortcuts
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeModal();
-            }
-        });
-    </script>
 </body>
 </html>

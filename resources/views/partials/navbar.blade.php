@@ -5,24 +5,16 @@
                 <div class="flex items-center">
                     <div class="flex-shrink-0 flex items-center">
                         <div class="w-10 h-10 bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 rounded-lg flex items-center justify-center neon-glow">
-                            <span class="text-white font-bold text-lg">G</span>
+                            <img src="" class="logo">
                         </div>
                         <span class="ml-3 text-xl font-bold gradient-text">Playverse</span>
                     </div>
                 </div>
-                <!-- Import Game Button -->
-                    <button class="btn-secondary px-4 py-2 rounded-lg text-sm font-medium flex items-center space-x-2 hover:text-white transition-colors">
-                        <span>Home</span>
-                    </button>
-                <!-- Import Game Button -->
-                    <button class="btn-secondary px-4 py-2 rounded-lg text-sm font-medium flex items-center space-x-2 hover:text-white transition-colors">
-                        <span>📁</span>
-                        <span>Import Game</span>
-                    </button>
-                   <button class="btn-developer px-4 py-2 rounded-lg text-sm font-medium text-white flex items-center space-x-2">
-                        <span>⚡</span>
-                        <span>Developer Mode</span>
-                    </button>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="{{ url('/') }}" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors">Home</a>
+                    <a href="#" class="text-white px-3 py-2 text-sm font-medium">Import Game</a>
+                    <a href="#" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors">Development Mode</a>
+                </div>
                 <!-- Search and Auth -->
                 <div class="flex items-center space-x-4">
                     <div class="relative">
@@ -30,7 +22,7 @@
                                class="bg-gray-800/50 border border-blue-500/30 rounded-lg px-4 py-2 pl-10 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 text-white placeholder-gray-400">
                         <div class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">🔍</div>
                     </div>
-                    <button class="btn-neon px-4 py-2 rounded-lg text-sm font-medium text-white">Login</button>
+                    <a href="" class="btn-neon px-4 py-2 rounded-lg text-sm font-medium text-white">Login</a>
                 </div>
             </div>
         </div>

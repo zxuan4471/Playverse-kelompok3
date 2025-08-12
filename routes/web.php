@@ -17,6 +17,6 @@ Route::get('/games', function () {
 })->name('games.list');
 
 // Halaman detail game
-Route::get('/games/{id}', function ($id) {
-    return view('games.show', ['id' => $id]);
-})->name('games.show');
+Route::get('/game', function () {
+    return view('games.showgame');
+});

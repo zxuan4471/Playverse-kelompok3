@@ -23,7 +23,7 @@
                             <h1 class="text-4xl font-bold mb-4">Digital Assets Marketplace</h1>
                             <p class="text-lg text-blue-100 mb-6">Temukan sprite, musik, font, dan aset digital berkualitas tinggi untuk proyek game Anda. Buat game lebih cepat dengan aset premium!</p>
                             <button class="btn-neon px-8 py-3 rounded-xl font-semibold">
-                                🎨 Jelajahi Aset
+                                 Jelajahi Aset
                             </button>
                         </div>
                     </section>
@@ -45,8 +45,7 @@
                         <div class="asset-card rounded-xl overflow-hidden">
                             <div class="relative">
                                 <img src="" alt="Pixel Character Pack" class="asset-thumbnail">
-                                <div class="asset-type-icon">🎨</div>
-                                <div class="price-tag">$12.99</div>
+                                <div class="price-tag">Rp. 12.000</div>
                             </div>
                             <div class="p-4">
                                 <h3 class="font-bold text-white mb-2 text-lg">Pixel Character Pack</h3>
@@ -75,11 +74,8 @@
                                     <span class="download-count">1.2k downloads</span>
                                 </div>
                                 <div class="flex space-x-2">
-                                    <button onclick="previewAsset(1)" class="flex-1 btn-neon text-white py-2 px-4 rounded-lg font-semibold text-sm">
-                                        👁 Preview
-                                    </button>
                                     <button onclick="buyAsset(1)" class="btn-success text-white py-2 px-4 rounded-lg font-semibold text-sm">
-                                        💳 Beli
+                                         Beli
                                     </button>
                                 </div>
                             </div>
@@ -118,11 +114,8 @@
                                     <span class="download-count">3.5k downloads</span>
                                 </div>
                                 <div class="flex space-x-2">
-                                    <button onclick="previewAsset(2)" class="flex-1 btn-neon text-white py-2 px-4 rounded-lg font-semibold text-sm">
-                                        🎧 Listen
-                                    </button>
-                                    <button onclick="downloadAsset(2)" class="btn-success text-white py-2 px-4 rounded-lg font-semibold text-sm">
-                                        ⬇ Download
+                                    <button class="btn-success text-white py-2 px-4 rounded-lg font-semibold text-sm">
+                                         Download
                                     </button>
                                 </div>
                             </div>
@@ -132,8 +125,7 @@
                         <div class="asset-card rounded-xl overflow-hidden">
                             <div class="relative">
                                 <img src="https://via.placeholder.com/300x180/059669/ffffff?text=Platformer+Template" alt="Platformer Game Template" class="asset-thumbnail">
-                                <div class="asset-type-icon">📋</div>
-                                <div class="price-tag">$24.99</div>
+                                <div class="price-tag">Rp.10.000</div>
                             </div>
                             <div class="p-4">
                                 <h3 class="font-bold text-white mb-2 text-lg">Platformer Game Template</h3>
@@ -162,11 +154,8 @@
                                     <span class="download-count">890 downloads</span>
                                 </div>
                                 <div class="flex space-x-2">
-                                    <button onclick="" class="flex-1 btn-neon text-white py-2 px-4 rounded-lg font-semibold text-sm">
-                                        🎮 Demo
-                                    </button>
-                                    <button onclick="" class="btn-success text-white py-2 px-4 rounded-lg font-semibold text-sm">
-                                        💳 Beli
+                                    <button class="btn-success text-white py-2 px-4 rounded-lg font-semibold text-sm">
+                                         Beli
                                     </button>
                                 </div>
                             </div>
@@ -176,7 +165,6 @@
                         <div class="asset-card rounded-xl overflow-hidden" data-category="fonts" data-price="free">
                             <div class="relative">
                                 <img src="https://via.placeholder.com/300x180/dc2626/ffffff?text=Pixel+Font+Pack" alt="Pixel Font Collection" class="asset-thumbnail">
-                                <div class="asset-type-icon">🔤</div>
                                 <div class="price-tag" style="background: linear-gradient(45deg, #10b981, #059669);">FREE</div>
                             </div>
                             <div class="p-4">
@@ -206,11 +194,8 @@
                                     <span class="download-count">2.1k downloads</span>
                                 </div>
                                 <div class="flex space-x-2">
-                                    <button onclick="previewAsset(4)" class="flex-1 btn-neon text-white py-2 px-4 rounded-lg font-semibold text-sm">
-                                        Aa Preview
-                                    </button>
-                                    <button onclick="downloadAsset(4)" class="btn-success text-white py-2 px-4 rounded-lg font-semibold text-sm">
-                                        ⬇ Download
+                                    <button class="btn-success text-white py-2 px-4 rounded-lg font-semibold text-sm">
+                                         Download
                                     </button>
                                 </div>
                             </div>
@@ -220,8 +205,7 @@
                         <div class="asset-card rounded-xl overflow-hidden" data-category="textures" data-price="premium">
                             <div class="relative">
                                 <img src="https://via.placeholder.com/300x180/1f2937/ffffff?text=Medieval+Textures" alt="Medieval Texture Pack" class="asset-thumbnail">
-                                <div class="asset-type-icon">🖼️</div>
-                                <div class="price-tag">$18.99</div>
+                                <div class="price-tag">Rp.30.000</div>
                             </div>
                             <div class="p-4">
                                 <h3 class="font-bold text-white mb-2 text-lg">Medieval Texture Pack</h3>
@@ -250,11 +234,8 @@
                                     <span class="download-count">650 downloads</span>
                                 </div>
                                 <div class="flex space-x-2">
-                                    <button onclick="previewAsset(5)" class="flex-1 btn-neon text-white py-2 px-4 rounded-lg font-semibold text-sm">
-                                        🖼️ Preview
-                                    </button>
-                                    <button onclick="buyAsset(5)" class="btn-success text-white py-2 px-4 rounded-lg font-semibold text-sm">
-                                        💳 Beli
+                                    <button class="btn-success text-white py-2 px-4 rounded-lg font-semibold text-sm">
+                                         Beli
                                     </button>
                                 </div>
                             </div>
@@ -264,8 +245,7 @@
                         <div class="asset-card rounded-xl overflow-hidden" data-category="animations" data-price="premium">
                             <div class="relative">
                                 <img src="https://via.placeholder.com/300x180/1e40af/ffffff?text=Combat+Animations" alt="Combat Animation Pack" class="asset-thumbnail">
-                                <div class="asset-type-icon">🎬</div>
-                                <div class="price-tag">$15.99</div>
+                                <div class="price-tag">Rp.11.000</div>
                             </div>
                             <div class="p-4">
                                 <h3 class="font-bold text-white mb-2 text-lg">Combat Animation Pack</h3>
@@ -294,10 +274,7 @@
                                     <span class="download-count">1.8k downloads</span>
                                 </div>
                                 <div class="flex space-x-2">
-                                    <button onclick="previewAsset(6)" class="flex-1 btn-neon text-white py-2 px-4 rounded-lg font-semibold text-sm">
-                                        ▶️ Preview
-                                    </button>
-                                    <button onclick="buyAsset(6)" class="btn-success text-white py-2 px-4 rounded-lg font-semibold text-sm">
+                                    <button class="btn-success text-white py-2 px-4 rounded-lg font-semibold text-sm">
                                         💳 Beli
                                     </button>
                                 </div>
@@ -308,7 +285,6 @@
                         <div class="asset-card rounded-xl overflow-hidden" data-category="sprites" data-price="free">
                             <div class="relative">
                                 <img src="https://via.placeholder.com/300x180/059669/ffffff?text=UI+Elements" alt="Game UI Elements" class="asset-thumbnail">
-                                <div class="asset-type-icon">🎨</div>
                                 <div class="price-tag" style="background: linear-gradient(45deg, #10b981, #059669);">FREE</div>
                             </div>
                             <div class="p-4">
@@ -338,11 +314,8 @@
                                     <span class="download-count">4.2k downloads</span>
                                 </div>
                                 <div class="flex space-x-2">
-                                    <button onclick="previewAsset(7)" class="flex-1 btn-neon text-white py-2 px-4 rounded-lg font-semibold text-sm">
-                                        📱 Preview
-                                    </button>
-                                    <button onclick="downloadAsset(7)" class="btn-success text-white py-2 px-4 rounded-lg font-semibold text-sm">
-                                        ⬇ Download
+                                    <button class="btn-success text-white py-2 px-4 rounded-lg font-semibold text-sm">
+                                         Download
                                     </button>
                                 </div>
                             </div>
@@ -352,8 +325,7 @@
                         <div class="asset-card rounded-xl overflow-hidden" data-category="audio" data-price="premium">
                             <div class="relative">
                                 <img src="https://via.placeholder.com/300x180/7c3aed/ffffff?text=SFX+Library" alt="Sound Effects Library" class="asset-thumbnail">
-                                <div class="asset-type-icon">🎵</div>
-                                <div class="price-tag">$9.99</div>
+                                <div class="price-tag">Rp.20.000</div>
                             </div>
                             <div class="p-4">
                                 <h3 class="font-bold text-white mb-2 text-lg">Sound Effects Library</h3>
@@ -382,11 +354,8 @@
                                     <span class="download-count">2.7k downloads</span>
                                 </div>
                                 <div class="flex space-x-2">
-                                    <button onclick="previewAsset(8)" class="flex-1 btn-neon text-white py-2 px-4 rounded-lg font-semibold text-sm">
-                                        🔊 Listen
-                                    </button>
-                                    <button onclick="buyAsset(8)" class="btn-success text-white py-2 px-4 rounded-lg font-semibold text-sm">
-                                        💳 Beli
+                                    <button class="btn-success text-white py-2 px-4 rounded-lg font-semibold text-sm">
+                                         Beli
                                     </button>
                                 </div>
                             </div>
@@ -396,8 +365,7 @@
                         <div class="asset-card rounded-xl overflow-hidden" data-category="templates" data-price="premium">
                             <div class="relative">
                                 <img src="https://via.placeholder.com/300x180/dc2626/ffffff?text=RPG+System" alt="RPG Game System" class="asset-thumbnail">
-                                <div class="asset-type-icon">📋</div>
-                                <div class="price-tag">$39.99</div>
+                                <div class="price-tag">Rp.12.000</div>
                             </div>
                             <div class="p-4">
                                 <h3 class="font-bold text-white mb-2 text-lg">RPG Game System</h3>
@@ -426,11 +394,8 @@
                                     <span class="download-count">340 downloads</span>
                                 </div>
                                 <div class="flex space-x-2">
-                                    <button onclick="previewAsset(9)" class="flex-1 btn-neon text-white py-2 px-4 rounded-lg font-semibold text-sm">
-                                        🎮 Demo
-                                    </button>
-                                    <button onclick="buyAsset(9)" class="btn-success text-white py-2 px-4 rounded-lg font-semibold text-sm">
-                                        💳 Beli
+                                    <button class="btn-success text-white py-2 px-4 rounded-lg font-semibold text-sm">
+                                         Beli
                                     </button>
                                 </div>
                             </div>
@@ -460,91 +425,6 @@
     </div>
 
     <script>
-        // Asset data for modal functionality
-        const assetData = {
-            1: { 
-                title: "Pixel Character Pack", 
-                author: "PixelCraft Studios", 
-                price: "$12.99", 
-                type: "Sprites",
-                description: "Koleksi lengkap 50+ karakter pixel art dengan animasi walking, running, dan idle. Termasuk berbagai profesi dan karakter fantasy.",
-                features: ["50+ Unique Characters", "Walking/Running/Idle Animations", "PNG Format with Transparency", "32x32 and 64x64 sizes", "Commercial License Included"],
-                preview: "https://via.placeholder.com/400x300/4338ca/ffffff?text=Character+Preview"
-            },
-            2: { 
-                title: "Epic Game Soundtrack", 
-                author: "SoundWave Studios", 
-                price: "FREE", 
-                type: "Audio",
-                description: "10 track musik epik untuk game RPG dan adventure. High quality WAV dan MP3 format dengan loop-ready versions.",
-                features: ["10 Epic Tracks", "WAV & MP3 Format", "Loop-Ready Versions", "Commercial Use OK", "2-3 Minutes Each"],
-                preview: "https://via.placeholder.com/400x300/7c3aed/ffffff?text=Audio+Waveform"
-            },
-            3: { 
-                title: "Platformer Game Template", 
-                author: "GameDev Pro", 
-                price: "$24.99", 
-                type: "Template",
-                description: "Template game platformer lengkap dengan Unity project, scripts, dan dokumentasi. Siap untuk dikustomisasi dan dikembangkan.",
-                features: ["Complete Unity Project", "Player Controller Script", "Level Editor", "Documentation Included", "Source Code Commented"],
-                preview: "https://via.placeholder.com/400x300/059669/ffffff?text=Game+Screenshot"
-            },
-            4: { 
-                title: "Pixel Font Collection", 
-                author: "TypeCraft", 
-                price: "FREE", 
-                type: "Fonts",
-                description: "5 font pixel style unik untuk UI game retro. Termasuk angka dan simbol khusus untuk game interface.",
-                features: ["5 Unique Pixel Fonts", "TTF Format", "Numbers & Symbols", "Multiple Weights", "Web Font Ready"],
-                preview: "https://via.placeholder.com/400x300/dc2626/ffffff?text=Font+Preview"
-            },
-            5: { 
-                title: "Medieval Texture Pack", 
-                author: "TextureCraft", 
-                price: "$18.99", 
-                type: "Textures",
-                description: "100+ texture medieval berkualitas tinggi untuk environment dan building game. PBR materials included.",
-                features: ["100+ High-Res Textures", "4K Resolution", "PBR Materials", "Seamless Tiling", "Normal & Bump Maps"],
-                preview: "https://via.placeholder.com/400x300/1f2937/ffffff?text=Texture+Grid"
-            },
-            6: { 
-                title: "Combat Animation Pack", 
-                author: "AnimPro Studios", 
-                price: "$15.99", 
-                type: "Animations",
-                description: "25+ animasi combat untuk karakter 2D. Attack, defend, special moves, dan death animations dalam format FBX.",
-                features: ["25+ Combat Animations", "FBX Format", "60fps Quality", "Root Motion", "Unity & Unreal Ready"],
-                preview: "https://via.placeholder.com/400x300/1e40af/ffffff?text=Animation+Preview"
-            },
-            7: { 
-                title: "Game UI Elements", 
-                author: "UI Masters", 
-                price: "FREE", 
-                type: "UI",
-                description: "Koleksi lengkap button, panel, icon, dan elemen UI untuk game mobile dan desktop. Vector format untuk scalability.",
-                features: ["80+ UI Elements", "SVG Vector Format", "Multiple Styles", "Mobile & Desktop", "Easy to Customize"],
-                preview: "https://via.placeholder.com/400x300/059669/ffffff?text=UI+Elements"
-            },
-            8: { 
-                title: "Sound Effects Library", 
-                author: "AudioCraft", 
-                price: "$9.99", 
-                type: "Audio",
-                description: "200+ sound effect berkualitas tinggi untuk berbagai genre game. Explosion, magic, UI sounds, dan ambient effects.",
-                features: ["200+ Sound Effects", "48kHz WAV Format", "Categorized Library", "Studio Quality", "Royalty Free"],
-                preview: "https://via.placeholder.com/400x300/7c3aed/ffffff?text=SFX+Library"
-            },
-            9: { 
-                title: "RPG Game System", 
-                author: "SystemCraft Pro", 
-                price: "$39.99", 
-                type: "Template",
-                description: "Sistem RPG lengkap dengan inventory, skill tree, quest system, dan character progression. Advanced Unity template.",
-                features: ["Complete RPG Systems", "Inventory Management", "Skill Tree System", "Quest Framework", "Save/Load System"],
-                preview: "https://via.placeholder.com/400x300/dc2626/ffffff?text=RPG+System+UI"
-            }
-        };
-
         // Initialize
         document.addEventListener('DOMContentLoaded', function() {
             setupEventListeners();
