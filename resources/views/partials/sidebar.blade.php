@@ -3,24 +3,18 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex gap-8">
                 <!-- Sidebar -->
-                <aside class="w-64 sidebar-glass rounded-2xl p-6 h-fit sticky top-24">
+                <aside class="w-64 sidebar-glass rounded-2xl p-6 h-fit sticky top-0 self-start">
                     <h2 class="text-lg font-bold gradient-text mb-6">Kategori Game</h2>
                     
                     <nav class="space-y-2">
                         <a href="{{ url('/') }}" class="sidebar-item block px-4 py-3 text-sm text-gray-300 hover:text-white rounded-lg transition-all">
                             Home
                         </a>
-                        <a href="#" class="sidebar-item block px-4 py-3 text-sm text-gray-300 hover:text-white rounded-lg transition-all" data-category="all">
+                        <a href="{{ url('/all_game') }}" class="sidebar-item block px-4 py-3 text-sm text-gray-300 hover:text-white rounded-lg transition-all" data-category="all">
                             Semua Game
                         </a>
                         <a href="{{ url('/assets') }}" class="sidebar-item block px-4 py-3 text-sm text-gray-300 hover:text-white rounded-lg transition-all">
                              Assets
-                        </a>
-                        <a href="#" class="sidebar-item block px-4 py-3 text-sm text-gray-300 hover:text-white rounded-lg transition-all">
-                             Developers Mode
-                        </a>
-                        <a href="#" class="sidebar-item block px-4 py-3 text-sm text-gray-300 hover:text-white rounded-lg transition-all">
-                             Pengaturan
                         </a>
                         <div class="px-4 py-2 text-sm text-gray-300" x-data="{ open: false }">
     <!-- Judul Genre bisa diklik untuk toggle -->

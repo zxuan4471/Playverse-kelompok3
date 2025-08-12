@@ -136,81 +136,100 @@
                             </div>
                         </div>
 
-                        <!-- Asset Card 7 -->
-                        <div class="asset-card rounded-xl overflow-hidden" data-category="sprites" data-price="free">
+                        <div class="game-card rounded-xl overflow-hidden" data-category="adventure" data-price="free">
                             <div class="relative">
-                                <img src="https://via.placeholder.com/300x180/059669/ffffff?text=UI+Elements" alt="Game UI Elements" class="asset-thumbnail">
-                                <div class="price-tag" style="background: linear-gradient(45deg, #10b981, #059669);">FREE</div>
+                                <img src="https://via.placeholder.com/300x200/4338ca/ffffff?text=Forest+Game" alt="Mystical Forest Adventure" class="game-thumbnail">
+                                <div class="absolute top-3 right-3">
+                                    <span class="category-badge">Adventure</span>
+                                </div>
+                                <div class="absolute bottom-3 left-3">
+                                    <span class="text-green-400 font-bold text-sm bg-black/50 px-2 py-1 rounded">Free</span>
+                                </div>
                             </div>
                             <div class="p-4">
-                                <h3 class="font-bold text-white mb-2 text-lg">Game UI Elements</h3>
-                                <p class="text-gray-400 text-sm mb-3 line-clamp-2">Koleksi lengkap button, panel, icon, dan elemen UI untuk game mobile dan desktop.</p>
-
+                                <h3 class="font-bold text-white mb-2 text-lg">Mystical Forest Adventure</h3>
+                                <p class="text-gray-400 text-sm mb-3 line-clamp-2">Explore a magical forest filled with secrets and creatures. A beautiful point-and-click adventure game.</p>
                                 <div class="flex items-center justify-between mb-3">
                                     <div class="flex items-center space-x-1">
                                         <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
                                         <span class="text-yellow-400 font-bold">4.8</span>
                                     </div>
-                                    <span class="download-count">4.2k downloads</span>
+                                    <span class="text-gray-500 text-xs">by PixelCraft Studios</span>
                                 </div>
                                 <div class="flex space-x-2">
-                                    <button class="btn-success text-white py-2 px-4 rounded-lg font-semibold text-sm">
-                                         Download
+                                    <a href="{{ url('/game') }}" class="flex-1 btn-neon text-white py-2 px-4 rounded-lg font-semibold text-sm">
+                                        🎮 Play
+                                    </a>
+                                    <button class="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded-lg font-semibold text-sm transition-colors">
+                                        👁 View
                                     </button>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Asset Card 8 -->
-                        <div class="asset-card rounded-xl overflow-hidden" data-category="audio" data-price="premium">
+                        <!-- Game Card 2 -->
+                        <div class="game-card rounded-xl overflow-hidden" data-category="action" data-price="paid">
                             <div class="relative">
-                                <img src="https://via.placeholder.com/300x180/7c3aed/ffffff?text=SFX+Library" alt="Sound Effects Library" class="asset-thumbnail">
-                                <div class="price-tag">Rp.20.000</div>
+                                <img src="https://via.placeholder.com/300x200/7c3aed/ffffff?text=Neon+Runner" alt="Neon Runner 2077" class="game-thumbnail">
+                                <div class="absolute top-3 right-3">
+                                    <span class="category-badge">Action</span>
+                                </div>
+                                <div class="absolute bottom-3 left-3">
+                                    <span class="text-yellow-400 font-bold text-sm bg-black/50 px-2 py-1 rounded">$4.99</span>
+                                </div>
                             </div>
                             <div class="p-4">
-                                <h3 class="font-bold text-white mb-2 text-lg">Sound Effects Library</h3>
-                                <p class="text-gray-400 text-sm mb-3 line-clamp-2">200+ sound effect berkualitas tinggi untuk berbagai genre game. Explosion, magic, UI sounds.</p>
-
+                                <h3 class="font-bold text-white mb-2 text-lg">Neon Runner 2077</h3>
+                                <p class="text-gray-400 text-sm mb-3 line-clamp-2">Fast-paced cyberpunk platformer with stunning neon aesthetics and electronic soundtrack.</p>
                                 <div class="flex items-center justify-between mb-3">
                                     <div class="flex items-center space-x-1">
                                         <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
-                                        <span class="text-yellow-400 font-bold">4.9</span>
+                                        <span class="text-yellow-400 font-bold">4.6</span>
                                     </div>
-                                    <span class="download-count">2.7k downloads</span>
+                                    <span class="text-gray-500 text-xs">by NeonDev</span>
                                 </div>
                                 <div class="flex space-x-2">
-                                    <button class="btn-success text-white py-2 px-4 rounded-lg font-semibold text-sm">
-                                         Beli
+                                    <button class="flex-1 btn-neon text-white py-2 px-4 rounded-lg font-semibold text-sm">
+                                        🎮 Play
+                                    </button>
+                                    <button class="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded-lg font-semibold text-sm transition-colors">
+                                        👁 View
                                     </button>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Asset Card 9 -->
-                        <div class="asset-card rounded-xl overflow-hidden" data-category="templates" data-price="premium">
+                        <!-- Game Card 3 -->
+                        <div class="game-card rounded-xl overflow-hidden" data-category="action" data-price="paid">
                             <div class="relative">
-                                <img src="https://via.placeholder.com/300x180/dc2626/ffffff?text=RPG+System" alt="RPG Game System" class="asset-thumbnail">
-                                <div class="price-tag">Rp.12.000</div>
+                                <img src="https://via.placeholder.com/300x200/7c3aed/ffffff?text=Neon+Runner" alt="Neon Runner 2077" class="game-thumbnail">
+                                <div class="absolute top-3 right-3">
+                                    <span class="category-badge">Action</span>
+                                </div>
+                                <div class="absolute bottom-3 left-3">
+                                    <span class="text-yellow-400 font-bold text-sm bg-black/50 px-2 py-1 rounded">$4.99</span>
+                                </div>
                             </div>
                             <div class="p-4">
-                                <h3 class="font-bold text-white mb-2 text-lg">RPG Game System</h3>
-                                <p class="text-gray-400 text-sm mb-3 line-clamp-2">Sistem RPG lengkap dengan inventory, skill tree, quest system, dan character progression.</p>
-
+                                <h3 class="font-bold text-white mb-2 text-lg">Neon Runner 2077</h3>
+                                <p class="text-gray-400 text-sm mb-3 line-clamp-2">Fast-paced cyberpunk platformer with stunning neon aesthetics and electronic soundtrack.</p>
                                 <div class="flex items-center justify-between mb-3">
                                     <div class="flex items-center space-x-1">
                                         <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
-                                        <span class="text-yellow-400 font-bold">5.0</span>
+                                        <span class="text-yellow-400 font-bold">4.6</span>
                                     </div>
-                                    <span class="download-count">340 downloads</span>
+                                    <span class="text-gray-500 text-xs">by NeonDev</span>
                                 </div>
                                 <div class="flex space-x-2">
-                                    <button class="btn-success text-white py-2 px-4 rounded-lg font-semibold text-sm">
-                                         Beli
+                                    <button class="flex-1 btn-neon text-white py-2 px-4 rounded-lg font-semibold text-sm">
+                                        🎮 Play
+                                    </button>
+                                    <button class="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded-lg font-semibold text-sm transition-colors">
+                                        👁 View
                                     </button>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
                     <!-- Load More Button -->
                     <div class="text-center">

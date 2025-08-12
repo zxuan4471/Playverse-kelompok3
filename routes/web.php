@@ -20,3 +20,19 @@ Route::get('/games', function () {
 Route::get('/game', function () {
     return view('games.showgame');
 });
+
+Route::get('developer', function () {
+    return view('development.developer-mode');
+});
+
+Route::get('/all_game', function () {
+    return view('semua-game');
+});
+
+Route::get('/import-game', function () {
+    return view('development.import.import-game');
+});
+
+Route::get('/detail-game', function () {
+    return view('development.import.detail-game');
+});
