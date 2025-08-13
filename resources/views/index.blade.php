@@ -62,12 +62,11 @@
                                     <span class="text-gray-500 text-xs">by PixelCraft Studios</span>
                                 </div>
                                 <div class="flex space-x-2">
-                                    <a href="{{ url('/game') }}" class="flex-1 btn-neon text-white py-2 px-4 rounded-lg font-semibold text-sm">
-                                        🎮 Play
-                                    </a>
-                                    <button class="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded-lg font-semibold text-sm transition-colors">
-                                        👁 View
+                                    <a href="{{ url('/game') }}">
+                                    <button class="flex-1 btn-neon text-white py-2 px-4 rounded-lg font-semibold text-sm">
+                                         Play
                                     </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -94,12 +93,11 @@
                                     <span class="text-gray-500 text-xs">by NeonDev</span>
                                 </div>
                                 <div class="flex space-x-2">
+                                    <a href="{{ url('/game') }}">
                                     <button class="flex-1 btn-neon text-white py-2 px-4 rounded-lg font-semibold text-sm">
-                                        🎮 Play
+                                         Play
                                     </button>
-                                    <button class="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded-lg font-semibold text-sm transition-colors">
-                                        👁 View
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -126,12 +124,11 @@
                                     <span class="text-gray-500 text-xs">by NeonDev</span>
                                 </div>
                                 <div class="flex space-x-2">
+                                    <a href="{{ url('/game') }}">
                                     <button class="flex-1 btn-neon text-white py-2 px-4 rounded-lg font-semibold text-sm">
-                                        🎮 Play
+                                         Play
                                     </button>
-                                    <button class="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded-lg font-semibold text-sm transition-colors">
-                                        👁 View
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>

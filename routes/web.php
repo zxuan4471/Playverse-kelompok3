@@ -36,3 +36,11 @@ Route::get('/import-game', function () {
 Route::get('/detail-game', function () {
     return view('development.import.detail-game');
 });
+
+Route::get('/dashboard-admin', function () {
+    return view('admin.dashboard-admin');
+});
+
+Route::get('/management-user', function () {
+    return view('admin.user-management');
+});
