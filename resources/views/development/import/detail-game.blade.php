@@ -504,9 +504,11 @@
                 <button class="btn-secondary px-6 py-3 rounded-lg font-medium">
                     Save Draft
                 </button>
+                <a href="{{ url('/publish-game') }}">
                 <button class="btn-neon px-8 py-3 rounded-lg font-medium">
                     Next: Publikasi →
                 </button>
+                </a>
             </div>
         </div>
     </div>

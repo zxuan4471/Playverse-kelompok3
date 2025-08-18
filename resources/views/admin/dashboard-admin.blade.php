@@ -38,13 +38,9 @@
                             <p class="text-gray-400 text-sm font-medium">Total Users</p>
                             <p class="text-3xl font-bold text-white mt-2">24,531</p>
                             <div class="flex items-center mt-2 text-sm">
-                                <i class="fas fa-arrow-up text-green-400 mr-1"></i>
                                 <span class="text-green-400">+12.5%</span>
                                 <span class="text-gray-500 ml-1">vs last month</span>
                             </div>
-                        </div>
-                        <div class="bg-blue-600 p-3 rounded-full">
-                            <i class="fas fa-users text-white text-xl"></i>
                         </div>
                     </div>
                 </div>
@@ -55,13 +51,9 @@
                             <p class="text-gray-400 text-sm font-medium">Active Games</p>
                             <p class="text-3xl font-bold text-white mt-2">1,247</p>
                             <div class="flex items-center mt-2 text-sm">
-                                <i class="fas fa-arrow-up text-green-400 mr-1"></i>
                                 <span class="text-green-400">+8.2%</span>
                                 <span class="text-gray-500 ml-1">vs last month</span>
                             </div>
-                        </div>
-                        <div class="bg-purple-600 p-3 rounded-full">
-                            <i class="fas fa-gamepad text-white text-xl"></i>
                         </div>
                     </div>
                 </div>
@@ -72,13 +64,9 @@
                             <p class="text-gray-400 text-sm font-medium">Revenue</p>
                             <p class="text-3xl font-bold text-white mt-2">$89,247</p>
                             <div class="flex items-center mt-2 text-sm">
-                                <i class="fas fa-arrow-down text-red-400 mr-1"></i>
                                 <span class="text-red-400">-2.1%</span>
                                 <span class="text-gray-500 ml-1">vs last month</span>
                             </div>
-                        </div>
-                        <div class="bg-green-600 p-3 rounded-full">
-                            <i class="fas fa-dollar-sign text-white text-xl"></i>
                         </div>
                     </div>
                 </div>
@@ -89,13 +77,9 @@
                             <p class="text-gray-400 text-sm font-medium">Pending Reports</p>
                             <p class="text-3xl font-bold text-white mt-2">23</p>
                             <div class="flex items-center mt-2 text-sm">
-                                <i class="fas fa-arrow-up text-red-400 mr-1"></i>
                                 <span class="text-red-400">+15</span>
                                 <span class="text-gray-500 ml-1">today</span>
                             </div>
-                        </div>
-                        <div class="bg-red-600 p-3 rounded-full">
-                            <i class="fas fa-exclamation-triangle text-white text-xl"></i>
                         </div>
                     </div>
                 </div>

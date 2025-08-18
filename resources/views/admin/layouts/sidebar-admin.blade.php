@@ -24,11 +24,6 @@
                 <div class="mb-6">
                     <h3 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">Content</h3>
                     <a href="#" class="nav-item flex items-center px-4 py-3 text-sm rounded-lg">
-                        <i class="fas fa-flag w-5"></i>
-                        <span class="ml-3">Reports</span>
-                        <span class="ml-auto bg-red-600 text-xs px-2 py-1 rounded-full">8</span>
-                    </a>
-                    <a href="#" class="nav-item flex items-center px-4 py-3 text-sm rounded-lg">
                         <i class="fas fa-comments w-5"></i>
                         <span class="ml-3">Reviews</span>
                     </a>
@@ -39,22 +34,6 @@
                 </div>
 
                 <div class="mb-6">
-                    <h3 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">System</h3>
-                    <a href="#" class="nav-item flex items-center px-4 py-3 text-sm rounded-lg">
-                        <i class="fas fa-server w-5"></i>
-                        <span class="ml-3">Server Status</span>
-                    </a>
-                    <a href="#" class="nav-item flex items-center px-4 py-3 text-sm rounded-lg">
-                        <i class="fas fa-database w-5"></i>
-                        <span class="ml-3">Database</span>
-                    </a>
-                    <a href="#" class="nav-item flex items-center px-4 py-3 text-sm rounded-lg">
-                        <i class="fas fa-shield-alt w-5"></i>
-                        <span class="ml-3">Security</span>
-                    </a>
-                    <a href="#" class="nav-item flex items-center px-4 py-3 text-sm rounded-lg">
-                        <i class="fas fa-cogs w-5"></i>
-                        <span class="ml-3">Settings</span>
                     </a>
                 </div>
             </nav>

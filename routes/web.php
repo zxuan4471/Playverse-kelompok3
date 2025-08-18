@@ -44,3 +44,15 @@ Route::get('/dashboard-admin', function () {
 Route::get('/management-user', function () {
     return view('admin.user-management');
 });
+
+Route::get('/management-game', function () {
+    return view('admin.game-management');
+});
+
+Route::get('/publish-game', function () {
+    return view('development.import.publish-game');
+});
+
+Route::get('/penghasilan', function () {
+    return view('development.penghasilan');
+});
