@@ -12,6 +12,10 @@ Route::get('/assets', function () {
     return view('assets');
 });
 
+Route::get('/review', function () {
+    return view('admin.review');
+});
+
 Route::get('/games', function () {
     return view('games.list');
 })->name('games.list');

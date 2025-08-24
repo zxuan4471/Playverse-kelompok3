@@ -106,40 +106,6 @@
                     </div>
                 </div>
 
-                <!-- System Health -->
-                <div class="admin-card rounded-xl p-6">
-                    <h3 class="text-lg font-bold text-white mb-4">System Health</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <div class="flex justify-between text-sm mb-1">
-                                <span class="text-gray-400">CPU Usage</span>
-                                <span class="text-white">45%</span>
-                            </div>
-                            <div class="w-full bg-gray-700 rounded-full h-2">
-                                <div class="bg-blue-500 h-2 rounded-full" style="width: 45%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between text-sm mb-1">
-                                <span class="text-gray-400">Memory</span>
-                                <span class="text-white">72%</span>
-                            </div>
-                            <div class="w-full bg-gray-700 rounded-full h-2">
-                                <div class="bg-green-500 h-2 rounded-full" style="width: 72%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between text-sm mb-1">
-                                <span class="text-gray-400">Storage</span>
-                                <span class="text-white">89%</span>
-                            </div>
-                            <div class="w-full bg-gray-700 rounded-full h-2">
-                                <div class="bg-yellow-500 h-2 rounded-full" style="width: 89%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- Recent Activity -->
                 <div class="admin-card rounded-xl p-6">
                     <h3 class="text-lg font-bold text-white mb-4">Recent Activity</h3>
@@ -445,63 +411,6 @@
                         </table>
                     </div>
                 </div>
-
-                <!-- User Analytics -->
-                <div class="admin-card rounded-xl p-6">
-                    <h3 class="text-lg font-bold text-white mb-4">User Analytics</h3>
-                    <div class="space-y-6">
-                        <!-- User Growth Chart Placeholder -->
-                        <div class="bg-gray-900 rounded-lg p-4 border border-gray-800">
-                            <div class="flex items-center justify-between mb-3">
-                                <h4 class="font-medium text-white">User Growth (30 days)</h4>
-                                <span class="text-green-400 text-sm">+15.3%</span>
-                            </div>
-                            <div class="h-32 flex items-end justify-between space-x-1">
-                                <div class="bg-blue-500 w-6 rounded-t" style="height: 40%"></div>
-                                <div class="bg-blue-500 w-6 rounded-t" style="height: 60%"></div>
-                                <div class="bg-blue-500 w-6 rounded-t" style="height: 45%"></div>
-                                <div class="bg-blue-500 w-6 rounded-t" style="height: 80%"></div>
-                                <div class="bg-blue-500 w-6 rounded-t" style="height: 70%"></div>
-                                <div class="bg-blue-500 w-6 rounded-t" style="height: 90%"></div>
-                                <div class="bg-blue-500 w-6 rounded-t" style="height: 100%"></div>
-                            </div>
-                        </div>
-
-                        <!-- User Distribution -->
-                        <div class="space-y-3">
-                            <h4 class="font-medium text-white">User Distribution</h4>
-                            <div class="space-y-2">
-                                <div class="flex items-center justify-between">
-                                    <span class="text-gray-400 text-sm">Active Users</span>
-                                    <span class="text-white">18,432 (75%)</span>
-                                </div>
-                                <div class="w-full bg-gray-700 rounded-full h-2">
-                                    <div class="bg-green-500 h-2 rounded-full" style="width: 75%"></div>
-                                </div>
-                            </div>
-                            <div class="space-y-2">
-                                <div class="flex items-center justify-between">
-                                    <span class="text-gray-400 text-sm">Inactive Users</span>
-                                    <span class="text-white">4,921 (20%)</span>
-                                </div>
-                                <div class="w-full bg-gray-700 rounded-full h-2">
-                                    <div class="bg-yellow-500 h-2 rounded-full" style="width: 20%"></div>
-                                </div>
-                            </div>
-                            <div class="space-y-2">
-                                <div class="flex items-center justify-between">
-                                    <span class="text-gray-400 text-sm">Suspended Users</span>
-                                    <span class="text-white">1,178 (5%)</span>
-                                </div>
-                                <div class="w-full bg-gray-700 rounded-full h-2">
-                                    <div class="bg-red-500 h-2 rounded-full" style="width: 5%"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             <!-- Admin Actions Panel -->
             <div class="admin-card rounded-xl p-6 mt-6">
                 <h3 class="text-xl font-bold text-white mb-6">Administrative Actions</h3>
@@ -555,65 +464,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Recent Admin Logs -->
-            <div class="admin-card rounded-xl p-6 mt-6">
-                <h3 class="text-xl font-bold text-white mb-6">Admin Activity Log</h3>
-                <div class="space-y-3">
-                    <div class="flex items-center justify-between p-3 bg-gray-900 rounded-lg border border-gray-800">
-                        <div class="flex items-center space-x-3">
-                            <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
-                                <i class="fas fa-user text-white text-xs"></i>
-                            </div>
-                            <div>
-                                <p class="text-white text-sm">User "john_doe" was suspended</p>
-                                <p class="text-gray-400 text-xs">By Admin • 15 minutes ago</p>
-                            </div>
-                        </div>
-                        <span class="text-red-400 text-xs">HIGH</span>
-                    </div>
-
-                    <div class="flex items-center justify-between p-3 bg-gray-900 rounded-lg border border-gray-800">
-                        <div class="flex items-center space-x-3">
-                            <div class="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center">
-                                <i class="fas fa-gamepad text-white text-xs"></i>
-                            </div>
-                            <div>
-                                <p class="text-white text-sm">Game "Pixel Wars" approved for publication</p>
-                                <p class="text-gray-400 text-xs">By Admin • 1 hour ago</p>
-                            </div>
-                        </div>
-                        <span class="text-green-400 text-xs">LOW</span>
-                    </div>
-
-                    <div class="flex items-center justify-between p-3 bg-gray-900 rounded-lg border border-gray-800">
-                        <div class="flex items-center space-x-3">
-                            <div class="w-8 h-8 bg-yellow-600 rounded-full flex items-center justify-center">
-                                <i class="fas fa-database text-white text-xs"></i>
-                            </div>
-                            <div>
-                                <p class="text-white text-sm">Database backup completed successfully</p>
-                                <p class="text-gray-400 text-xs">System • 2 hours ago</p>
-                            </div>
-                        </div>
-                        <span class="text-blue-400 text-xs">INFO</span>
-                    </div>
-
-                    <div class="flex items-center justify-between p-3 bg-gray-900 rounded-lg border border-gray-800">
-                        <div class="flex items-center space-x-3">
-                            <div class="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center">
-                                <i class="fas fa-exclamation-triangle text-white text-xs"></i>
-                            </div>
-                            <div>
-                                <p class="text-white text-sm">Security alert: Multiple failed login attempts</p>
-                                <p class="text-gray-400 text-xs">Security System • 3 hours ago</p>
-                            </div>
-                        </div>
-                        <span class="text-red-400 text-xs">CRITICAL</span>
-                    </div>
-                </div>
-            </div>
-        </div>
     </main>
 </body>
 </html>
