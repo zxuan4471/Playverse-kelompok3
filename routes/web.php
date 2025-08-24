@@ -60,3 +60,11 @@ Route::get('/publish-game', function () {
 Route::get('/penghasilan', function () {
     return view('development.penghasilan');
 });
+
+Route::get('/pendaftaran-daveloper', function () {
+    return view('development.pendaftaran-davelopers');
+});
+
+Route::get('/login', function () {
+    return view('login');
+});
