@@ -68,3 +68,11 @@ Route::get('/pendaftaran-daveloper', function () {
 Route::get('/login', function () {
     return view('login');
 });
+
+Route::get('/report', function () {
+    return view('admin.laporan');
+});
+
+Route::get('/login-admin', function () {
+    return view('admin.login-admin');
+});

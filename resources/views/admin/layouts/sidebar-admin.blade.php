@@ -23,9 +23,10 @@
 
                 <div class="mb-6">
                     <h3 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">Content</h3>
-                    <a href="#" class="nav-item flex items-center px-4 py-3 text-sm rounded-lg">
-                        <i class="fas fa-comments w-5"></i>
-                        <span class="ml-3">Reviews</span>
+                    <a href="#" class="nav-item active flex items-center px-4 py-3 text-sm rounded-lg">
+                        <i class="fas fa-flag w-5"></i>
+                        <span class="ml-3">Laporan</span>
+                        <span class="ml-auto bg-red-600 text-xs px-2 py-1 rounded-full">12</span>
                     </a>
                     <a href="#" class="nav-item flex items-center px-4 py-3 text-sm rounded-lg">
                         <i class="fas fa-chart-line w-5"></i>
