@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GameHub - Developer Mode Dashboard</title>
+    <title>GameHub - Dashboard Developer</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
         body {
             background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            min-height: 100vh;
         }
         
         .neon-glow {
@@ -25,13 +29,13 @@
             background: linear-gradient(145deg, #1e1e3f 0%, #2a2a5a 100%);
             border: 1px solid rgba(59, 130, 246, 0.2);
             backdrop-filter: blur(10px);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
         }
         
         .dev-card:hover {
-            transform: translateY(-4px) scale(1.01);
+            transform: translateY(-4px);
             box-shadow: 0 15px 30px rgba(59, 130, 246, 0.25), 0 0 25px rgba(59, 130, 246, 0.15);
             border-color: rgba(59, 130, 246, 0.5);
         }
@@ -90,30 +94,59 @@
             border-right: 1px solid rgba(59, 130, 246, 0.2);
         }
         
+        .sidebar-item {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .sidebar-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 3px;
+            background: linear-gradient(to bottom, #3b82f6, #8b5cf6);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .sidebar-item:hover::before {
+            transform: scaleY(1);
+        }
+        
         .sidebar-item:hover {
             background: linear-gradient(90deg, rgba(59, 130, 246, 0.1), rgba(59, 130, 246, 0.2));
-            border-left: 3px solid #3b82f6;
             box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
         }
         
         .sidebar-item.active {
             background: linear-gradient(90deg, rgba(59, 130, 246, 0.2), rgba(59, 130, 246, 0.3));
-            border-left: 3px solid #3b82f6;
             color: white;
             font-weight: 600;
+        }
+        
+        .sidebar-item.active::before {
+            transform: scaleY(1);
         }
         
         .stats-card {
             background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
             border: 1px solid rgba(59, 130, 246, 0.3);
             backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .stats-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.2);
         }
         
         .progress-bar {
             background: linear-gradient(90deg, #3b82f6, #8b5cf6);
             height: 8px;
             border-radius: 4px;
-            transition: width 0.3s ease;
+            transition: width 0.5s ease;
         }
         
         .nav-tabs {
@@ -128,7 +161,6 @@
             text-decoration: none;
             transition: all 0.3s ease;
             border-bottom: 2px solid transparent;
-            position: relative;
         }
         
         .nav-tab:hover {
@@ -154,16 +186,6 @@
             color: #f59e0b;
         }
         
-        .code-block {
-            background: #1f2937;
-            border: 1px solid rgba(59, 130, 246, 0.3);
-            border-radius: 8px;
-            padding: 16px;
-            font-family: 'Monaco', 'Menlo', monospace;
-            font-size: 14px;
-            color: #e5e7eb;
-        }
-        
         .metric-trend-up {
             color: #22c55e;
         }
@@ -171,10 +193,62 @@
         .metric-trend-down {
             color: #ef4444;
         }
+        
+        .notification-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: linear-gradient(45deg, #ef4444, #dc2626);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: bold;
+        }
+        
+        .project-card {
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            background: rgba(59, 130, 246, 0.1);
+            border-color: rgba(59, 130, 246, 0.5);
+        }
+        
+        .mobile-menu {
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: block;
+            }
+            
+            .desktop-menu {
+                display: none;
+            }
+            
+            .sidebar {
+                position: fixed;
+                left: -100%;
+                top: 0;
+                bottom: 0;
+                width: 80%;
+                z-index: 40;
+                transition: left 0.3s ease;
+            }
+            
+            .sidebar.active {
+                left: 0;
+            }
+        }
     </style>
 </head>
 <body class="text-white min-h-screen">
-
     <!-- Main Navigation -->
     <nav class="glass-morphism fixed top-0 left-0 right-0 z-50 border-b border-blue-500/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -189,129 +263,156 @@
                         <span class="ml-2 px-2 py-1 bg-purple-600 text-xs rounded-full">DEV</span>
                     </div>
                 </div>
-
-                <!-- Navigation Links -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="{{ url('/') }}" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors">Home</a>
-                    <a href="#" class="text-white px-3 py-2 text-sm font-medium transition-colors border-b-2 border-blue-500">Developer Mode</a>
-                    <a href="#" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors">Community</a>
+                
+                <!-- Desktop Navigation Links -->
+                <div class="hidden md:flex items-center space-x-8 desktop-menu">
+                    <a href="{{ url('/') }}" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors">Beranda</a>
+                    <a href="#" class="text-white px-3 py-2 text-sm font-medium transition-colors border-b-2 border-blue-500">Mode Developer</a>
+                    <a href="#" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors">Komunitas</a>
                 </div>
-
+                
                 <!-- User Actions -->
                 <div class="flex items-center space-x-4">
                     <div class="relative">
-                        <button class="bg-gray-800/50 border border-blue-500/30 rounded-lg px-3 py-2 text-sm text-white">
-                            🔔 <span class="ml-1 bg-red-500 text-xs px-1.5 py-0.5 rounded-full">3</span>
+                        <button class="bg-gray-800/50 border border-blue-500/30 rounded-lg px-3 py-2 text-sm text-white relative">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-badge">3</span>
                         </button>
                     </div>
                     <div class="flex items-center space-x-2">
                         <div class="w-8 h-8 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full"></div>
-                        <span class="text-sm font-medium">Developer</span>
+                        <span class="text-sm font-medium hidden sm:block">Developer</span>
                     </div>
+                    
+                    <!-- Mobile Menu Button -->
+                    <button class="md:hidden text-gray-300 hover:text-white mobile-menu" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
                 </div>
             </div>
         </div>
     </nav>
-
+    
     <!-- Secondary Navigation (Creator Dashboard Style) -->
     <div class="pt-16 bg-gray-800/50 border-b border-gray-700/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between py-4">
-                <h1 class="text-2xl font-bold text-white">Creator Dashboard</h1>
-                <div class="flex items-center space-x-4">
-                    <span class="text-sm text-gray-400">Last updated: 2 minutes ago</span>
+            <div class="flex flex-col sm:flex-row items-center justify-between py-4">
+                <h1 class="text-2xl font-bold text-white mb-2 sm:mb-0">Dashboard Kreator</h1>
+                <div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-4">
+                    <span class="text-sm text-gray-400">Terakhir diperbarui: 2 menit yang lalu</span>
                     <button class="btn-neon px-4 py-2 rounded-lg text-sm font-medium">
-                        🚀 Deploy
+                        <i class="fas fa-rocket mr-2"></i> Terbitkan
                     </button>
                 </div>
             </div>
             
             <!-- Tab Navigation -->
             <div class="nav-tabs">
-                <div class="flex space-x-0">
-                    <a href="#" class="nav-tab">Projects</a>
-                    <a href="#" class="nav-tab active">Analytics</a>
-                    <a href="#" class="nav-tab">Earnings</a>
-                    <a href="#" class="nav-tab">Promotions</a>
-                    <a href="#" class="nav-tab">Posts</a>
-                    <a href="#" class="nav-tab">Game jams</a>
-                    <a href="#" class="nav-tab">More</a>
+                <div class="flex overflow-x-auto">
+                    <a href="#" class="nav-tab whitespace-nowrap">Proyek</a>
+                    <a href="#" class="nav-tab whitespace-nowrap">Pendapatan</a>
+                    <a href="#" class="nav-tab whitespace-nowrap">Postingan</a>
                 </div>
             </div>
         </div>
     </div>
-
+    
     <!-- Main Content -->
     <div class="pt-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex gap-8">
+            <div class="flex flex-col lg:flex-row gap-8">
                 <!-- Sidebar -->
-                <aside class="w-64 sidebar-glass rounded-2xl p-6 h-fit sticky top-32">
-                    <h2 class="text-lg font-bold gradient-text mb-6">Developer Tools</h2>
+                <aside class="w-full lg:w-64 sidebar-glass rounded-2xl p-6 h-fit lg:sticky lg:top-32 sidebar" id="sidebar">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-lg font-bold gradient-text">Alat Developer</h2>
+                        <button class="lg:hidden text-gray-400 hover:text-white" onclick="toggleSidebar()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
                     
                     <nav class="space-y-2">
-                        <a href="#" class="sidebar-item active block px-4 py-3 text-sm rounded-lg transition-all">
-                            📊 Dashboard
+                        <a href="#" class="sidebar-item active flex items-center px-4 py-3 text-sm rounded-lg transition-all">
+                            <i class="fas fa-chart-line mr-3"></i>
+                            Dashboard
                         </a>
-                        <a href="#" class="sidebar-item block px-4 py-3 text-sm text-gray-300 hover:text-white rounded-lg transition-all">
-                            🎮 My Games
+                        <a href="#" class="sidebar-item flex items-center px-4 py-3 text-sm text-gray-300 hover:text-white rounded-lg transition-all">
+                            <i class="fas fa-gamepad mr-3"></i>
+                            Game Saya
                         </a>
-                        <a href="#" class="sidebar-item block px-4 py-3 text-sm text-gray-300 hover:text-white rounded-lg transition-all">
-                            📈 Analytics
+                        <a href="#" class="sidebar-item flex items-center px-4 py-3 text-sm text-gray-300 hover:text-white rounded-lg transition-all">
+                            <i class="fas fa-cog mr-3"></i>
+                            Assets
                         </a>
-                        <a href="#" class="sidebar-item block px-4 py-3 text-sm text-gray-300 hover:text-white rounded-lg transition-all">
-                            💰 Revenue
-                        </a>
-                        <a href="#" class="sidebar-item block px-4 py-3 text-sm text-gray-300 hover:text-white rounded-lg transition-all">
-                            🔧 API Keys
-                        </a>
-                        <a href="#" class="sidebar-item block px-4 py-3 text-sm text-gray-300 hover:text-white rounded-lg transition-all">
-                            📝 Documentation
-                        </a>
-                        <a href="#" class="sidebar-item block px-4 py-3 text-sm text-gray-300 hover:text-white rounded-lg transition-all">
-                            ⚙️ Settings
+                        <a href="#" class="sidebar-item flex items-center px-4 py-3 text-sm text-gray-300 hover:text-white rounded-lg transition-all">
+                            <i class="fas fa-coins mr-3"></i>
+                            Pendapatan
                         </a>
                     </nav>
-
+                    
                     <!-- Quick Stats -->
                     <div class="mt-8 p-4 bg-gradient-to-br from-green-600/20 to-blue-600/20 rounded-xl border border-green-500/30">
-                        <h3 class="text-sm font-bold text-white mb-2">🚀 Quick Deploy</h3>
-                        <p class="text-xs text-gray-300 mb-3">Deploy your latest changes</p>
+                        <h3 class="text-sm font-bold text-white mb-2 flex items-center">
+                            <i class="fas fa-rocket mr-2"></i> Terbitkan Cepat
+                        </h3>
+                        <p class="text-xs text-gray-300 mb-3">Terbitkan perubahan terbaru Anda</p>
                         <button class="w-full bg-green-600 hover:bg-green-700 text-white py-2 px-3 rounded-lg text-xs font-medium transition-colors">
-                            Deploy Now
+                            Terbitkan Sekarang
+                        </button>
+                    </div>
+                    
+                    <!-- Storage Info -->
+                    <div class="mt-6 p-4 bg-gray-800/50 rounded-xl border border-gray-700/50">
+                        <h3 class="text-sm font-bold text-white mb-3 flex items-center">
+                            <i class="fas fa-database mr-2"></i> Penyimpanan
+                        </h3>
+                        <div class="mb-2">
+                            <div class="flex justify-between text-xs mb-1">
+                                <span class="text-gray-400">Digunakan</span>
+                                <span class="text-white">7.2 GB / 10 GB</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="progress-bar w-3/4"></div>
+                            </div>
+                        </div>
+                        <button class="text-xs text-blue-400 hover:text-blue-300 mt-2">
+                            Tingkatkan Penyimpanan
                         </button>
                     </div>
                 </aside>
-
+                
                 <!-- Main Content Area -->
                 <main class="flex-1">
                     <!-- Stats Overview -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
                         <div class="stats-card rounded-xl p-6">
                             <div class="flex items-center justify-between mb-4">
                                 <div>
-                                    <p class="text-gray-400 text-sm">Total Games</p>
+                                    <p class="text-gray-400 text-sm">Total Game</p>
                                     <p class="text-2xl font-bold text-white">12</p>
                                 </div>
                                 <div class="text-3xl">🎮</div>
                             </div>
                             <div class="flex items-center text-sm">
-                                <span class="metric-trend-up">↗ +2</span>
-                                <span class="text-gray-400 ml-1">this month</span>
+                                <span class="metric-trend-up flex items-center">
+                                    <i class="fas fa-arrow-up mr-1"></i> +2
+                                </span>
+                                <span class="text-gray-400 ml-1">bulan ini</span>
                             </div>
                         </div>
                         
                         <div class="stats-card rounded-xl p-6">
                             <div class="flex items-center justify-between mb-4">
                                 <div>
-                                    <p class="text-gray-400 text-sm">Downloads</p>
+                                    <p class="text-gray-400 text-sm">Unduhan</p>
                                     <p class="text-2xl font-bold text-white">45.2K</p>
                                 </div>
                                 <div class="text-3xl">📥</div>
                             </div>
                             <div class="flex items-center text-sm">
-                                <span class="metric-trend-up">↗ +12%</span>
-                                <span class="text-gray-400 ml-1">vs last month</span>
+                                <span class="metric-trend-up flex items-center">
+                                    <i class="fas fa-arrow-up mr-1"></i> +12%
+                                </span>
+                                <span class="text-gray-400 ml-1">vs bulan lalu</span>
                             </div>
                         </div>
                         
@@ -324,98 +425,113 @@
                                 <div class="text-3xl">💰</div>
                             </div>
                             <div class="flex items-center text-sm">
-                                <span class="metric-trend-up">↗ +8%</span>
-                                <span class="text-gray-400 ml-1">this month</span>
+                                <span class="metric-trend-up flex items-center">
+                                    <i class="fas fa-arrow-up mr-1"></i> +8%
+                                </span>
+                                <span class="text-gray-400 ml-1">bulan ini</span>
                             </div>
                         </div>
                         
                         <div class="stats-card rounded-xl p-6">
                             <div class="flex items-center justify-between mb-4">
                                 <div>
-                                    <p class="text-gray-400 text-sm">API Calls</p>
+                                    <p class="text-gray-400 text-sm">Panggilan API</p>
                                     <p class="text-2xl font-bold text-white">892K</p>
                                 </div>
                                 <div class="text-3xl">🔄</div>
                             </div>
                             <div class="flex items-center text-sm">
-                                <span class="metric-trend-down">↘ -3%</span>
-                                <span class="text-gray-400 ml-1">today</span>
+                                <span class="metric-trend-down flex items-center">
+                                    <i class="fas fa-arrow-down mr-1"></i> -3%
+                                </span>
+                                <span class="text-gray-400 ml-1">hari ini</span>
                             </div>
                         </div>
                     </div>
-
+                    
                     <!-- Recent Projects -->
                     <div class="dev-card rounded-xl p-6 mb-8">
-                        <div class="flex items-center justify-between mb-6">
-                            <h2 class="text-xl font-bold text-white">Recent Projects</h2>
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6">
+                            <h2 class="text-xl font-bold text-white mb-2 sm:mb-0">Proyek Terbaru</h2>
                             <a href="{{ url('/import-game') }}" class="btn-neon px-4 py-2 rounded-lg text-sm font-medium">
-                                + New Project
+                                <i class="fas fa-plus mr-2"></i> Proyek Baru
                             </a>
                         </div>
                         
                         <div class="space-y-4">
-                            <div class="flex items-center justify-between p-4 bg-gray-800/50 rounded-lg border border-gray-700/50">
-                                <div class="flex items-center space-x-4">
+                            <div class="project-card flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-gray-800/50 rounded-lg border border-gray-700/50">
+                                <div class="flex items-center space-x-4 mb-3 sm:mb-0">
                                     <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg flex items-center justify-center">
                                         <span class="text-white font-bold">MF</span>
                                     </div>
                                     <div>
                                         <h3 class="font-bold text-white">Mystical Forest Adventure</h3>
-                                        <p class="text-gray-400 text-sm">Last updated 2 hours ago</p>
+                                        <p class="text-gray-400 text-sm">Terakhir diperbarui 2 jam yang lalu</p>
                                     </div>
                                 </div>
                                 <div class="flex items-center space-x-2">
-                                    <span class="status-online">● Online</span>
+                                    <span class="status-online flex items-center">
+                                        <i class="fas fa-circle mr-1 text-xs"></i> Online
+                                    </span>
                                     <button class="btn-secondary px-3 py-1 rounded text-sm">Edit</button>
-                                    <button class="btn-neon px-3 py-1 rounded text-sm">View</button>
+                                    <button class="btn-neon px-3 py-1 rounded text-sm">Lihat</button>
                                 </div>
                             </div>
                             
-                            <div class="flex items-center justify-between p-4 bg-gray-800/50 rounded-lg border border-gray-700/50">
-                                <div class="flex items-center space-x-4">
+                            <div class="project-card flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-gray-800/50 rounded-lg border border-gray-700/50">
+                                <div class="flex items-center space-x-4 mb-3 sm:mb-0">
                                     <div class="w-12 h-12 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg flex items-center justify-center">
                                         <span class="text-white font-bold">NR</span>
                                     </div>
                                     <div>
                                         <h3 class="font-bold text-white">Neon Runner 2077</h3>
-                                        <p class="text-gray-400 text-sm">Last updated 1 day ago</p>
+                                        <p class="text-gray-400 text-sm">Terakhir diperbarui 1 hari yang lalu</p>
                                     </div>
                                 </div>
                                 <div class="flex items-center space-x-2">
-                                    <span class="status-maintenance">● Maintenance</span>
+                                    <span class="status-maintenance flex items-center">
+                                        <i class="fas fa-circle mr-1 text-xs"></i> Pemeliharaan
+                                    </span>
                                     <button class="btn-secondary px-3 py-1 rounded text-sm">Edit</button>
-                                    <button class="btn-secondary px-3 py-1 rounded text-sm">View</button>
+                                    <button class="btn-secondary px-3 py-1 rounded text-sm">Lihat</button>
                                 </div>
                             </div>
                             
-                            <div class="flex items-center justify-between p-4 bg-gray-800/50 rounded-lg border border-gray-700/50">
-                                <div class="flex items-center space-x-4">
+                            <div class="project-card flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-gray-800/50 rounded-lg border border-gray-700/50">
+                                <div class="flex items-center space-x-4 mb-3 sm:mb-0">
                                     <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-500 rounded-lg flex items-center justify-center">
                                         <span class="text-white font-bold">QP</span>
                                     </div>
                                     <div>
                                         <h3 class="font-bold text-white">Quantum Puzzle Box</h3>
-                                        <p class="text-gray-400 text-sm">Last updated 3 days ago</p>
+                                        <p class="text-gray-400 text-sm">Terakhir diperbarui 3 hari yang lalu</p>
                                     </div>
                                 </div>
                                 <div class="flex items-center space-x-2">
-                                    <span class="status-offline">● Offline</span>
+                                    <span class="status-offline flex items-center">
+                                        <i class="fas fa-circle mr-1 text-xs"></i> Offline
+                                    </span>
                                     <button class="btn-secondary px-3 py-1 rounded text-sm">Edit</button>
                                     <button class="btn-danger px-3 py-1 rounded text-sm">Debug</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-
+                    
                     <!-- Development Tools -->
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                         <!-- API Usage -->
                         <div class="dev-card rounded-xl p-6">
-                            <h3 class="text-lg font-bold text-white mb-4">API Usage</h3>
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-lg font-bold text-white">Penggunaan API</h3>
+                                <button class="text-blue-400 hover:text-blue-300 text-sm">
+                                    <i class="fas fa-sync-alt mr-1"></i> Refresh
+                                </button>
+                            </div>
                             <div class="space-y-4">
                                 <div>
                                     <div class="flex justify-between text-sm mb-2">
-                                        <span class="text-gray-400">Daily Limit</span>
+                                        <span class="text-gray-400">Batas Harian</span>
                                         <span class="text-white">8.9K / 10K</span>
                                     </div>
                                     <div class="w-full bg-gray-700 rounded-full h-2">
@@ -424,38 +540,110 @@
                                 </div>
                                 <div>
                                     <div class="flex justify-between text-sm mb-2">
-                                        <span class="text-gray-400">Monthly Limit</span>
+                                        <span class="text-gray-400">Batas Bulanan</span>
                                         <span class="text-white">245K / 300K</span>
                                     </div>
                                     <div class="w-full bg-gray-700 rounded-full h-2">
                                         <div class="progress-bar w-4/5"></div>
                                     </div>
                                 </div>
+                                <div class="mt-4 p-3 bg-blue-900/20 rounded-lg border border-blue-700/30">
+                                    <p class="text-xs text-blue-300">
+                                        <i class="fas fa-info-circle mr-1"></i> 
+                                        Anda akan mencapai batas harian dalam 2 jam. Pertimbangkan untuk meningkatkan paket Anda.
+                                    </p>
+                                </div>
                             </div>
                         </div>
-
+                        
                         <!-- Recent Deployments -->
                         <div class="dev-card rounded-xl p-6">
-                            <h3 class="text-lg font-bold text-white mb-4">Recent Deployments</h3>
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-lg font-bold text-white">Penerapan Terbaru</h3>
+                                <button class="text-blue-400 hover:text-blue-300 text-sm">
+                                    Lihat Semua
+                                </button>
+                            </div>
                             <div class="space-y-3">
                                 <div class="flex items-center justify-between text-sm">
-                                    <span class="text-gray-400">v1.2.3 - Mystical Forest</span>
-                                    <span class="status-online">✓ Success</span>
+                                    <div>
+                                        <span class="text-gray-400">v1.2.3 - Mystical Forest</span>
+                                        <p class="text-xs text-gray-500">2 jam yang lalu</p>
+                                    </div>
+                                    <span class="status-online flex items-center">
+                                        <i class="fas fa-check-circle mr-1"></i> Berhasil
+                                    </span>
                                 </div>
                                 <div class="flex items-center justify-between text-sm">
-                                    <span class="text-gray-400">v1.1.8 - Neon Runner</span>
-                                    <span class="status-maintenance">⚠ Warning</span>
+                                    <div>
+                                        <span class="text-gray-400">v1.1.8 - Neon Runner</span>
+                                        <p class="text-xs text-gray-500">1 hari yang lalu</p>
+                                    </div>
+                                    <span class="status-maintenance flex items-center">
+                                        <i class="fas fa-exclamation-triangle mr-1"></i> Peringatan
+                                    </span>
                                 </div>
                                 <div class="flex items-center justify-between text-sm">
-                                    <span class="text-gray-400">v2.0.1 - Quantum Puzzle</span>
-                                    <span class="status-offline">✗ Failed</span>
+                                    <div>
+                                        <span class="text-gray-400">v2.0.1 - Quantum Puzzle</span>
+                                        <p class="text-xs text-gray-500">3 hari yang lalu</p>
+                                    </div>
+                                    <span class="status-offline flex items-center">
+                                        <i class="fas fa-times-circle mr-1"></i> Gagal
+                                    </span>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Additional Section: Quick Actions -->
+                    <div class="dev-card rounded-xl p-6 mt-8">
+                        <h3 class="text-lg font-bold text-white mb-4">Aksi Cepat</h3>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                            <button class="flex flex-col items-center justify-center p-4 bg-gray-800/50 rounded-lg border border-gray-700/50 hover:bg-gray-700/50 transition-colors">
+                                <i class="fas fa-plus-circle text-2xl text-blue-400 mb-2"></i>
+                                <span class="text-sm">Buat Game</span>
+                            </button>
+                            <button class="flex flex-col items-center justify-center p-4 bg-gray-800/50 rounded-lg border border-gray-700/50 hover:bg-gray-700/50 transition-colors">
+                                <i class="fas fa-upload text-2xl text-green-400 mb-2"></i>
+                                <span class="text-sm">Unggah Build</span>
+                            </button>
+                            <button class="flex flex-col items-center justify-center p-4 bg-gray-800/50 rounded-lg border border-gray-700/50 hover:bg-gray-700/50 transition-colors">
+                                <i class="fas fa-chart-line text-2xl text-purple-400 mb-2"></i>
+                                <span class="text-sm">Lihat Statistik</span>
+                            </button>
+                            <button class="flex flex-col items-center justify-center p-4 bg-gray-800/50 rounded-lg border border-gray-700/50 hover:bg-gray-700/50 transition-colors">
+                                <i class="fas fa-users text-2xl text-yellow-400 mb-2"></i>
+                                <span class="text-sm">Komunitas</span>
+                            </button>
                         </div>
                     </div>
                 </main>
             </div>
         </div>
     </div>
+    
+    <script>
+        // Mobile menu functionality
+        function toggleMobileMenu() {
+            // This would toggle a mobile menu if implemented
+            console.log('Mobile menu toggled');
+        }
+        
+        // Sidebar functionality for mobile
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+        }
+        
+        // Simulate real-time data updates
+        function updateStats() {
+            // This would fetch real data in a real application
+            console.log('Stats updated');
+        }
+        
+        // Update stats every 30 seconds
+        setInterval(updateStats, 30000);
+    </script>
 </body>
 </html>

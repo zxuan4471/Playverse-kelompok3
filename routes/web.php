@@ -73,6 +73,22 @@ Route::get('/report', function () {
     return view('admin.laporan');
 });
 
+Route::get('/analisis', function () {
+    return view('admin.management-analistik');
+});
+
+Route::get('/management-uang', function () {
+    return view('admin.management-uang');
+});
+
 Route::get('/login-admin', function () {
     return view('admin.login-admin');
+});
+
+Route::get('/game-saya', function () {
+    return view('development.game-saya');
+});
+
+Route::get('/asset-saya', function () {
+    return view('development.assets-saya');
 });
