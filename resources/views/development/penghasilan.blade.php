@@ -324,7 +324,6 @@
                     <a href="{{ url('/') }}" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors">Beranda</a>
                     <a href="{{ url('/developer-dashboard') }}" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors">Dashboard</a>
                     <a href="{{ url('/my-games') }}" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors">Game Saya</a>
-                    <a href="#" class="text-white px-3 py-2 text-sm font-medium transition-colors border-b-2 border-blue-500">Pendapatan</a>
                     <a href="#" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors">Komunitas</a>
                 </div>
                 
@@ -362,16 +361,6 @@
                     </button>
                 </div>
             </div>
-            
-            <!-- Tab Navigation -->
-            <div class="nav-tabs">
-                <div class="flex overflow-x-auto">
-                    <a href="#" class="nav-tab active whitespace-nowrap">Ringkasan</a>
-                    <a href="#" class="nav-tab whitespace-nowrap">Transaksi</a>
-                    <a href="#" class="nav-tab whitespace-nowrap">Laporan Pajak</a>
-                    <a href="#" class="nav-tab whitespace-nowrap">Pengaturan Pembayaran</a>
-                </div>
-            </div>
         </div>
     </div>
     
@@ -389,7 +378,7 @@
                     </div>
                     
                     <nav class="space-y-2">
-                        <a href="{{ url('/developer-dashboard') }}" class="sidebar-item flex items-center px-4 py-3 text-sm text-gray-300 hover:text-white rounded-lg transition-all">
+                        <a href="{{ url('/developer') }}" class="sidebar-item flex items-center px-4 py-3 text-sm text-gray-300 hover:text-white rounded-lg transition-all">
                             <i class="fas fa-chart-line mr-3"></i>
                             Dashboard
                         </a>
@@ -397,21 +386,13 @@
                             <i class="fas fa-gamepad mr-3"></i>
                             Game Saya
                         </a>
+                        <a href="#" class="sidebar-item flex items-center px-4 py-3 text-sm text-gray-300 hover:text-white rounded-lg transition-all">
+                            <i class="fas fa-cog mr-3"></i>
+                            Assets
+                        </a>
                         <a href="#" class="sidebar-item active flex items-center px-4 py-3 text-sm rounded-lg transition-all">
                             <i class="fas fa-coins mr-3"></i>
                             Pendapatan
-                        </a>
-                        <a href="#" class="sidebar-item flex items-center px-4 py-3 text-sm text-gray-300 hover:text-white rounded-lg transition-all">
-                            <i class="fas fa-key mr-3"></i>
-                            Kunci API
-                        </a>
-                        <a href="#" class="sidebar-item flex items-center px-4 py-3 text-sm text-gray-300 hover:text-white rounded-lg transition-all">
-                            <i class="fas fa-book mr-3"></i>
-                            Dokumentasi
-                        </a>
-                        <a href="#" class="sidebar-item flex items-center px-4 py-3 text-sm text-gray-300 hover:text-white rounded-lg transition-all">
-                            <i class="fas fa-cog mr-3"></i>
-                            Pengaturan
                         </a>
                     </nav>
                     

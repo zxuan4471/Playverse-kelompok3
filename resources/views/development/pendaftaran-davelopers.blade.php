@@ -169,37 +169,13 @@
     </style>
 </head>
 <body class="text-white min-h-screen">
+            }
+        }
+    </style>
+</head>
+<body class="text-white min-h-screen">
     <!-- Main Navigation -->
-    <nav class="glass-morphism fixed top-0 left-0 right-0 z-50 border-b border-blue-500/20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <!-- Logo -->
-                <div class="flex items-center">
-                    <div class="flex-shrink-0 flex items-center">
-                        <div class="w-10 h-10 bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 rounded-lg flex items-center justify-center neon-glow">
-                            <span class="text-white font-bold text-lg">G</span>
-                        </div>
-                        <span class="ml-3 text-xl font-bold gradient-text">Playverse</span>
-                    </div>
-                </div>
-                <!-- Navigation Links -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="{{ url('/') }}" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors">Home</a>
-                    <a href="{{ url('/developer') }}" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors">Developer Mode</a>
-                    <a href="{{ url('/my-games') }}" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors">My Games</a>
-                    <a href="#" class="text-white px-3 py-2 text-sm font-medium transition-colors border-b-2 border-blue-500">Join as Developer</a>
-                    <a href="#" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors">Community</a>
-                </div>
-                <!-- User Actions -->
-                <div class="flex items-center space-x-4">
-                    <div class="flex items-center space-x-2">
-                        <a href="{{ url('/login') }}" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors">Login</a>
-                        <a href="{{ url('/register') }}" class="btn-neon px-4 py-2 rounded-lg text-sm font-medium">Sign Up</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
+    @include('development.navigasi.navbar-developer')
     
     <!-- Main Content -->
     <div class="pt-24 pb-12">

@@ -250,49 +250,7 @@
 </head>
 <body class="text-white min-h-screen">
     <!-- Main Navigation -->
-    <nav class="glass-morphism fixed top-0 left-0 right-0 z-50 border-b border-blue-500/20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <!-- Logo -->
-                <div class="flex items-center">
-                    <div class="flex-shrink-0 flex items-center">
-                        <div class="w-10 h-10 bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 rounded-lg flex items-center justify-center neon-glow">
-                            <span class="text-white font-bold text-lg">G</span>
-                        </div>
-                        <span class="ml-3 text-xl font-bold gradient-text">Playverse</span>
-                        <span class="ml-2 px-2 py-1 bg-purple-600 text-xs rounded-full">DEV</span>
-                    </div>
-                </div>
-                
-                <!-- Desktop Navigation Links -->
-                <div class="hidden md:flex items-center space-x-8 desktop-menu">
-                    <a href="{{ url('/') }}" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors">Beranda</a>
-                    <a href="#" class="text-white px-3 py-2 text-sm font-medium transition-colors border-b-2 border-blue-500">Mode Developer</a>
-                    <a href="#" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors">Komunitas</a>
-                </div>
-                
-                <!-- User Actions -->
-                <div class="flex items-center space-x-4">
-                    <div class="relative">
-                        <button class="bg-gray-800/50 border border-blue-500/30 rounded-lg px-3 py-2 text-sm text-white relative">
-                            <i class="fas fa-bell"></i>
-                            <span class="notification-badge">3</span>
-                        </button>
-                    </div>
-                    <div class="flex items-center space-x-2">
-                        <div class="w-8 h-8 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full"></div>
-                        <span class="text-sm font-medium hidden sm:block">Developer</span>
-                    </div>
-                    
-                    <!-- Mobile Menu Button -->
-                    <button class="md:hidden text-gray-300 hover:text-white mobile-menu" onclick="toggleMobileMenu()">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </nav>
-    
+    @include('development.navigasi.navbar-developer')
     <!-- Secondary Navigation (Creator Dashboard Style) -->
     <div class="pt-16 bg-gray-800/50 border-b border-gray-700/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -305,15 +263,6 @@
                     </button>
                 </div>
             </div>
-            
-            <!-- Tab Navigation -->
-            <div class="nav-tabs">
-                <div class="flex overflow-x-auto">
-                    <a href="#" class="nav-tab whitespace-nowrap">Proyek</a>
-                    <a href="#" class="nav-tab whitespace-nowrap">Pendapatan</a>
-                    <a href="#" class="nav-tab whitespace-nowrap">Postingan</a>
-                </div>
-            </div>
         </div>
     </div>
     
@@ -322,63 +271,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col lg:flex-row gap-8">
                 <!-- Sidebar -->
-                <aside class="w-full lg:w-64 sidebar-glass rounded-2xl p-6 h-fit lg:sticky lg:top-32 sidebar" id="sidebar">
-                    <div class="flex justify-between items-center mb-6">
-                        <h2 class="text-lg font-bold gradient-text">Alat Developer</h2>
-                        <button class="lg:hidden text-gray-400 hover:text-white" onclick="toggleSidebar()">
-                            <i class="fas fa-times"></i>
-                        </button>
-                    </div>
-                    
-                    <nav class="space-y-2">
-                        <a href="#" class="sidebar-item active flex items-center px-4 py-3 text-sm rounded-lg transition-all">
-                            <i class="fas fa-chart-line mr-3"></i>
-                            Dashboard
-                        </a>
-                        <a href="#" class="sidebar-item flex items-center px-4 py-3 text-sm text-gray-300 hover:text-white rounded-lg transition-all">
-                            <i class="fas fa-gamepad mr-3"></i>
-                            Game Saya
-                        </a>
-                        <a href="#" class="sidebar-item flex items-center px-4 py-3 text-sm text-gray-300 hover:text-white rounded-lg transition-all">
-                            <i class="fas fa-cog mr-3"></i>
-                            Assets
-                        </a>
-                        <a href="#" class="sidebar-item flex items-center px-4 py-3 text-sm text-gray-300 hover:text-white rounded-lg transition-all">
-                            <i class="fas fa-coins mr-3"></i>
-                            Pendapatan
-                        </a>
-                    </nav>
-                    
-                    <!-- Quick Stats -->
-                    <div class="mt-8 p-4 bg-gradient-to-br from-green-600/20 to-blue-600/20 rounded-xl border border-green-500/30">
-                        <h3 class="text-sm font-bold text-white mb-2 flex items-center">
-                            <i class="fas fa-rocket mr-2"></i> Terbitkan Cepat
-                        </h3>
-                        <p class="text-xs text-gray-300 mb-3">Terbitkan perubahan terbaru Anda</p>
-                        <button class="w-full bg-green-600 hover:bg-green-700 text-white py-2 px-3 rounded-lg text-xs font-medium transition-colors">
-                            Terbitkan Sekarang
-                        </button>
-                    </div>
-                    
-                    <!-- Storage Info -->
-                    <div class="mt-6 p-4 bg-gray-800/50 rounded-xl border border-gray-700/50">
-                        <h3 class="text-sm font-bold text-white mb-3 flex items-center">
-                            <i class="fas fa-database mr-2"></i> Penyimpanan
-                        </h3>
-                        <div class="mb-2">
-                            <div class="flex justify-between text-xs mb-1">
-                                <span class="text-gray-400">Digunakan</span>
-                                <span class="text-white">7.2 GB / 10 GB</span>
-                            </div>
-                            <div class="w-full bg-gray-700 rounded-full h-2">
-                                <div class="progress-bar w-3/4"></div>
-                            </div>
-                        </div>
-                        <button class="text-xs text-blue-400 hover:text-blue-300 mt-2">
-                            Tingkatkan Penyimpanan
-                        </button>
-                    </div>
-                </aside>
+    @include('development.navigasi.sidebar-developer')
                 
                 <!-- Main Content Area -->
                 <main class="flex-1">

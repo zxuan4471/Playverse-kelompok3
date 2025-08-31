@@ -262,124 +262,14 @@
 </head>
 <body class="text-white min-h-screen">
     <!-- Main Navigation -->
-    <nav class="glass-morphism fixed top-0 left-0 right-0 z-50 border-b border-blue-500/20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <!-- Logo -->
-                <div class="flex items-center">
-                    <div class="flex-shrink-0 flex items-center">
-                        <div class="w-10 h-10 bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 rounded-lg flex items-center justify-center neon-glow">
-                            <span class="text-white font-bold text-lg">G</span>
-                        </div>
-                        <span class="ml-3 text-xl font-bold gradient-text">Playverse</span>
-                        <span class="ml-2 px-2 py-1 bg-purple-600 text-xs rounded-full">DEV</span>
-                    </div>
-                </div>
-                
-                <!-- Desktop Navigation Links -->
-                <div class="hidden md:flex items-center space-x-8 desktop-menu">
-                    <a href="{{ url('/') }}" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors">Beranda</a>
-                    <a href="{{ url('/developer-dashboard') }}" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors">Dashboard</a>
-                    <a href="#" class="text-white px-3 py-2 text-sm font-medium transition-colors border-b-2 border-blue-500">Game Saya</a>
-                    <a href="#" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors">Komunitas</a>
-                </div>
-                
-                <!-- User Actions -->
-                <div class="flex items-center space-x-4">
-                    <div class="relative">
-                        <button class="bg-gray-800/50 border border-blue-500/30 rounded-lg px-3 py-2 text-sm text-white relative">
-                            <i class="fas fa-bell"></i>
-                            <span class="absolute -top-1 -right-1 bg-red-500 text-white rounded-full w-4 h-4 flex items-center justify-center text-xs">3</span>
-                        </button>
-                    </div>
-                    <div class="flex items-center space-x-2">
-                        <div class="w-8 h-8 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full"></div>
-                        <span class="text-sm font-medium hidden sm:block">Developer</span>
-                    </div>
-                    
-                    <!-- Mobile Menu Button -->
-                    <button class="md:hidden text-gray-300 hover:text-white mobile-menu" onclick="toggleMobileMenu()">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </nav>
+    @include('development.navigasi.navbar-developer')
     
     <!-- Main Content -->
     <div class="pt-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col lg:flex-row gap-8">
                 <!-- Sidebar -->
-                <aside class="w-full lg:w-64 sidebar-glass rounded-2xl p-6 h-fit lg:sticky lg:top-32 sidebar" id="sidebar">
-                    <div class="flex justify-between items-center mb-6">
-                        <h2 class="text-lg font-bold gradient-text">Alat Developer</h2>
-                        <button class="lg:hidden text-gray-400 hover:text-white" onclick="toggleSidebar()">
-                            <i class="fas fa-times"></i>
-                        </button>
-                    </div>
-                    
-                    <nav class="space-y-2">
-                        <a href="{{ url('/developer-dashboard') }}" class="sidebar-item flex items-center px-4 py-3 text-sm text-gray-300 hover:text-white rounded-lg transition-all">
-                            <i class="fas fa-chart-line mr-3"></i>
-                            Dashboard
-                        </a>
-                        <a href="#" class="sidebar-item active flex items-center px-4 py-3 text-sm rounded-lg transition-all">
-                            <i class="fas fa-gamepad mr-3"></i>
-                            Game Saya
-                        </a>
-                        <a href="#" class="sidebar-item flex items-center px-4 py-3 text-sm text-gray-300 hover:text-white rounded-lg transition-all">
-                            <i class="fas fa-chart-bar mr-3"></i>
-                            Analitik
-                        </a>
-                        <a href="#" class="sidebar-item flex items-center px-4 py-3 text-sm text-gray-300 hover:text-white rounded-lg transition-all">
-                            <i class="fas fa-coins mr-3"></i>
-                            Pendapatan
-                        </a>
-                        <a href="#" class="sidebar-item flex items-center px-4 py-3 text-sm text-gray-300 hover:text-white rounded-lg transition-all">
-                            <i class="fas fa-key mr-3"></i>
-                            Kunci API
-                        </a>
-                        <a href="#" class="sidebar-item flex items-center px-4 py-3 text-sm text-gray-300 hover:text-white rounded-lg transition-all">
-                            <i class="fas fa-book mr-3"></i>
-                            Dokumentasi
-                        </a>
-                        <a href="#" class="sidebar-item flex items-center px-4 py-3 text-sm text-gray-300 hover:text-white rounded-lg transition-all">
-                            <i class="fas fa-cog mr-3"></i>
-                            Pengaturan
-                        </a>
-                    </nav>
-                    
-                    <!-- Quick Stats -->
-                    <div class="mt-8 p-4 bg-gradient-to-br from-green-600/20 to-blue-600/20 rounded-xl border border-green-500/30">
-                        <h3 class="text-sm font-bold text-white mb-2 flex items-center">
-                            <i class="fas fa-plus mr-2"></i> Tambah Game Baru
-                        </h3>
-                        <p class="text-xs text-gray-300 mb-3">Mulai membuat game Anda sekarang</p>
-                        <button onclick="showCreateGameModal()" class="w-full bg-green-600 hover:bg-green-700 text-white py-2 px-3 rounded-lg text-xs font-medium transition-colors">
-                            Buat Game
-                        </button>
-                    </div>
-                    
-                    <!-- Storage Info -->
-                    <div class="mt-6 p-4 bg-gray-800/50 rounded-xl border border-gray-700/50">
-                        <h3 class="text-sm font-bold text-white mb-3 flex items-center">
-                            <i class="fas fa-database mr-2"></i> Penyimpanan Game
-                        </h3>
-                        <div class="mb-2">
-                            <div class="flex justify-between text-xs mb-1">
-                                <span class="text-gray-400">Digunakan</span>
-                                <span class="text-white">5.8 GB / 10 GB</span>
-                            </div>
-                            <div class="w-full bg-gray-700 rounded-full h-2">
-                                <div class="progress-bar w-3/5"></div>
-                            </div>
-                        </div>
-                        <button class="text-xs text-blue-400 hover:text-blue-300 mt-2">
-                            Tingkatkan Penyimpanan
-                        </button>
-                    </div>
-                </aside>
+    @include('development.navigasi.sidebar-developer')
                 
                 <!-- Main Content Area -->
                 <main class="flex-1">
@@ -390,9 +280,11 @@
                                 <h1 class="text-3xl font-bold text-white mb-2">Game Saya</h1>
                                 <p class="text-gray-400">Kelola semua game yang telah Anda buat</p>
                             </div>
-                            <button onclick="showCreateGameModal()" class="btn-neon px-6 py-3 rounded-lg font-medium mt-4 sm:mt-0">
+                            <a href="{{ url('/publish-asset') }}" >
+                            <button class="btn-neon px-6 py-3 rounded-lg font-medium mt-4 sm:mt-0">
                                 <i class="fas fa-plus mr-2"></i> Game Baru
                             </button>
+                           </a>
                         </div>
                         
                         <!-- Search and Filter -->

@@ -25,7 +25,7 @@ Route::get('/game', function () {
     return view('games.showgame');
 });
 
-Route::get('developer', function () {
+Route::get('developer-dashboard', function () {
     return view('development.developer-mode');
 });
 
@@ -91,4 +91,8 @@ Route::get('/game-saya', function () {
 
 Route::get('/asset-saya', function () {
     return view('development.assets-saya');
+});
+
+Route::get('/publish-asset', function () {
+    return view('development.import.import-asset');
 });
