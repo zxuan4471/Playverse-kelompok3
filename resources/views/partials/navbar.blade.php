@@ -13,17 +13,28 @@
                 <!-- Navigation Links -->
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="{{ url('/') }}" class="text-white px-3 py-2 text-sm font-medium transition-colors border-b-2 border-blue-500">Home</a>
-                    <a href="{{ url('/developer') }}" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors">Developer Mode</a>
+                    <a href="{{ url('/developer-dashboard') }}" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors">Developer Mode</a>
                     <a href="{{ url('/pendaftaran-daveloper') }}" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors">Join as Developer</a>
                     <a href="#" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors">Community</a>
                 </div>
                 <!-- User Actions -->
-                <div class="flex items-center space-x-4">
-                    <div class="flex items-center space-x-2">
-                        <a href="{{ url('/login') }}" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors">Login</a>
-                        <a href="{{ url('/register') }}" class="btn-neon px-4 py-2 rounded-lg text-sm font-medium">Sign Up</a>
-                    </div>
-                </div>
+            
+<div class="flex items-center space-x-2">
+    @guest
+        <a href="{{ route('login') }}" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors">Login</a>
+        <a href="{{ route('register') }}" class="btn-neon px-4 py-2 rounded-lg text-sm font-medium">Sign Up</a>
+    @endguest
+
+    @auth
+        <span class="text-white px-3 py-2 text-sm font-medium">{{ Auth::user()->username }}</span>
+        <form method="POST" action="{{ route('logout') }}">
+            @csrf
+            <button type="submit" class="btn-neon px-4 py-2 rounded-lg text-sm font-medium">Logout</button>
+        </form>
+    @endauth
+</div>
+
+
             </div>
         </div>
     </nav>

@@ -250,9 +250,8 @@
 </head>
 <body class="text-white min-h-screen">
     <!-- Main Navigation -->
-    @include('development.navigasi.navbar-developer')
     <!-- Secondary Navigation (Creator Dashboard Style) -->
-    <div class="pt-16 bg-gray-800/50 border-b border-gray-700/50">
+    <div class="bg-gray-800/50 border-b border-gray-700/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col sm:flex-row items-center justify-between py-4">
                 <h1 class="text-2xl font-bold text-white mb-2 sm:mb-0">Dashboard Kreator</h1>

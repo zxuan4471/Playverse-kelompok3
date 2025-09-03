@@ -23,6 +23,10 @@
                             <i class="fas fa-coins mr-3"></i>
                             Pendapatan
                         </a>
+                        <a href="{{ url('/') }}"" class="sidebar-item flex items-center px-4 py-3 text-sm text-gray-300 hover:text-white rounded-lg transition-all">
+                            <i class="fas fa-sign-out-alt mr-3"></i>
+                            Logout
+                        </a>
                     </nav>
                     
                     <!-- Quick Stats -->

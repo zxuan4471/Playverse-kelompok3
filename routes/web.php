@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Log;
 
@@ -65,8 +66,16 @@ Route::get('/pendaftaran-daveloper', function () {
     return view('development.pendaftaran-davelopers');
 });
 
-Route::get('/login', function () {
-    return view('login');
+
+
+Route::get('/login', [AuthController::class, 'showSigninForm'])->name('login');
+Route::post('/login', [AuthController::class, 'signinProses'])->name('login.proses');
+
+Route::get('/register', [AuthController::class, 'showSignupForm'])->name('register');
+Route::post('/register', [AuthController::class, 'signupProses'])->name('register.proses');
+
+Route::get('/report', function () {
+    return view('admin.laporan');
 });
 
 Route::get('/report', function () {
@@ -96,3 +105,6 @@ Route::get('/asset-saya', function () {
 Route::get('/publish-asset', function () {
     return view('development.import.import-asset');
 });
+
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
