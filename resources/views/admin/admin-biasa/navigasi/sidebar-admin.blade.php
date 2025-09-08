@@ -5,7 +5,7 @@
             <nav class="space-y-2">
                 <div class="mb-6">
                     <h3 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">Main</h3>
-                    <a href="#{{ url('/dashboard-admin') }}" class="nav-item flex items-center px-4 py-3 text-sm rounded-lg">
+                    <a href="{{ url('/dashboard-admin') }}" class="nav-item flex items-center px-4 py-3 text-sm rounded-lg">
                         <i class="fas fa-tachometer-alt w-5"></i>
                         <span class="ml-3">Dashboard</span>
                     </a>

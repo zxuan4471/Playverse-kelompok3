@@ -19,6 +19,11 @@
                         <span class="ml-3">Game Management</span>
                         <span class="ml-auto bg-green-600 text-xs px-2 py-1 rounded-full">45</span>
                     </a>
+                    <a href="{{ url('/management-assets') }}" class="nav-item flex items-center px-4 py-3 text-sm rounded-lg">
+                        <i class="fas fa-puzzles w-5"></i>
+                        <span class="ml-3">Assets Management</span>
+                        <span class="ml-auto bg-green-600 text-xs px-2 py-1 rounded-full">45</span>
+                    </a>
                 </div>
                 <div class="mb-6">
                     <h3 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">Content</h3>

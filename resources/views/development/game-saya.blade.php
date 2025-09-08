@@ -131,7 +131,7 @@
         }
         
         .game-card {
-            background: linear-gradient(145deg, #1e1e3f 0%, #2a2a5a 100%);
+            background: linear-gradient(145deg, rgba(30, 30, 63, 0.9), rgba(42, 42, 90, 0.9));
             border: 1px solid rgba(59, 130, 246, 0.2);
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
@@ -161,89 +161,85 @@
             transform: scaleX(1);
         }
         
-        .status-badge {
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 500;
-        }
-        
-        .status-published {
-            background: rgba(34, 197, 94, 0.2);
+        .status-online {
             color: #22c55e;
-            border: 1px solid rgba(34, 197, 94, 0.3);
         }
         
-        .status-draft {
-            background: rgba(245, 158, 11, 0.2);
+        .status-offline {
+            color: #ef4444;
+        }
+        
+        .status-maintenance {
             color: #f59e0b;
-            border: 1px solid rgba(245, 158, 11, 0.3);
         }
         
-        .status-archived {
-            background: rgba(107, 114, 128, 0.2);
-            color: #9ca3af;
-            border: 1px solid rgba(107, 114, 128, 0.3);
+        .add-game-fab {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+            transition: all 0.3s ease;
+            z-index: 30;
+        }
+        
+        .add-game-fab:hover {
+            transform: scale(1.1) rotate(90deg);
+            box-shadow: 0 15px 35px rgba(59, 130, 246, 0.6);
         }
         
         .filter-chip {
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 500;
             background: rgba(59, 130, 246, 0.1);
             border: 1px solid rgba(59, 130, 246, 0.3);
-            color: rgba(255, 255, 255, 0.8);
-            transition: all 0.3s ease;
-            cursor: pointer;
+            transition: all 0.2s ease;
         }
         
         .filter-chip:hover {
             background: rgba(59, 130, 246, 0.2);
             border-color: rgba(59, 130, 246, 0.5);
-            color: white;
         }
         
         .filter-chip.active {
-            background: linear-gradient(45deg, #3b82f6, #1d4ed8);
+            background: rgba(59, 130, 246, 0.3);
             border-color: #3b82f6;
             color: white;
         }
         
-        .search-input {
-            background: rgba(30, 30, 63, 0.6);
-            border: 1px solid rgba(59, 130, 246, 0.3);
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
+        /* Garis pemisah antara navbar dan konten */
+        .nav-divider {
+            height: 1px;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(255, 255, 255, 0.1) 20%, 
+                rgba(255, 255, 255, 0.3) 50%, 
+                rgba(255, 255, 255, 0.1) 80%, 
+                transparent 100%);
+            margin: 1rem 0;
+            position: relative;
         }
         
-        .search-input:focus {
-            background: rgba(30, 30, 63, 0.8);
-            border-color: rgba(59, 130, 246, 0.6);
-            box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
-            outline: none;
-        }
-        
-        .progress-bar {
-            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
-            height: 6px;
-            border-radius: 3px;
-            transition: width 0.5s ease;
-        }
-        
-        .mobile-menu {
-            display: none;
+        .nav-divider::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(59, 130, 246, 0.2) 20%, 
+                rgba(59, 130, 246, 0.5) 50%, 
+                rgba(59, 130, 246, 0.2) 80%, 
+                transparent 100%);
         }
         
         @media (max-width: 768px) {
-            .mobile-menu {
-                display: block;
-            }
-            
-            .desktop-menu {
-                display: none;
-            }
-            
             .sidebar {
                 position: fixed;
                 left: -100%;
@@ -257,6 +253,13 @@
             .sidebar.active {
                 left: 0;
             }
+            
+            .add-game-fab {
+                bottom: 1rem;
+                right: 1rem;
+                width: 56px;
+                height: 56px;
+            }
         }
     </style>
 </head>
@@ -264,13 +267,16 @@
     <!-- Main Navigation -->
     @include('development.navigasi.navbar-developer')
     
+    <!-- Garis Pemisah dengan Jarak -->
+    <div class="pt-16"></div>
+    <div class="nav-divider"></div>
+    
     <!-- Main Content -->
-    <div class="pt-16">
+    <div class="pt-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col lg:flex-row gap-8">
                 <!-- Sidebar -->
     @include('development.navigasi.sidebar-developer')
-                
                 <!-- Main Content Area -->
                 <main class="flex-1">
                     <!-- Header Section -->
@@ -280,72 +286,102 @@
                                 <h1 class="text-3xl font-bold text-white mb-2">Game Saya</h1>
                                 <p class="text-gray-400">Kelola semua game yang telah Anda buat</p>
                             </div>
-                            <a href="{{ url('/publish-asset') }}" >
-                            <button class="btn-neon px-6 py-3 rounded-lg font-medium mt-4 sm:mt-0">
-                                <i class="fas fa-plus mr-2"></i> Game Baru
-                            </button>
-                           </a>
+                            <a href="{{ url('/import-game') }}" class="btn-neon px-6 py-3 rounded-lg text-sm font-medium mt-4 sm:mt-0">
+                                <i class="fas fa-plus mr-2"></i> Tambah Game Baru
+                            </a>
                         </div>
                         
-                        <!-- Search and Filter -->
-                        <div class="flex flex-col sm:flex-row gap-4">
-                            <div class="relative flex-1">
-                                <input type="text" placeholder="Cari game..." class="search-input w-full pl-10 pr-4 py-3 rounded-lg text-white">
-                                <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                        <!-- Stats Overview -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+                            <div class="bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-xl p-4 border border-blue-500/30">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <p class="text-gray-400 text-sm">Total Game</p>
+                                        <p class="text-2xl font-bold text-white">12</p>
+                                    </div>
+                                    <i class="fas fa-gamepad text-2xl text-blue-400"></i>
+                                </div>
                             </div>
-                            <div class="flex gap-2 overflow-x-auto pb-2">
-                                <button class="filter-chip active">Semua</button>
-                                <button class="filter-chip">Diterbitkan</button>
-                                <button class="filter-chip">Draft</button>
-                                <button class="filter-chip">Diarsipkan</button>
-                                <button class="filter-chip">Aksi</button>
-                                <button class="filter-chip">Petualangan</button>
-                                <button class="filter-chip">RPG</button>
+                            <div class="bg-gradient-to-r from-green-600/20 to-blue-600/20 rounded-xl p-4 border border-green-500/30">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <p class="text-gray-400 text-sm">Game Aktif</p>
+                                        <p class="text-2xl font-bold text-white">8</p>
+                                    </div>
+                                    <i class="fas fa-check-circle text-2xl text-green-400"></i>
+                                </div>
+                            </div>
+                            <div class="bg-gradient-to-r from-yellow-600/20 to-orange-600/20 rounded-xl p-4 border border-yellow-500/30">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <p class="text-gray-400 text-sm">Total Unduhan</p>
+                                        <p class="text-2xl font-bold text-white">45.2K</p>
+                                    </div>
+                                    <i class="fas fa-download text-2xl text-yellow-400"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Filter and Search -->
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
+                            <div class="flex flex-wrap gap-2">
+                                <button class="filter-chip active px-4 py-2 rounded-lg text-sm">Semua</button>
+                                <button class="filter-chip px-4 py-2 rounded-lg text-sm">Online</button>
+                                <button class="filter-chip px-4 py-2 rounded-lg text-sm">Offline</button>
+                                <button class="filter-chip px-4 py-2 rounded-lg text-sm">Pemeliharaan</button>
+                            </div>
+                            <div class="relative">
+                                <input type="text" placeholder="Cari game..." class="bg-gray-800/50 border border-gray-700/50 rounded-lg px-4 py-2 pr-10 text-sm w-full sm:w-64">
+                                <i class="fas fa-search absolute right-3 top-2.5 text-gray-400"></i>
                             </div>
                         </div>
                     </div>
                     
                     <!-- Games Grid -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
                         <!-- Game Card 1 -->
                         <div class="game-card rounded-xl overflow-hidden">
                             <div class="relative">
                                 <img src="https://picsum.photos/seed/game1/400/225.jpg" alt="Game Cover" class="w-full h-48 object-cover">
                                 <div class="absolute top-3 right-3">
-                                    <span class="status-badge status-published">Diterbitkan</span>
-                                </div>
-                                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
-                                    <h3 class="text-lg font-bold text-white">Mystical Forest Adventure</h3>
-                                    <p class="text-sm text-gray-300">Petualangan • RPG</p>
+                                    <span class="status-online bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-xs flex items-center">
+                                        <i class="fas fa-circle mr-1 text-xs"></i> Online
+                                    </span>
                                 </div>
                             </div>
-                            <div class="p-4">
-                                <div class="flex items-center justify-between mb-3">
-                                    <div class="flex items-center space-x-4 text-sm">
-                                        <span class="text-gray-400">
-                                            <i class="fas fa-download mr-1"></i> 12.5K
-                                        </span>
-                                        <span class="text-gray-400">
-                                            <i class="fas fa-star mr-1"></i> 4.5
-                                        </span>
-                                        <span class="text-gray-400">
-                                            <i class="fas fa-heart mr-1"></i> 3.2K
-                                        </span>
+                            <div class="p-5">
+                                <h3 class="text-lg font-bold text-white mb-2">Misteri Hutan Angker</h3>
+                                <p class="text-gray-400 text-sm mb-4">Game petualangan horor dengan grafis memukau dan cerita yang menegangkan.</p>
+                                
+                                <div class="grid grid-cols-2 gap-4 mb-4 text-sm">
+                                    <div>
+                                        <p class="text-gray-500">Unduhan</p>
+                                        <p class="text-white font-medium">12.5K</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-gray-500">Rating</p>
+                                        <p class="text-white font-medium">4.8 ⭐</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-gray-500">Pendapatan</p>
+                                        <p class="text-white font-medium">Rp 15.2 Juta</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-gray-500">Terakhir Update</p>
+                                        <p class="text-white font-medium">2 jam lalu</p>
                                     </div>
                                 </div>
-                                <div class="flex items-center justify-between">
-                                    <div class="text-sm">
-                                        <span class="text-gray-400">Pendapatan:</span>
-                                        <span class="text-white font-medium ml-1">$1,245</span>
-                                    </div>
-                                    <div class="flex space-x-2">
-                                        <button class="btn-secondary px-3 py-1 rounded text-sm">
-                                            <i class="fas fa-edit"></i>
-                                        </button>
-                                        <button class="btn-neon px-3 py-1 rounded text-sm">
-                                            <i class="fas fa-eye"></i>
-                                        </button>
-                                    </div>
+                                
+                                <div class="flex gap-2">
+                                    <button class="btn-neon flex-1 py-2 rounded text-sm">
+                                        <i class="fas fa-edit mr-1"></i> Edit
+                                    </button>
+                                    <button class="btn-secondary flex-1 py-2 rounded text-sm">
+                                        <i class="fas fa-eye mr-1"></i> Lihat
+                                    </button>
+                                    <button class="btn-danger p-2 rounded text-sm">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -355,40 +391,44 @@
                             <div class="relative">
                                 <img src="https://picsum.photos/seed/game2/400/225.jpg" alt="Game Cover" class="w-full h-48 object-cover">
                                 <div class="absolute top-3 right-3">
-                                    <span class="status-badge status-published">Diterbitkan</span>
-                                </div>
-                                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
-                                    <h3 class="text-lg font-bold text-white">Neon Runner 2077</h3>
-                                    <p class="text-sm text-gray-300">Aksi • Lari</p>
+                                    <span class="status-maintenance bg-yellow-500/20 text-yellow-400 px-3 py-1 rounded-full text-xs flex items-center">
+                                        <i class="fas fa-circle mr-1 text-xs"></i> Pemeliharaan
+                                    </span>
                                 </div>
                             </div>
-                            <div class="p-4">
-                                <div class="flex items-center justify-between mb-3">
-                                    <div class="flex items-center space-x-4 text-sm">
-                                        <span class="text-gray-400">
-                                            <i class="fas fa-download mr-1"></i> 8.7K
-                                        </span>
-                                        <span class="text-gray-400">
-                                            <i class="fas fa-star mr-1"></i> 4.2
-                                        </span>
-                                        <span class="text-gray-400">
-                                            <i class="fas fa-heart mr-1"></i> 2.1K
-                                        </span>
+                            <div class="p-5">
+                                <h3 class="text-lg font-bold text-white mb-2">Pelari Neon 2077</h3>
+                                <p class="text-gray-400 text-sm mb-4">Game lari tak berujung dengan tema cyberpunk dan musik elektronik yang menghentak.</p>
+                                
+                                <div class="grid grid-cols-2 gap-4 mb-4 text-sm">
+                                    <div>
+                                        <p class="text-gray-500">Unduhan</p>
+                                        <p class="text-white font-medium">18.3K</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-gray-500">Rating</p>
+                                        <p class="text-white font-medium">4.6 ⭐</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-gray-500">Pendapatan</p>
+                                        <p class="text-white font-medium">Rp 22.1 Juta</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-gray-500">Terakhir Update</p>
+                                        <p class="text-white font-medium">1 hari lalu</p>
                                     </div>
                                 </div>
-                                <div class="flex items-center justify-between">
-                                    <div class="text-sm">
-                                        <span class="text-gray-400">Pendapatan:</span>
-                                        <span class="text-white font-medium ml-1">$892</span>
-                                    </div>
-                                    <div class="flex space-x-2">
-                                        <button class="btn-secondary px-3 py-1 rounded text-sm">
-                                            <i class="fas fa-edit"></i>
-                                        </button>
-                                        <button class="btn-neon px-3 py-1 rounded text-sm">
-                                            <i class="fas fa-eye"></i>
-                                        </button>
-                                    </div>
+                                
+                                <div class="flex gap-2">
+                                    <button class="btn-neon flex-1 py-2 rounded text-sm">
+                                        <i class="fas fa-edit mr-1"></i> Edit
+                                    </button>
+                                    <button class="btn-secondary flex-1 py-2 rounded text-sm">
+                                        <i class="fas fa-eye mr-1"></i> Lihat
+                                    </button>
+                                    <button class="btn-danger p-2 rounded text-sm">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -398,40 +438,44 @@
                             <div class="relative">
                                 <img src="https://picsum.photos/seed/game3/400/225.jpg" alt="Game Cover" class="w-full h-48 object-cover">
                                 <div class="absolute top-3 right-3">
-                                    <span class="status-badge status-draft">Draft</span>
-                                </div>
-                                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
-                                    <h3 class="text-lg font-bold text-white">Quantum Puzzle Box</h3>
-                                    <p class="text-sm text-gray-300">Teka-teki • Simulasi</p>
+                                    <span class="status-offline bg-red-500/20 text-red-400 px-3 py-1 rounded-full text-xs flex items-center">
+                                        <i class="fas fa-circle mr-1 text-xs"></i> Offline
+                                    </span>
                                 </div>
                             </div>
-                            <div class="p-4">
-                                <div class="flex items-center justify-between mb-3">
-                                    <div class="flex items-center space-x-4 text-sm">
-                                        <span class="text-gray-400">
-                                            <i class="fas fa-download mr-1"></i> 0
-                                        </span>
-                                        <span class="text-gray-400">
-                                            <i class="fas fa-star mr-1"></i> -
-                                        </span>
-                                        <span class="text-gray-400">
-                                            <i class="fas fa-heart mr-1"></i> 0
-                                        </span>
+                            <div class="p-5">
+                                <h3 class="text-lg font-bold text-white mb-2">Teka-Teki Kuantum</h3>
+                                <p class="text-gray-400 text-sm mb-4">Game puzzle sains dengan mekanika unik berdasarkan fisika kuantum.</p>
+                                
+                                <div class="grid grid-cols-2 gap-4 mb-4 text-sm">
+                                    <div>
+                                        <p class="text-gray-500">Unduhan</p>
+                                        <p class="text-white font-medium">8.7K</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-gray-500">Rating</p>
+                                        <p class="text-white font-medium">4.9 ⭐</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-gray-500">Pendapatan</p>
+                                        <p class="text-white font-medium">Rp 10.5 Juta</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-gray-500">Terakhir Update</p>
+                                        <p class="text-white font-medium">3 hari lalu</p>
                                     </div>
                                 </div>
-                                <div class="flex items-center justify-between">
-                                    <div class="text-sm">
-                                        <span class="text-gray-400">Progress:</span>
-                                        <span class="text-white font-medium ml-1">75%</span>
-                                    </div>
-                                    <div class="flex space-x-2">
-                                        <button class="btn-secondary px-3 py-1 rounded text-sm">
-                                            <i class="fas fa-edit"></i>
-                                        </button>
-                                        <button class="btn-success px-3 py-1 rounded text-sm">
-                                            <i class="fas fa-upload"></i>
-                                        </button>
-                                    </div>
+                                
+                                <div class="flex gap-2">
+                                    <button class="btn-neon flex-1 py-2 rounded text-sm">
+                                        <i class="fas fa-edit mr-1"></i> Edit
+                                    </button>
+                                    <button class="btn-secondary flex-1 py-2 rounded text-sm">
+                                        <i class="fas fa-eye mr-1"></i> Lihat
+                                    </button>
+                                    <button class="btn-danger p-2 rounded text-sm">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -441,40 +485,44 @@
                             <div class="relative">
                                 <img src="https://picsum.photos/seed/game4/400/225.jpg" alt="Game Cover" class="w-full h-48 object-cover">
                                 <div class="absolute top-3 right-3">
-                                    <span class="status-badge status-published">Diterbitkan</span>
-                                </div>
-                                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
-                                    <h3 class="text-lg font-bold text-white">Space Defender</h3>
-                                    <p class="text-sm text-gray-300">Shooter • Arkade</p>
+                                    <span class="status-online bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-xs flex items-center">
+                                        <i class="fas fa-circle mr-1 text-xs"></i> Online
+                                    </span>
                                 </div>
                             </div>
-                            <div class="p-4">
-                                <div class="flex items-center justify-between mb-3">
-                                    <div class="flex items-center space-x-4 text-sm">
-                                        <span class="text-gray-400">
-                                            <i class="fas fa-download mr-1"></i> 15.3K
-                                        </span>
-                                        <span class="text-gray-400">
-                                            <i class="fas fa-star mr-1"></i> 4.7
-                                        </span>
-                                        <span class="text-gray-400">
-                                            <i class="fas fa-heart mr-1"></i> 4.5K
-                                        </span>
+                            <div class="p-5">
+                                <h3 class="text-lg font-bold text-white mb-2">Pertempuran Galaksi</h3>
+                                <p class="text-gray-400 text-sm mb-4">Game strategi ruang angkasa dengan grafis 3D yang memukau.</p>
+                                
+                                <div class="grid grid-cols-2 gap-4 mb-4 text-sm">
+                                    <div>
+                                        <p class="text-gray-500">Unduhan</p>
+                                        <p class="text-white font-medium">5.9K</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-gray-500">Rating</p>
+                                        <p class="text-white font-medium">4.7 ⭐</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-gray-500">Pendapatan</p>
+                                        <p class="text-white font-medium">Rp 11.1 Juta</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-gray-500">Terakhir Update</p>
+                                        <p class="text-white font-medium">5 jam lalu</p>
                                     </div>
                                 </div>
-                                <div class="flex items-center justify-between">
-                                    <div class="text-sm">
-                                        <span class="text-gray-400">Pendapatan:</span>
-                                        <span class="text-white font-medium ml-1">$1,567</span>
-                                    </div>
-                                    <div class="flex space-x-2">
-                                        <button class="btn-secondary px-3 py-1 rounded text-sm">
-                                            <i class="fas fa-edit"></i>
-                                        </button>
-                                        <button class="btn-neon px-3 py-1 rounded text-sm">
-                                            <i class="fas fa-eye"></i>
-                                        </button>
-                                    </div>
+                                
+                                <div class="flex gap-2">
+                                    <button class="btn-neon flex-1 py-2 rounded text-sm">
+                                        <i class="fas fa-edit mr-1"></i> Edit
+                                    </button>
+                                    <button class="btn-secondary flex-1 py-2 rounded text-sm">
+                                        <i class="fas fa-eye mr-1"></i> Lihat
+                                    </button>
+                                    <button class="btn-danger p-2 rounded text-sm">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -484,40 +532,44 @@
                             <div class="relative">
                                 <img src="https://picsum.photos/seed/game5/400/225.jpg" alt="Game Cover" class="w-full h-48 object-cover">
                                 <div class="absolute top-3 right-3">
-                                    <span class="status-badge status-archived">Diarsipkan</span>
-                                </div>
-                                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
-                                    <h3 class="text-lg font-bold text-white">Retro Racing</h3>
-                                    <p class="text-sm text-gray-300">Balapan • Retro</p>
+                                    <span class="status-online bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-xs flex items-center">
+                                        <i class="fas fa-circle mr-1 text-xs"></i> Online
+                                    </span>
                                 </div>
                             </div>
-                            <div class="p-4">
-                                <div class="flex items-center justify-between mb-3">
-                                    <div class="flex items-center space-x-4 text-sm">
-                                        <span class="text-gray-400">
-                                            <i class="fas fa-download mr-1"></i> 3.2K
-                                        </span>
-                                        <span class="text-gray-400">
-                                            <i class="fas fa-star mr-1"></i> 3.8
-                                        </span>
-                                        <span class="text-gray-400">
-                                            <i class="fas fa-heart mr-1"></i> 890
-                                        </span>
+                            <div class="p-5">
+                                <h3 class="text-lg font-bold text-white mb-2">Koki Nusantara</h3>
+                                <p class="text-gray-400 text-sm mb-4">Game memasak dengan berbagai resep masakan Indonesia yang autentik.</p>
+                                
+                                <div class="grid grid-cols-2 gap-4 mb-4 text-sm">
+                                    <div>
+                                        <p class="text-gray-500">Unduhan</p>
+                                        <p class="text-white font-medium">15.2K</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-gray-500">Rating</p>
+                                        <p class="text-white font-medium">4.5 ⭐</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-gray-500">Pendapatan</p>
+                                        <p class="text-white font-medium">Rp 18.3 Juta</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-gray-500">Terakhir Update</p>
+                                        <p class="text-white font-medium">1 hari lalu</p>
                                     </div>
                                 </div>
-                                <div class="flex items-center justify-between">
-                                    <div class="text-sm">
-                                        <span class="text-gray-400">Total Pendapatan:</span>
-                                        <span class="text-white font-medium ml-1">$456</span>
-                                    </div>
-                                    <div class="flex space-x-2">
-                                        <button class="btn-secondary px-3 py-1 rounded text-sm">
-                                            <i class="fas fa-undo"></i>
-                                        </button>
-                                        <button class="btn-danger px-3 py-1 rounded text-sm">
-                                            <i class="fas fa-trash"></i>
-                                        </button>
-                                    </div>
+                                
+                                <div class="flex gap-2">
+                                    <button class="btn-neon flex-1 py-2 rounded text-sm">
+                                        <i class="fas fa-edit mr-1"></i> Edit
+                                    </button>
+                                    <button class="btn-secondary flex-1 py-2 rounded text-sm">
+                                        <i class="fas fa-eye mr-1"></i> Lihat
+                                    </button>
+                                    <button class="btn-danger p-2 rounded text-sm">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -527,171 +579,96 @@
                             <div class="relative">
                                 <img src="https://picsum.photos/seed/game6/400/225.jpg" alt="Game Cover" class="w-full h-48 object-cover">
                                 <div class="absolute top-3 right-3">
-                                    <span class="status-badge status-draft">Draft</span>
-                                </div>
-                                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
-                                    <h3 class="text-lg font-bold text-white">Fantasy Kingdom</h3>
-                                    <p class="text-sm text-gray-300">Strategi • Simulasi</p>
+                                    <span class="status-maintenance bg-yellow-500/20 text-yellow-400 px-3 py-1 rounded-full text-xs flex items-center">
+                                        <i class="fas fa-circle mr-1 text-xs"></i> Pemeliharaan
+                                    </span>
                                 </div>
                             </div>
-                            <div class="p-4">
-                                <div class="flex items-center justify-between mb-3">
-                                    <div class="flex items-center space-x-4 text-sm">
-                                        <span class="text-gray-400">
-                                            <i class="fas fa-download mr-1"></i> 0
-                                        </span>
-                                        <span class="text-gray-400">
-                                            <i class="fas fa-star mr-1"></i> -
-                                        </span>
-                                        <span class="text-gray-400">
-                                            <i class="fas fa-heart mr-1"></i> 0
-                                        </span>
+                            <div class="p-5">
+                                <h3 class="text-lg font-bold text-white mb-2">Balapan Liar</h3>
+                                <p class="text-gray-400 text-sm mb-4">Game balap mobil dengan berbagai trek dan modifikasi kendaraan.</p>
+                                
+                                <div class="grid grid-cols-2 gap-4 mb-4 text-sm">
+                                    <div>
+                                        <p class="text-gray-500">Unduhan</p>
+                                        <p class="text-white font-medium">9.8K</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-gray-500">Rating</p>
+                                        <p class="text-white font-medium">4.4 ⭐</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-gray-500">Pendapatan</p>
+                                        <p class="text-white font-medium">Rp 12.0 Juta</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-gray-500">Terakhir Update</p>
+                                        <p class="text-white font-medium">2 hari lalu</p>
                                     </div>
                                 </div>
-                                <div class="flex items-center justify-between">
-                                    <div class="text-sm">
-                                        <span class="text-gray-400">Progress:</span>
-                                        <span class="text-white font-medium ml-1">30%</span>
-                                    </div>
-                                    <div class="flex space-x-2">
-                                        <button class="btn-secondary px-3 py-1 rounded text-sm">
-                                            <i class="fas fa-edit"></i>
-                                        </button>
-                                        <button class="btn-success px-3 py-1 rounded text-sm">
-                                            <i class="fas fa-upload"></i>
-                                        </button>
-                                    </div>
+                                
+                                <div class="flex gap-2">
+                                    <button class="btn-neon flex-1 py-2 rounded text-sm">
+                                        <i class="fas fa-edit mr-1"></i> Edit
+                                    </button>
+                                    <button class="btn-secondary flex-1 py-2 rounded text-sm">
+                                        <i class="fas fa-eye mr-1"></i> Lihat
+                                    </button>
+                                    <button class="btn-danger p-2 rounded text-sm">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
                     <!-- Pagination -->
-                    <div class="flex items-center justify-between mt-8">
-                        <div class="text-sm text-gray-400">
-                            Menampilkan 6 dari 12 game
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <button class="btn-secondary px-4 py-2 rounded-lg text-sm">
-                                <i class="fas fa-chevron-left mr-1"></i> Sebelumnya
+                    <div class="flex justify-center mt-8">
+                        <nav class="flex space-x-2">
+                            <button class="px-3 py-2 bg-gray-800/50 border border-gray-700/50 rounded-lg text-sm hover:bg-gray-700/50">
+                                <i class="fas fa-chevron-left"></i>
                             </button>
-                            <button class="btn-neon px-4 py-2 rounded-lg text-sm">
-                                Selanjutnya <i class="fas fa-chevron-right ml-1"></i>
+                            <button class="px-4 py-2 bg-blue-600 border border-blue-500 rounded-lg text-sm">1</button>
+                            <button class="px-4 py-2 bg-gray-800/50 border border-gray-700/50 rounded-lg text-sm hover:bg-gray-700/50">2</button>
+                            <button class="px-4 py-2 bg-gray-800/50 border border-gray-700/50 rounded-lg text-sm hover:bg-gray-700/50">3</button>
+                            <button class="px-3 py-2 bg-gray-800/50 border border-gray-700/50 rounded-lg text-sm hover:bg-gray-700/50">
+                                <i class="fas fa-chevron-right"></i>
                             </button>
-                        </div>
+                        </nav>
                     </div>
                 </main>
             </div>
         </div>
     </div>
     
-    <!-- Create Game Modal -->
-    <div id="create-game-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden">
-        <div class="flex items-center justify-center min-h-screen p-4">
-            <div class="dev-card rounded-2xl p-8 max-w-md w-full">
-                <div class="flex items-center justify-between mb-6">
-                    <h3 class="text-xl font-bold text-white">Buat Game Baru</h3>
-                    <button onclick="hideCreateGameModal()" class="text-gray-400 hover:text-white">
-                        <i class="fas fa-times text-xl"></i>
-                    </button>
-                </div>
-                
-                <form>
-                    <div class="space-y-4">
-                        <div>
-                            <label class="block text-sm font-medium text-gray-300 mb-2">Nama Game</label>
-                            <input type="text" class="search-input w-full px-4 py-3 rounded-lg text-white" placeholder="Masukkan nama game">
-                        </div>
-                        
-                        <div>
-                            <label class="block text-sm font-medium text-gray-300 mb-2">Kategori</label>
-                            <select class="search-input w-full px-4 py-3 rounded-lg text-white">
-                                <option>Pilih kategori</option>
-                                <option>Aksi</option>
-                                <option>Petualangan</option>
-                                <option>RPG</option>
-                                <option>Strategi</option>
-                                <option>Simulasi</option>
-                                <option>Olahraga</option>
-                                <option>Balapan</option>
-                                <option>Teka-teki</option>
-                            </select>
-                        </div>
-                        
-                        <div>
-                            <label class="block text-sm font-medium text-gray-300 mb-2">Deskripsi Singkat</label>
-                            <textarea class="search-input w-full px-4 py-3 rounded-lg text-white h-24 resize-none" placeholder="Deskripsikan game Anda"></textarea>
-                        </div>
-                        
-                        <div>
-                            <label class="block text-sm font-medium text-gray-300 mb-2">Cover Game</label>
-                            <div class="border-2 border-dashed border-gray-600 rounded-lg p-8 text-center cursor-pointer hover:border-blue-500 transition-colors">
-                                <i class="fas fa-cloud-upload-alt text-3xl text-gray-400 mb-2"></i>
-                                <p class="text-gray-400">Klik untuk upload cover</p>
-                                <p class="text-xs text-gray-500 mt-1">PNG, JPG maksimal 5MB</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="flex justify-end space-x-3 mt-6">
-                        <button type="button" onclick="hideCreateGameModal()" class="btn-secondary px-6 py-2 rounded-lg">
-                            Batal
-                        </button>
-                        <button type="submit" class="btn-neon px-6 py-2 rounded-lg">
-                            Buat Game
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+    <!-- Floating Action Button -->
+    <a href="{{ url('/import-game') }}" class="add-game-fab">
+        <i class="fas fa-plus text-white text-xl"></i>
+    </a>
     
     <script>
-        // Mobile menu functionality
-        function toggleMobileMenu() {
-            console.log('Mobile menu toggled');
-        }
-        
         // Sidebar functionality for mobile
         function toggleSidebar() {
             const sidebar = document.getElementById('sidebar');
             sidebar.classList.toggle('active');
         }
         
-        // Modal functionality
-        function showCreateGameModal() {
-            document.getElementById('create-game-modal').classList.remove('hidden');
-        }
-        
-        function hideCreateGameModal() {
-            document.getElementById('create-game-modal').classList.add('hidden');
-        }
-        
         // Filter functionality
         document.querySelectorAll('.filter-chip').forEach(chip => {
             chip.addEventListener('click', function() {
-                // Remove active class from all chips
                 document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
-                // Add active class to clicked chip
                 this.classList.add('active');
-                // Here you would filter the games based on the selected filter
-                console.log('Filter:', this.textContent);
             });
         });
         
-        // Search functionality
-        document.querySelector('.search-input').addEventListener('input', function(e) {
-            const searchTerm = e.target.value.toLowerCase();
-            // Here you would filter the games based on the search term
-            console.log('Search:', searchTerm);
-        });
+        // Simulate real-time data updates
+        function updateGameStats() {
+            // This would fetch real data in a real application
+            console.log('Game stats updated');
+        }
         
-        // Close modal when clicking outside
-        document.getElementById('create-game-modal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                hideCreateGameModal();
-            }
-        });
+        // Update stats every 60 seconds
+        setInterval(updateGameStats, 60000);
     </script>
 </body>
 </html>

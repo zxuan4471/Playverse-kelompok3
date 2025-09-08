@@ -251,6 +251,7 @@
 <body class="text-white min-h-screen">
     <!-- Main Navigation -->
     @include('development.navigasi.navbar-developer')
+    
     <!-- Secondary Navigation (Creator Dashboard Style) -->
     <div class="pt-16 bg-gray-800/50 border-b border-gray-700/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -313,7 +314,7 @@
                             <div class="flex items-center justify-between mb-4">
                                 <div>
                                     <p class="text-gray-400 text-sm">Pendapatan</p>
-                                    <p class="text-2xl font-bold text-white">$3.8K</p>
+                                    <p class="text-2xl font-bold text-white">Rp 58.9 Juta</p>
                                 </div>
                                 <div class="text-3xl">💰</div>
                             </div>
@@ -355,10 +356,10 @@
                             <div class="project-card flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-gray-800/50 rounded-lg border border-gray-700/50">
                                 <div class="flex items-center space-x-4 mb-3 sm:mb-0">
                                     <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg flex items-center justify-center">
-                                        <span class="text-white font-bold">MF</span>
+                                        <span class="text-white font-bold">MP</span>
                                     </div>
                                     <div>
-                                        <h3 class="font-bold text-white">Mystical Forest Adventure</h3>
+                                        <h3 class="font-bold text-white">Misteri Hutan Angker</h3>
                                         <p class="text-gray-400 text-sm">Terakhir diperbarui 2 jam yang lalu</p>
                                     </div>
                                 </div>
@@ -374,10 +375,10 @@
                             <div class="project-card flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-gray-800/50 rounded-lg border border-gray-700/50">
                                 <div class="flex items-center space-x-4 mb-3 sm:mb-0">
                                     <div class="w-12 h-12 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg flex items-center justify-center">
-                                        <span class="text-white font-bold">NR</span>
+                                        <span class="text-white font-bold">PL</span>
                                     </div>
                                     <div>
-                                        <h3 class="font-bold text-white">Neon Runner 2077</h3>
+                                        <h3 class="font-bold text-white">Pelari Neon 2077</h3>
                                         <p class="text-gray-400 text-sm">Terakhir diperbarui 1 hari yang lalu</p>
                                     </div>
                                 </div>
@@ -393,10 +394,10 @@
                             <div class="project-card flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-gray-800/50 rounded-lg border border-gray-700/50">
                                 <div class="flex items-center space-x-4 mb-3 sm:mb-0">
                                     <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-500 rounded-lg flex items-center justify-center">
-                                        <span class="text-white font-bold">QP</span>
+                                        <span class="text-white font-bold">TK</span>
                                     </div>
                                     <div>
-                                        <h3 class="font-bold text-white">Quantum Puzzle Box</h3>
+                                        <h3 class="font-bold text-white">Teka-Teki Kuantum</h3>
                                         <p class="text-gray-400 text-sm">Terakhir diperbarui 3 hari yang lalu</p>
                                     </div>
                                 </div>
@@ -418,7 +419,7 @@
                             <div class="flex items-center justify-between mb-4">
                                 <h3 class="text-lg font-bold text-white">Penggunaan API</h3>
                                 <button class="text-blue-400 hover:text-blue-300 text-sm">
-                                    <i class="fas fa-sync-alt mr-1"></i> Refresh
+                                    <i class="fas fa-sync-alt mr-1"></i> Segarkan
                                 </button>
                             </div>
                             <div class="space-y-4">
@@ -460,7 +461,7 @@
                             <div class="space-y-3">
                                 <div class="flex items-center justify-between text-sm">
                                     <div>
-                                        <span class="text-gray-400">v1.2.3 - Mystical Forest</span>
+                                        <span class="text-gray-400">v1.2.3 - Misteri Hutan</span>
                                         <p class="text-xs text-gray-500">2 jam yang lalu</p>
                                     </div>
                                     <span class="status-online flex items-center">
@@ -469,7 +470,7 @@
                                 </div>
                                 <div class="flex items-center justify-between text-sm">
                                     <div>
-                                        <span class="text-gray-400">v1.1.8 - Neon Runner</span>
+                                        <span class="text-gray-400">v1.1.8 - Pelari Neon</span>
                                         <p class="text-xs text-gray-500">1 hari yang lalu</p>
                                     </div>
                                     <span class="status-maintenance flex items-center">
@@ -478,7 +479,7 @@
                                 </div>
                                 <div class="flex items-center justify-between text-sm">
                                     <div>
-                                        <span class="text-gray-400">v2.0.1 - Quantum Puzzle</span>
+                                        <span class="text-gray-400">v2.0.1 - Teka-Teki Kuantum</span>
                                         <p class="text-xs text-gray-500">3 hari yang lalu</p>
                                     </div>
                                     <span class="status-offline flex items-center">

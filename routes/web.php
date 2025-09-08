@@ -96,3 +96,7 @@ Route::get('/asset-saya', function () {
 Route::get('/publish-asset', function () {
     return view('development.import.import-asset');
 });
+
+Route::get('/management-asset', function () {
+    return view('admin.asset-management');
+});
