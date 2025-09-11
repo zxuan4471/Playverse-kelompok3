@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Log;
 
@@ -100,3 +101,11 @@ Route::get('/publish-asset', function () {
 Route::get('/management-asset', function () {
     return view('admin.asset-management');
 });
+
+Route::get('/login', [AuthController::class, 'showSigninForm'])->name('login');
+Route::post('/login', [AuthController::class, 'signinProses'])->name('login.proses');
+
+Route::get('/register', [AuthController::class, 'showSignupForm'])->name('register');
+Route::post('/register', [AuthController::class, 'signupProses'])->name('register.proses');
+
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');

@@ -18,12 +18,23 @@
                     <a href="#" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors">Community</a>
                 </div>
                 <!-- User Actions -->
-                <div class="flex items-center space-x-4">
-                    <div class="flex items-center space-x-2">
-                        <a href="{{ url('/login') }}" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors">Login</a>
-                        <a href="{{ url('/register') }}" class="btn-neon px-4 py-2 rounded-lg text-sm font-medium">Sign Up</a>
-                    </div>
-                </div>
+            
+<div class="flex items-center space-x-2">
+    @guest
+        <a href="{{ route('login') }}" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors">Login</a>
+        <a href="{{ route('register') }}" class="btn-neon px-4 py-2 rounded-lg text-sm font-medium">Sign Up</a>
+    @endguest
+
+    @auth
+        <span class="text-white px-3 py-2 text-sm font-medium">{{ Auth::user()->username }}</span>
+        <form method="POST" action="{{ route('logout') }}">
+            @csrf
+            <button type="submit" class="btn-neon px-4 py-2 rounded-lg text-sm font-medium">Logout</button>
+        </form>
+    @endauth
+</div>
+
+
             </div>
         </div>
     </nav>
