@@ -1,111 +1,46 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\GameController;
+use App\Http\Controllers\ImportGameController;
+use App\Http\Controllers\PublishGameController;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Log;
 
-Route::get('/', function () {
-    return view('index'); // atau nama view halaman utamamu
-});
+Route::get('/', fn() => view('index'));
 
+// ================== STATIC VIEW ROUTES ==================
+Route::get('/assets', fn() => view('assets'));
+Route::get('/review', fn() => view('admin.review'));
+Route::get('/games', fn() => view('games.list'))->name('games.list');
+Route::get('/game', fn() => view('games.showgame'));
+Route::get('developer-dashboard', fn() => view('development.developer-mode'));
+Route::get('/all_game', fn() => view('semua-game'));
+Route::get('/dashboard-admin', fn() => view('admin.dashboard-admin'));
+Route::get('/management-user', fn() => view('admin.user-management'));
+Route::get('/management-game', fn() => view('admin.game-management'));
+Route::get('/penghasilan', fn() => view('development.penghasilan'));
+Route::get('/pendaftaran-daveloper', fn() => view('development.pendaftaran-davelopers'));
+Route::get('/report', fn() => view('admin.laporan'));
+Route::get('/analisis', fn() => view('admin.management-analistik'));
+Route::get('/management-uang', fn() => view('admin.management-uang'));
+Route::get('/login-admin', fn() => view('admin.login-admin'));
+Route::get('/game-saya', fn() => view('development.game-saya'));
+Route::get('/asset-saya', fn() => view('development.assets-saya'));
+Route::get('/publish-asset', fn() => view('development.import.import-asset'));
+Route::get('/management-asset', fn() => view('admin.asset-management'));
 
-Route::get('/assets', function () {
-    return view('assets');
-});
-
-Route::get('/review', function () {
-    return view('admin.review');
-});
-
-Route::get('/games', function () {
-    return view('games.list');
-})->name('games.list');
-
-// Halaman detail game
-Route::get('/game', function () {
-    return view('games.showgame');
-});
-
-Route::get('developer-dashboard', function () {
-    return view('development.developer-mode');
-});
-
-Route::get('/all_game', function () {
-    return view('semua-game');
-});
-
-Route::get('/import-game', function () {
-    return view('development.import.import-game');
-});
-
-Route::get('/detail-game', function () {
-    return view('development.import.detail-game');
-});
-
-Route::get('/dashboard-admin', function () {
-    return view('admin.dashboard-admin');
-});
-
-Route::get('/management-user', function () {
-    return view('admin.user-management');
-});
-
-Route::get('/management-game', function () {
-    return view('admin.game-management');
-});
-
-Route::get('/publish-game', function () {
-    return view('development.import.publish-game');
-});
-
-Route::get('/penghasilan', function () {
-    return view('development.penghasilan');
-});
-
-Route::get('/pendaftaran-daveloper', function () {
-    return view('development.pendaftaran-davelopers');
-});
-
-Route::get('/login', function () {
-    return view('login');
-});
-
-Route::get('/report', function () {
-    return view('admin.laporan');
-});
-
-Route::get('/analisis', function () {
-    return view('admin.management-analistik');
-});
-
-Route::get('/management-uang', function () {
-    return view('admin.management-uang');
-});
-
-Route::get('/login-admin', function () {
-    return view('admin.login-admin');
-});
-
-Route::get('/game-saya', function () {
-    return view('development.game-saya');
-});
-
-Route::get('/asset-saya', function () {
-    return view('development.assets-saya');
-});
-
-Route::get('/publish-asset', function () {
-    return view('development.import.import-asset');
-});
-
-Route::get('/management-asset', function () {
-    return view('admin.asset-management');
-});
-
+// ================== AUTH ==================
 Route::get('/login', [AuthController::class, 'showSigninForm'])->name('login');
 Route::post('/login', [AuthController::class, 'signinProses'])->name('login.proses');
-
 Route::get('/register', [AuthController::class, 'showSignupForm'])->name('register');
 Route::post('/register', [AuthController::class, 'signupProses'])->name('register.proses');
-
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+// ================== GAME ==================
+// ================== GAME ==================
+Route::get('/import-game', [ImportGameController::class, 'create'])->name('import.create');
+Route::post('/import-game', [ImportGameController::class, 'store'])->name('import.store');
+Route::get('/games/create', [ImportGameController::class, 'create'])->name('games.create');
+Route::post('/games/store', [ImportGameController::class, 'store'])->name('games.store');
+
+

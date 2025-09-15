@@ -48,16 +48,6 @@
             transform: translateY(-2px);
         }
         
-        .btn-secondary {
-            background: linear-gradient(45deg, #6b7280, #4b5563);
-            transition: all 0.3s ease;
-        }
-        
-        .btn-secondary:hover {
-            background: linear-gradient(45deg, #9ca3af, #6b7280);
-            transform: translateY(-1px);
-        }
-        
         .gradient-text {
             background: linear-gradient(45deg, #3b82f6, #8b5cf6, #06b6d4);
             -webkit-background-clip: text;
@@ -99,59 +89,8 @@
             border-color: #3b82f6;
         }
         
-        .step-indicator {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 2rem;
-        }
-        
-        .step {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(59, 130, 246, 0.2);
-            border: 2px solid rgba(59, 130, 246, 0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .step.active {
-            background: linear-gradient(45deg, #3b82f6, #1d4ed8);
-            border-color: #3b82f6;
-            color: white;
-        }
-        
-        .step.completed {
-            background: linear-gradient(45deg, #22c55e, #16a34a);
-            border-color: #22c55e;
-            color: white;
-        }
-        
-        .step-connector {
-            width: 100px;
-            height: 2px;
-            background: rgba(59, 130, 246, 0.3);
-            margin: 0 10px;
-        }
-        
-        .step-connector.completed {
-            background: linear-gradient(90deg, #22c55e, #3b82f6);
-        }
-        
         .error-message {
             color: #ef4444;
-            font-size: 0.875rem;
-            margin-top: 0.25rem;
-            display: none;
-        }
-        
-        .success-message {
-            color: #22c55e;
             font-size: 0.875rem;
             margin-top: 0.25rem;
             display: none;
@@ -166,10 +105,13 @@
             border-color: rgba(59, 130, 246, 0.6);
             background: rgba(59, 130, 246, 0.05);
         }
-    </style>
-</head>
-<body class="text-white min-h-screen">
-            }
+        
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid rgba(59, 130, 246, 0.3);
         }
     </style>
 </head>
@@ -188,97 +130,80 @@
                 </p>
             </div>
             
-            <!-- Step Indicator -->
-            <div class="step-indicator">
-                <div class="step active" id="step1">1</div>
-                <div class="step-connector" id="connector1"></div>
-                <div class="step" id="step2">2</div>
-                <div class="step-connector" id="connector2"></div>
-                <div class="step" id="step3">3</div>
-            </div>
-            
             <!-- Registration Form -->
             <div class="dev-card rounded-2xl p-8">
-                <!-- Step 1: Personal Information -->
-                <div id="form-step-1" class="form-step">
-                    <h2 class="text-2xl font-bold text-white mb-6">Informasi Pribadi</h2>
-                    
-                    <form id="registration-form">
+                <form id="registration-form">
+                    <!-- Personal Information Section -->
+                    <div class="mb-10">
+                        <h2 class="section-title">Informasi Pribadi</h2>
+                        
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <label class="form-label block mb-2">Nama Depan *</label>
-                                <input type="text" class="form-input w-full px-4 py-3 rounded-lg text-white" placeholder="John" required>
+                                <input type="text" name="first_name" class="form-input w-full px-4 py-3 rounded-lg text-white" placeholder="John" required>
                                 <span class="error-message">Nama depan harus diisi</span>
                             </div>
                             
                             <div>
                                 <label class="form-label block mb-2">Nama Belakang *</label>
-                                <input type="text" class="form-input w-full px-4 py-3 rounded-lg text-white" placeholder="Doe" required>
+                                <input type="text" name="last_name" class="form-input w-full px-4 py-3 rounded-lg text-white" placeholder="Doe" required>
                                 <span class="error-message">Nama belakang harus diisi</span>
                             </div>
                             
                             <div class="md:col-span-2">
                                 <label class="form-label block mb-2">Email *</label>
-                                <input type="email" class="form-input w-full px-4 py-3 rounded-lg text-white" placeholder="john.doe@example.com" required>
+                                <input type="email" name="email" class="form-input w-full px-4 py-3 rounded-lg text-white" placeholder="john.doe@example.com" required>
                                 <span class="error-message">Email tidak valid</span>
                             </div>
                             
                             <div>
                                 <label class="form-label block mb-2">Password *</label>
-                                <input type="password" id="password" class="form-input w-full px-4 py-3 rounded-lg text-white" placeholder="••••••••" required>
+                                <input type="password" id="password" name="password" class="form-input w-full px-4 py-3 rounded-lg text-white" placeholder="••••••••" required>
                                 <span class="error-message">Password minimal 8 karakter</span>
                             </div>
                             
                             <div>
                                 <label class="form-label block mb-2">Konfirmasi Password *</label>
-                                <input type="password" id="confirm-password" class="form-input w-full px-4 py-3 rounded-lg text-white" placeholder="••••••••" required>
+                                <input type="password" id="confirm-password" name="confirm_password" class="form-input w-full px-4 py-3 rounded-lg text-white" placeholder="••••••••" required>
                                 <span class="error-message">Password tidak cocok</span>
                             </div>
                             
                             <div class="md:col-span-2">
                                 <label class="form-label block mb-2">Nomor Telepon</label>
-                                <input type="tel" class="form-input w-full px-4 py-3 rounded-lg text-white" placeholder="+62 812 3456 7890">
+                                <input type="tel" name="phone" class="form-input w-full px-4 py-3 rounded-lg text-white" placeholder="+62 812 3456 7890">
                             </div>
                         </div>
-                        
-                        <div class="flex justify-end mt-8">
-                            <button type="button" onclick="nextStep(1)" class="btn-neon px-6 py-3 rounded-lg font-medium">
-                                Lanjutkan <i class="fas fa-arrow-right ml-2"></i>
-                            </button>
-                        </div>
-                    </form>
-                </div>
-                
-                <!-- Step 2: Developer Information -->
-                <div id="form-step-2" class="form-step hidden">
-                    <h2 class="text-2xl font-bold text-white mb-6">Informasi Developer</h2>
+                    </div>
                     
-                    <form>
+                    <!-- Developer Information Section -->
+                    <div class="mb-10">
+                        <h2 class="section-title">Informasi Developer</h2>
+                        
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="md:col-span-2">
                                 <label class="form-label block mb-2">Nama Studio/Developer *</label>
-                                <input type="text" class="form-input w-full px-4 py-3 rounded-lg text-white" placeholder="Awesome Game Studio" required>
+                                <input type="text" name="studio_name" class="form-input w-full px-4 py-3 rounded-lg text-white" placeholder="Awesome Game Studio" required>
                                 <span class="error-message">Nama studio harus diisi</span>
                             </div>
                             
                             <div class="md:col-span-2">
                                 <label class="form-label block mb-2">Deskripsi Studio</label>
-                                <textarea class="form-input w-full px-4 py-3 rounded-lg text-white h-24 resize-none" placeholder="Ceritakan tentang studio Anda..."></textarea>
+                                <textarea name="studio_description" class="form-input w-full px-4 py-3 rounded-lg text-white h-24 resize-none" placeholder="Ceritakan tentang studio Anda..."></textarea>
                             </div>
                             
                             <div>
                                 <label class="form-label block mb-2">Website</label>
-                                <input type="url" class="form-input w-full px-4 py-3 rounded-lg text-white" placeholder="https://yourstudio.com">
+                                <input type="url" name="website" class="form-input w-full px-4 py-3 rounded-lg text-white" placeholder="https://yourstudio.com">
                             </div>
                             
                             <div>
                                 <label class="form-label block mb-2">Twitter/X</label>
-                                <input type="text" class="form-input w-full px-4 py-3 rounded-lg text-white" placeholder="@yourstudio">
+                                <input type="text" name="twitter" class="form-input w-full px-4 py-3 rounded-lg text-white" placeholder="@yourstudio">
                             </div>
                             
                             <div class="md:col-span-2">
                                 <label class="form-label block mb-2">Kategori Game Utama *</label>
-                                <select class="form-input w-full px-4 py-3 rounded-lg text-white" required>
+                                <select name="game_category" class="form-input w-full px-4 py-3 rounded-lg text-white" required>
                                     <option value="">Pilih kategori</option>
                                     <option value="action">Action</option>
                                     <option value="adventure">Adventure</option>
@@ -303,76 +228,64 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    
+                    <!-- Terms & Conditions Section -->
+                    <div class="mb-8">
+                        <h2 class="section-title">Syarat & Ketentuan</h2>
                         
-                        <div class="flex justify-between mt-8">
-                            <button type="button" onclick="previousStep(2)" class="btn-secondary px-6 py-3 rounded-lg font-medium">
-                                <i class="fas fa-arrow-left mr-2"></i> Kembali
-                            </button>
-                            <button type="button" onclick="nextStep(2)" class="btn-neon px-6 py-3 rounded-lg font-medium">
-                                Lanjutkan <i class="fas fa-arrow-right ml-2"></i>
-                            </button>
+                        <div class="bg-gray-800/50 rounded-lg p-6 mb-6 max-h-64 overflow-y-auto">
+                            <h3 class="font-bold mb-3">1. Persyaratan Developer</h3>
+                            <p class="text-sm text-gray-300 mb-4">
+                                Dengan mendaftar sebagai developer di Playverse, Anda setuju untuk mematuhi semua persyaratan dan ketentuan yang berlaku. Anda harus memiliki hak penuh atas konten yang Anda unggah dan bertanggung jawab atas semua game yang Anda publikasikan.
+                            </p>
+                            
+                            <h3 class="font-bold mb-3">2. Kebijakan Konten</h3>
+                            <p class="text-sm text-gray-300 mb-4">
+                                Semua game yang dipublikasikan harus mematuhi kebijakan konten Playverse. Konten yang melanggar hukum, mengandung kekerasan berlebihan, atau materi dewasa tanpa peringatan yang tepat akan ditolak.
+                            </p>
+                            
+                            <h3 class="font-bold mb-3">3. Pembagian Pendapatan</h3>
+                            <p class="text-sm text-gray-300 mb-4">
+                                Playverse mengambil komisi 30% dari semua penjualan game. Pembayaran akan dilakukan setiap bulan setelah mencapai minimum payout $100.
+                            </p>
+                            
+                            <h3 class="font-bold mb-3">4. Hak Kekayaan Intelektual</h3>
+                            <p class="text-sm text-gray-300">
+                                Anda mempertahankan semua hak kekayaan intelektual atas game Anda. Dengan mempublikasikan di Playverse, Anda memberikan kami lisensi untuk mendistribusikan game Anda.
+                            </p>
                         </div>
-                    </form>
-                </div>
-                
-                <!-- Step 3: Terms & Conditions -->
-                <div id="form-step-3" class="form-step hidden">
-                    <h2 class="text-2xl font-bold text-white mb-6">Syarat & Ketentuan</h2>
-                    
-                    <div class="bg-gray-800/50 rounded-lg p-6 mb-6 max-h-64 overflow-y-auto">
-                        <h3 class="font-bold mb-3">1. Persyaratan Developer</h3>
-                        <p class="text-sm text-gray-300 mb-4">
-                            Dengan mendaftar sebagai developer di Playverse, Anda setuju untuk mematuhi semua persyaratan dan ketentuan yang berlaku. Anda harus memiliki hak penuh atas konten yang Anda unggah dan bertanggung jawab atas semua game yang Anda publikasikan.
-                        </p>
                         
-                        <h3 class="font-bold mb-3">2. Kebijakan Konten</h3>
-                        <p class="text-sm text-gray-300 mb-4">
-                            Semua game yang dipublikasikan harus mematuhi kebijakan konten Playverse. Konten yang melanggar hukum, mengandung kekerasan berlebihan, atau materi dewasa tanpa peringatan yang tepat akan ditolak.
-                        </p>
-                        
-                        <h3 class="font-bold mb-3">3. Pembagian Pendapatan</h3>
-                        <p class="text-sm text-gray-300 mb-4">
-                            Playverse mengambil komisi 30% dari semua penjualan game. Pembayaran akan dilakukan setiap bulan setelah mencapai minimum payout $100.
-                        </p>
-                        
-                        <h3 class="font-bold mb-3">4. Hak Kekayaan Intelektual</h3>
-                        <p class="text-sm text-gray-300">
-                            Anda mempertahankan semua hak kekayaan intelektual atas game Anda. Dengan mempublikasikan di Playverse, Anda memberikan kami lisensi untuk mendistribusikan game Anda.
-                        </p>
+                        <div class="space-y-3 mb-6">
+                            <label class="flex items-start">
+                                <input type="checkbox" name="terms" class="form-checkbox mt-1 mr-3" required>
+                                <span class="text-sm text-gray-300">
+                                    Saya telah membaca dan menyetujui <a href="#" class="text-blue-400 hover:text-blue-300">Syarat & Ketentuan</a>
+                                </span>
+                            </label>
+                            
+                            <label class="flex items-start">
+                                <input type="checkbox" name="privacy" class="form-checkbox mt-1 mr-3" required>
+                                <span class="text-sm text-gray-300">
+                                    Saya menyetujui <a href="#" class="text-blue-400 hover:text-blue-300">Kebijakan Privasi</a>
+                                </span>
+                            </label>
+                            
+                            <label class="flex items-start">
+                                <input type="checkbox" name="newsletter" class="form-checkbox mt-1 mr-3">
+                                <span class="text-sm text-gray-300">
+                                    Saya ingin menerima newsletter dan update terbaru dari Playverse
+                                </span>
+                            </label>
+                        </div>
                     </div>
                     
-                    <div class="space-y-3 mb-6">
-                        <label class="flex items-start">
-                            <input type="checkbox" class="form-checkbox mt-1 mr-3" required>
-                            <span class="text-sm text-gray-300">
-                                Saya telah membaca dan menyetujui <a href="#" class="text-blue-400 hover:text-blue-300">Syarat & Ketentuan</a>
-                            </span>
-                        </label>
-                        
-                        <label class="flex items-start">
-                            <input type="checkbox" class="form-checkbox mt-1 mr-3" required>
-                            <span class="text-sm text-gray-300">
-                                Saya menyetujui <a href="#" class="text-blue-400 hover:text-blue-300">Kebijakan Privasi</a>
-                            </span>
-                        </label>
-                        
-                        <label class="flex items-start">
-                            <input type="checkbox" class="form-checkbox mt-1 mr-3">
-                            <span class="text-sm text-gray-300">
-                                Saya ingin menerima newsletter dan update terbaru dari Playverse
-                            </span>
-                        </label>
-                    </div>
-                    
-                    <div class="flex justify-between">
-                        <button type="button" onclick="previousStep(3)" class="btn-secondary px-6 py-3 rounded-lg font-medium">
-                            <i class="fas fa-arrow-left mr-2"></i> Kembali
-                        </button>
-                        <button type="submit" onclick="submitForm()" class="btn-neon px-6 py-3 rounded-lg font-medium">
+                    <div class="flex justify-center">
+                        <button type="submit" class="btn-neon px-8 py-3 rounded-lg font-medium">
                             Daftar Sekarang <i class="fas fa-check ml-2"></i>
                         </button>
                     </div>
-                </div>
+                </form>
             </div>
             
             <!-- Quick Benefits -->
@@ -415,43 +328,12 @@
     </div>
     
     <script>
-        let currentStep = 1;
-        
-        function nextStep(step) {
-            // Validate current step
-            if (validateStep(step)) {
-                // Update step indicators
-                document.getElementById(`step${step}`).classList.remove('active');
-                document.getElementById(`step${step}`).classList.add('completed');
-                document.getElementById(`connector${step}`).classList.add('completed');
-                
-                // Show next step
-                document.getElementById(`form-step-${step}`).classList.add('hidden');
-                document.getElementById(`form-step-${step + 1}`).classList.remove('hidden');
-                document.getElementById(`step${step + 1}`).classList.add('active');
-                
-                currentStep = step + 1;
-            }
-        }
-        
-        function previousStep(step) {
-            // Update step indicators
-            document.getElementById(`step${step}`).classList.remove('active');
-            document.getElementById(`step${step - 1}`).classList.remove('completed');
-            document.getElementById(`connector${step - 1}`).classList.remove('completed');
+        document.getElementById('registration-form').addEventListener('submit', function(e) {
+            e.preventDefault();
             
-            // Show previous step
-            document.getElementById(`form-step-${step}`).classList.add('hidden');
-            document.getElementById(`form-step-${step - 1}`).classList.remove('hidden');
-            document.getElementById(`step${step - 1}`).classList.add('active');
-            
-            currentStep = step - 1;
-        }
-        
-        function validateStep(step) {
+            // Validate form
             let isValid = true;
-            const currentForm = document.getElementById(`form-step-${step}`);
-            const inputs = currentForm.querySelectorAll('input[required], select[required]');
+            const inputs = this.querySelectorAll('input[required], select[required]');
             
             inputs.forEach(input => {
                 const errorMsg = input.parentElement.querySelector('.error-message');
@@ -473,34 +355,24 @@
                 }
             });
             
-            return isValid;
-        }
+            // Check required checkboxes
+            const termsCheckbox = this.querySelector('input[name="terms"]');
+            const privacyCheckbox = this.querySelector('input[name="privacy"]');
+            
+            if (!termsCheckbox.checked || !privacyCheckbox.checked) {
+                isValid = false;
+                alert('Harap menyetujui syarat dan ketentuan untuk melanjutkan');
+            }
+            
+            if (isValid) {
+                // Show success modal
+                document.getElementById('success-modal').classList.remove('hidden');
+            }
+        });
         
         function isValidEmail(email) {
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return emailRegex.test(email);
-        }
-        
-        function submitForm() {
-            const checkboxes = document.querySelectorAll('#form-step-3 input[type="checkbox"]:required');
-            let allChecked = true;
-            
-            checkboxes.forEach(checkbox => {
-                if (!checkbox.checked) {
-                    allChecked = false;
-                }
-            });
-            
-            if (allChecked) {
-                // Show success modal
-                document.getElementById('success-modal').classList.remove('hidden');
-                
-                // Update step indicators
-                document.getElementById('step3').classList.remove('active');
-                document.getElementById('step3').classList.add('completed');
-            } else {
-                alert('Harap menyetujui syarat dan ketentuan untuk melanjutkan');
-            }
         }
         
         function closeModal() {

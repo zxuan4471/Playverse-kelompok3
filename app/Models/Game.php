@@ -21,13 +21,15 @@ class Game extends Model
         return $this->belongsTo(Platform::class);
     }
 
-    public function screenshots()
-    {
-        return $this->hasMany(GameScreenshot::class);
-    }
+   public function screenshots()
+{
+    return $this->hasMany(GameScreenshot::class, 'game_id');
+}
+
 
     public function files()
     {
         return $this->hasMany(GameFile::class);
     }
+    
 }

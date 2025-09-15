@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->string('developer');
             $table->text('description');
+            $table->string('game_file');
             $table->decimal('price', 10, 2)->default(0);
             $table->string('cover_image')->nullable();
             $table->string('trailer_url')->nullable();
