@@ -9,23 +9,35 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <style>
         .game-frame {
-    position: relative;
-    width: 100%;
-    height: 80vh; /* kotak utama */
-    background: #000; /* biar tidak ada putih */
-    overflow: hidden;
-    border-radius: 0.5rem;
-}
+            position: relative;
+            width: 100%;
+            height: 80vh;
+            /* kotak utama */
+            background: #000;
+            /* biar tidak ada putih */
+            overflow: hidden;
+            border-radius: 0.5rem;
+        }
 
-#game-iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-}
+        #game-iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
 
+        #game-iframe {
+            overflow: hidden;
+            scrollbar-width: none;
+            /* Firefox */
+        }
+
+        #game-iframe::-webkit-scrollbar {
+            display: none;
+            /* Chrome, Safari */
+        }
     </style>
 </head>
 
@@ -47,37 +59,34 @@
                         </div>
 
                         <div class="game-frame" id="game-frame">
-                            <div class="game-overlay" id="game-overlay">
-                                <div class="text-center">
-                                    <h2 class="text-3xl font-bold mb-4 gradient-text">{{ $game->title }}</h2>
-                                    <p class="text-gray-300 mb-6 max-w-md">Klik tombol di bawah untuk memulai permainan!
-                                    </p>
-                                    <button id="start-game-btn" class="btn-neon px-8 py-4 rounded-xl font-bold text-lg">
-    Mulai Game
-</button>
+    <!-- Overlay (tombol mulai game) -->
+    <div class="game-overlay" id="game-overlay">
+        <div class="text-center">
+            <h2 class="text-3xl font-bold mb-4 gradient-text">{{ $game->title }}</h2>
+            <p class="text-gray-300 mb-6 max-w-md">
+                Klik tombol di bawah untuk memulai permainan!
+            </p>
+            <button id="start-game-btn" class="btn-neon px-8 py-4 rounded-xl font-bold text-lg">
+                Mulai Game
+            </button>
+        </div>
+    </div>
 
-                                </div>
-                            </div>
+    <!-- Loading state -->
+    <div id="loading-state" class="hidden absolute inset-0 flex flex-col items-center justify-center bg-black/80">
+        <div class="loading-spinner mb-4"></div>
+        <p class="text-gray-300">Loading game...</p>
+    </div>
 
-                            <!-- Loading state -->
-                            <div id="loading-state" class="hidden">
-                                <div class="loading-spinner mb-4"></div>
-                                <p class="text-gray-300">Loading game...</p>
-                            </div>
-
-                            <!-- Game iframe akan dimuat di sini -->
-                            <div class="game-frame">
+    <!-- Game iframe -->
     <iframe id="game-iframe"
             src="{{ asset($game->game_file) }}"
             frameborder="0"
+            class="hidden"
             allowfullscreen>
     </iframe>
 </div>
 
-
-
-
-                        </div>
                     </div>
 
                     <!-- Comments Section (moved from controls position) -->
@@ -181,28 +190,28 @@
     </div>
 
     <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const startBtn = document.getElementById("start-game-btn");
-        const overlay = document.getElementById("game-overlay");
-        const iframe = document.getElementById("game-iframe");
-        const loading = document.getElementById("loading-state");
+        document.addEventListener("DOMContentLoaded", function () {
+            const startBtn = document.getElementById("start-game-btn");
+            const overlay = document.getElementById("game-overlay");
+            const iframe = document.getElementById("game-iframe");
+            const loading = document.getElementById("loading-state");
 
-        if (startBtn) {
-            startBtn.addEventListener("click", function () {
-                overlay.style.display = "none";        // Hilangkan overlay
-                loading.classList.remove("hidden");   // Tampilkan loading
+            if (startBtn) {
+                startBtn.addEventListener("click", function () {
+                    overlay.style.display = "none";        // Hilangkan overlay
+                    loading.classList.remove("hidden");   // Tampilkan loading
 
-                // Refresh src iframe supaya game benar-benar load ulang
-                iframe.src = iframe.getAttribute("src");
+                    // Refresh src iframe supaya game benar-benar load ulang
+                    iframe.src = iframe.getAttribute("src");
 
-                iframe.onload = function () {
-                    loading.classList.add("hidden");   // Sembunyikan loading
-                    iframe.classList.remove("hidden"); // Tampilkan game
-                };
-            });
-        }
-    });
-</script>
+                    iframe.onload = function () {
+                        loading.classList.add("hidden");   // Sembunyikan loading
+                        iframe.classList.remove("hidden"); // Tampilkan game
+                    };
+                });
+            }
+        });
+    </script>
 
 
 
