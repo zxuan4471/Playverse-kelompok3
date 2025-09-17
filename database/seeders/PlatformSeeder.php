@@ -9,13 +9,9 @@ class PlatformSeeder extends Seeder
 {
     public function run()
     {
-        $platforms = ['Web Build', 'Unity', 'Godot', 'Construct 3'];
-
-        foreach ($platforms as $plat) {
-            Platform::create([
-                'name' => $plat,
-                'slug' => strtolower(str_replace(' ', '-', $plat)),
-            ]);
+        $platforms = ['PC', 'Console', 'Mobile'];
+        foreach ($platforms as $name) {
+            Platform::firstOrCreate(['name' => $name]);
         }
     }
 }

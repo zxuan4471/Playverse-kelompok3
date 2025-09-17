@@ -232,23 +232,23 @@
 
                         <!-- Platfrom -->
                         <label class="block text-sm font-medium text-gray-300 mb-2">Platform</label>
-<select name="platform_id" class="form-select w-full px-4 py-3 rounded-lg">
-    <option value="">Select platform</option>
-    @foreach($platforms as $platform)
-        <option value="{{ $platform->id }}">{{ $platform->name }}</option>
-    @endforeach
-</select>
+                        <select name="platform_id" class="form-select w-full px-4 py-3 rounded-lg">
+                            <option value="">Select platform</option>
+                            @foreach($platforms as $platform)
+                                <option value="{{ $platform->id }}">{{ $platform->name }}</option>
+                            @endforeach
+                        </select>
 
-<!-- Classification -->
-<div>
-    <label class="block text-sm font-medium text-gray-300 mb-2">Classification</label>
-    <select class="form-select w-full px-4 py-3 rounded-lg" name="classification_id">
-        <option value="">Select classification</option>
-        @foreach($classifications as $classification)
-            <option value="{{ $classification->value }}">{{ $classification->name }}</option>
-        @endforeach
-    </select>
-</div>
+                        <!-- Classification -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Classification</label>
+                            <select class="form-select w-full px-4 py-3 rounded-lg" name="classification_id">
+                                <option value="">Select classification</option>
+                                @foreach($classifications as $classification)
+                                    <option value="{{ $classification->id }}">{{ $classification->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
 
 
                         <!-- Release Status -->
@@ -299,15 +299,15 @@
                 <p class="text-sm text-gray-400 mb-4">Screenshots will appear on your game's page. Optional but highly
                     recommended. Upload 3 for best results.</p>
 
-               <div class="upload-zone rounded-lg p-8 text-center">
-    <div class="text-4xl mb-3">📸</div>
+                <div class="upload-zone rounded-lg p-8 text-center">
+                    <div class="text-4xl mb-3">📸</div>
 
-    <input type="file" name="screenshots[]" id="screenshots-upload" class="hidden"
-        accept="image/*" multiple>
+                    <input type="file" name="screenshots[]" id="screenshots-upload" class="hidden" accept="image/*"
+                        multiple>
 
-    <button type="button" onclick="document.getElementById('screenshots-upload').click()"
-        class="btn-neon px-6 py-3 rounded-lg font-medium">Add screenshots</button>
-</div>
+                    <button type="button" onclick="document.getElementById('screenshots-upload').click()"
+                        class="btn-neon px-6 py-3 rounded-lg font-medium">Add screenshots</button>
+                </div>
 
             </div>
 
@@ -399,7 +399,7 @@
                             <option value="15">Survival</option>
                         </select>
 
-    </div>
+                    </div>
 
                     <!-- Visibility & Access -->
                     <div>
@@ -429,91 +429,91 @@
         </form>
     </div>
 
-<script>
-    // Platform selection
-    document.querySelectorAll('.pricing-option').forEach(option => {
-        option.addEventListener('click', function () {
-            document.querySelectorAll('.pricing-option').forEach(o => o.classList.remove('selected'));
-            this.classList.add('selected');
-            this.querySelector('input[type="radio"]').checked = true;
+    <script>
+        // Platform selection
+        document.querySelectorAll('.pricing-option').forEach(option => {
+            option.addEventListener('click', function () {
+                document.querySelectorAll('.pricing-option').forEach(o => o.classList.remove('selected'));
+                this.classList.add('selected');
+                this.querySelector('input[type="radio"]').checked = true;
+            });
         });
-    });
 
-    // File upload feedback
-    document.getElementById('cover-upload').addEventListener('change', function (e) {
-        if (e.target.files.length > 0) {
-            const fullName = e.target.files[0].name;
-            const uploadText = document.getElementById('upload-text');
-            const uploadBtn = document.getElementById('upload-btn');
+        // File upload feedback
+        document.getElementById('cover-upload').addEventListener('change', function (e) {
+            if (e.target.files.length > 0) {
+                const fullName = e.target.files[0].name;
+                const uploadText = document.getElementById('upload-text');
+                const uploadBtn = document.getElementById('upload-btn');
 
-            // batasi max 25 huruf
-            let shortName = fullName;
-            if (fullName.length > 25) {
-                shortName = fullName.substring(0, 15) + "...";
+                // batasi max 25 huruf
+                let shortName = fullName;
+                if (fullName.length > 25) {
+                    shortName = fullName.substring(0, 15) + "...";
+                }
+
+                uploadText.textContent = shortName;
+                uploadBtn.title = fullName; // tooltip biar kelihatan full
+                uploadBtn.classList.add('bg-green-600');
+            }
+        });
+
+        document.getElementById('screenshots-upload').addEventListener('change', function (e) {
+            if (e.target.files.length > 0) {
+                const button = document.querySelector('[onclick="document.getElementById(\'screenshots-upload\').click()"]');
+                button.textContent = `Selected: ${e.target.files.length} screenshots`;
+                button.classList.add('bg-green-600');
+            }
+        });
+
+        document.getElementById('game-files-upload').addEventListener('change', function (e) {
+            if (e.target.files.length > 0) {
+                const fileName = e.target.files[0].name;
+                const button = document.querySelector('[onclick="document.getElementById(\'game-files-upload\').click()"]');
+                button.textContent = `Selected: ${fileName}`;
+                button.classList.add('bg-green-600');
+            }
+        });
+
+        // Form validation
+        document.querySelector('form').addEventListener('submit', function (e) {
+            const title = document.querySelector('input[name="title"]').value;
+            const description = document.querySelector('textarea[name="description"]').value;
+            const coverImage = document.getElementById('cover-upload').files.length;
+            const gameFile = document.getElementById('game-files-upload').files.length;
+            const genre = document.querySelector('select[name="category_id"]').value;
+
+            if (!title.trim()) {
+                e.preventDefault();
+                alert('⚠️ Please enter a title for your game');
+                return;
             }
 
-            uploadText.textContent = shortName;
-            uploadBtn.title = fullName; // tooltip biar kelihatan full
-            uploadBtn.classList.add('bg-green-600');
-        }
-    });
+            if (!description.trim()) {
+                e.preventDefault();
+                alert('⚠️ Please enter a description for your game');
+                return;
+            }
 
-    document.getElementById('screenshots-upload').addEventListener('change', function (e) {
-        if (e.target.files.length > 0) {
-            const button = document.querySelector('[onclick="document.getElementById(\'screenshots-upload\').click()"]');
-            button.textContent = `Selected: ${e.target.files.length} screenshots`;
-            button.classList.add('bg-green-600');
-        }
-    });
+            if (coverImage === 0) {
+                e.preventDefault();
+                alert('⚠️ Please upload a cover image');
+                return;
+            }
 
-    document.getElementById('game-files-upload').addEventListener('change', function (e) {
-        if (e.target.files.length > 0) {
-            const fileName = e.target.files[0].name;
-            const button = document.querySelector('[onclick="document.getElementById(\'game-files-upload\').click()"]');
-            button.textContent = `Selected: ${fileName}`;
-            button.classList.add('bg-green-600');
-        }
-    });
+            if (gameFile === 0) {
+                e.preventDefault();
+                alert('⚠️ Please upload your game file');
+                return;
+            }
 
-    // Form validation
-    document.querySelector('form').addEventListener('submit', function (e) {
-        const title = document.querySelector('input[name="title"]').value;
-        const description = document.querySelector('textarea[name="description"]').value;
-        const coverImage = document.getElementById('cover-upload').files.length;
-        const gameFile = document.getElementById('game-files-upload').files.length;
-        const genre = document.querySelector('select[name="category_id"]').value;
-
-        if (!title.trim()) {
-            e.preventDefault();
-            alert('⚠️ Please enter a title for your game');
-            return;
-        }
-
-        if (!description.trim()) {
-            e.preventDefault();
-            alert('⚠️ Please enter a description for your game');
-            return;
-        }
-
-        if (coverImage === 0) {
-            e.preventDefault();
-            alert('⚠️ Please upload a cover image');
-            return;
-        }
-
-        if (gameFile === 0) {
-            e.preventDefault();
-            alert('⚠️ Please upload your game file');
-            return;
-        }
-
-        if (!genre.trim()) {
-            e.preventDefault();
-            alert('⚠️ Please select a genre');
-            return;
-        }
-    });
-</script>
+            if (!genre.trim()) {
+                e.preventDefault();
+                alert('⚠️ Please select a genre');
+                return;
+            }
+        });
+    </script>
 
 </body>
 

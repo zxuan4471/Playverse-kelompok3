@@ -36,7 +36,8 @@ Route::get('/register', [AuthController::class, 'showSignupForm'])->name('regist
 Route::post('/register', [AuthController::class, 'signupProses'])->name('register.proses');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-// ================== GAME ==================
+// ================== GAME SHOW ==================
+Route::get('/games/{id}', [ImportGameController::class, 'show'])->name('games.show');
 // ================== GAME ==================
 Route::get('/import-game', [ImportGameController::class, 'create'])->name('import.create');
 Route::post('/import-game', [ImportGameController::class, 'store'])->name('import.store');

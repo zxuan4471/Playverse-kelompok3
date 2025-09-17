@@ -56,10 +56,9 @@ class GameController extends Controller
 
     }
 
-    public function show($id)
+public function show($id)
 {
-    $game = Game::with(['files', 'screenshots'])->findOrFail($id);
-    return view('games.detail', compact('game'));
+    $game = Game::with(['category', 'platform', 'screenshots'])->findOrFail($id);
+    return view('games.showgame', compact('game'));
 }
-
 }
