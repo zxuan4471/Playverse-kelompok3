@@ -305,52 +305,9 @@
 </head>
 <body class="text-white min-h-screen">
     <!-- Main Navigation -->
-    <nav class="glass-morphism fixed top-0 left-0 right-0 z-50 border-b border-blue-500/20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <!-- Logo -->
-                <div class="flex items-center">
-                    <div class="flex-shrink-0 flex items-center">
-                        <div class="w-10 h-10 bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 rounded-lg flex items-center justify-center neon-glow">
-                            <span class="text-white font-bold text-lg">G</span>
-                        </div>
-                        <span class="ml-3 text-xl font-bold gradient-text">Playverse</span>
-                        <span class="ml-2 px-2 py-1 bg-purple-600 text-xs rounded-full">DEV</span>
-                    </div>
-                </div>
-                
-                <!-- Desktop Navigation Links -->
-                <div class="hidden md:flex items-center space-x-8 desktop-menu">
-                    <a href="{{ url('/') }}" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors">Beranda</a>
-                    <a href="{{ url('/developer-dashboard') }}" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors">Dashboard</a>
-                    <a href="{{ url('/my-games') }}" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors">Game Saya</a>
-                    <a href="#" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors">Komunitas</a>
-                </div>
-                
-                <!-- User Actions -->
-                <div class="flex items-center space-x-4">
-                    <div class="relative">
-                        <button class="bg-gray-800/50 border border-blue-500/30 rounded-lg px-3 py-2 text-sm text-white relative">
-                            <i class="fas fa-bell"></i>
-                            <span class="notification-badge">3</span>
-                        </button>
-                    </div>
-                    <div class="flex items-center space-x-2">
-                        <div class="w-8 h-8 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full"></div>
-                        <span class="text-sm font-medium hidden sm:block">Developer</span>
-                    </div>
-                    
-                    <!-- Mobile Menu Button -->
-                    <button class="md:hidden text-gray-300 hover:text-white mobile-menu" onclick="toggleMobileMenu()">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </nav>
     
     <!-- Secondary Navigation -->
-    <div class="pt-16 bg-gray-800/50 border-b border-gray-700/50">
+    <div class="bg-gray-800/50 border-b border-gray-700/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col sm:flex-row items-center justify-between py-4">
                 <h1 class="text-2xl font-bold text-white mb-2 sm:mb-0">Pendapatan Saya</h1>
@@ -378,19 +335,19 @@
                     </div>
                     
                     <nav class="space-y-2">
-                        <a href="{{ url('/developer') }}" class="sidebar-item flex items-center px-4 py-3 text-sm text-gray-300 hover:text-white rounded-lg transition-all">
+                        <a href="{{ url('/developer-dashboard') }}" class="sidebar-item flex items-center px-4 py-3 text-sm text-gray-300 hover:text-white rounded-lg transition-all">
                             <i class="fas fa-chart-line mr-3"></i>
                             Dashboard
                         </a>
-                        <a href="{{ url('/my-games') }}" class="sidebar-item flex items-center px-4 py-3 text-sm text-gray-300 hover:text-white rounded-lg transition-all">
+                        <a href="{{ url('/game-saya') }}" class="sidebar-item flex items-center px-4 py-3 text-sm text-gray-300 hover:text-white rounded-lg transition-all">
                             <i class="fas fa-gamepad mr-3"></i>
                             Game Saya
                         </a>
-                        <a href="#" class="sidebar-item flex items-center px-4 py-3 text-sm text-gray-300 hover:text-white rounded-lg transition-all">
+                        <a href="{{ url('/asset-saya') }}" class="sidebar-item flex items-center px-4 py-3 text-sm text-gray-300 hover:text-white rounded-lg transition-all">
                             <i class="fas fa-cog mr-3"></i>
                             Assets
                         </a>
-                        <a href="#" class="sidebar-item active flex items-center px-4 py-3 text-sm rounded-lg transition-all">
+                        <a href="{{ url('/penghasilan') }}" class="sidebar-item active flex items-center px-4 py-3 text-sm rounded-lg transition-all">
                             <i class="fas fa-coins mr-3"></i>
                             Pendapatan
                         </a>

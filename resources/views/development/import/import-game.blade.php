@@ -240,15 +240,6 @@
                         </select>
 
                         <!-- Classification -->
-                        <div>
-                            <label class="block text-sm font-medium text-gray-300 mb-2">Classification</label>
-                            <select class="form-select w-full px-4 py-3 rounded-lg" name="classification_id">
-                                <option value="">Select classification</option>
-                                @foreach($classifications as $classification)
-                                    <option value="{{ $classification->id }}">{{ $classification->name }}</option>
-                                @endforeach
-                            </select>
-                        </div>
 
 
                         <!-- Release Status -->

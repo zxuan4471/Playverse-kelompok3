@@ -22,9 +22,6 @@
                         <div class="max-w-2xl">
                             <h1 class="text-4xl font-bold mb-4">Digital Assets Marketplace</h1>
                             <p class="text-lg text-blue-100 mb-6">Temukan sprite, musik, font, dan aset digital berkualitas tinggi untuk proyek game Anda. Buat game lebih cepat dengan aset premium!</p>
-                            <button class="btn-neon px-8 py-3 rounded-xl font-semibold">
-                                 Jelajahi Aset
-                            </button>
                         </div>
                     </section>
 

@@ -22,9 +22,6 @@
                         <div class="max-w-2xl">
                             <h1 class="text-4xl font-bold mb-4">Discover Amazing Indie Games</h1>
                             <p class="text-lg text-blue-100 mb-6">Jelajahi koleksi game indie terbaik dari game kita Mainkan langsung di browser tanpa perlu download!</p>
-                            <button class="btn-neon px-8 py-3 rounded-xl font-semibold">
-                                🚀 Explore Games
-                            </button>
                         </div>
                     </section>
 
