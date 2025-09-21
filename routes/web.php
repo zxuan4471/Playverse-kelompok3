@@ -28,6 +28,7 @@ Route::get('/game-saya', fn() => view('development.game-saya'));
 Route::get('/asset-saya', fn() => view('development.assets-saya'));
 Route::get('/publish-asset', fn() => view('development.import.import-asset'));
 Route::get('/management-asset', fn() => view('admin.asset-management'));
+Route::get('/setting', fn() => view('setting-user'));
 
 // ================== AUTH ==================
 Route::get('/login', [AuthController::class, 'showSigninForm'])->name('login');
