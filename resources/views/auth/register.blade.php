@@ -51,10 +51,11 @@
         @csrf
         <div class="space-y-4">
           <div>
-            <label>Username</label>
-            <input type="text" name="username" value="{{ old('username') }}" class="form-input w-full px-4 py-3 rounded-lg" required>
-            @error('username')<p class="text-red-500 text-sm">{{ $message }}</p>@enderror
-          </div>
+  <label>Nama</label>
+  <input type="text" name="name" value="{{ old('name') }}" class="form-input w-full px-4 py-3 rounded-lg" required>
+  @error('nama')<p class="text-red-500 text-sm">{{ $message }}</p>@enderror
+</div>
+
           <div>
             <label>Email</label>
             <input type="email" name="email" value="{{ old('email') }}" class="form-input w-full px-4 py-3 rounded-lg" required>

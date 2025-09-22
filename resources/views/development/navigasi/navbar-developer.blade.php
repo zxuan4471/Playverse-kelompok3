@@ -16,7 +16,6 @@
                     <a href="{{ url('/') }}" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors">Home</a>
                     <a href="{{ url('/developer') }}" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors">Developer Mode</a>
                     <a href="{{ url('/pendaftaran-daveloper') }}" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors">Join as Developer</a>
-                    <a href="#" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors">Community</a>
                 </div>
                 <!-- User Actions -->
                 <div class="flex items-center space-x-4">

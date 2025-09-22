@@ -265,11 +265,8 @@
 </head>
 <body class="text-white min-h-screen">
     <!-- Main Navigation -->
-    @include('development.navigasi.navbar-developer')
     
     <!-- Garis Pemisah dengan Jarak -->
-    <div class="pt-16"></div>
-    <div class="nav-divider"></div>
     
     <!-- Main Content -->
     <div class="pt-8">
