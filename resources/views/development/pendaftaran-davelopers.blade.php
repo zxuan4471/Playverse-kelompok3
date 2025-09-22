@@ -117,7 +117,7 @@
 </head>
 <body class="text-white min-h-screen">
     <!-- Main Navigation -->
-    @include('development.navigasi.navbar-developer')
+
     
     <!-- Main Content -->
     <div class="pt-24 pb-12">
@@ -129,7 +129,13 @@
                     Bergabunglah dengan komunitas developer terbesar dan publikasikan game Anda
                 </p>
             </div>
-            
+            <div class="mb-6">
+    <button onclick="history.back()" 
+        class="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+        <i class="fas fa-arrow-left"></i> Kembali
+    </button>
+</div>
+
             <!-- Registration Form -->
             <div class="dev-card rounded-2xl p-8">
                 <form id="registration-form">
@@ -138,17 +144,6 @@
                         <h2 class="section-title">Informasi Pribadi</h2>
                         
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="form-label block mb-2">Nama Depan *</label>
-                                <input type="text" name="first_name" class="form-input w-full px-4 py-3 rounded-lg text-white" placeholder="John" required>
-                                <span class="error-message">Nama depan harus diisi</span>
-                            </div>
-                            
-                            <div>
-                                <label class="form-label block mb-2">Nama Belakang *</label>
-                                <input type="text" name="last_name" class="form-input w-full px-4 py-3 rounded-lg text-white" placeholder="Doe" required>
-                                <span class="error-message">Nama belakang harus diisi</span>
-                            </div>
                             
                             <div class="md:col-span-2">
                                 <label class="form-label block mb-2">Email *</label>

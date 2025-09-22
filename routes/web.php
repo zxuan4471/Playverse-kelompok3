@@ -40,6 +40,7 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // ================== GAME SHOW ==================
 Route::get('/games/{id}', [ImportGameController::class, 'show'])->name('games.show');
+Route::get('/', [ImportGameController::class, 'index'])->name('home');
 // ================== GAME ==================
 Route::get('/import-game', [ImportGameController::class, 'create'])->name('import.create');
 Route::post('/import-game', [ImportGameController::class, 'store'])->name('import.store');

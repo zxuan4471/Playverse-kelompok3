@@ -252,19 +252,23 @@
     <!-- Main Navigation -->
     
     <!-- Secondary Navigation (Creator Dashboard Style) -->
-    <div class="bg-gray-800/50 border-b border-gray-700/50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col sm:flex-row items-center justify-between py-4">
-                <h1 class="text-2xl font-bold text-white mb-2 sm:mb-0">Dashboard Kreator</h1>
-                <div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-4">
-                    <span class="text-sm text-gray-400">Terakhir diperbarui: 2 menit yang lalu</span>
-                    <button class="btn-neon px-4 py-2 rounded-lg text-sm font-medium">
-                        <i class="fas fa-rocket mr-2"></i> Terbitkan
-                    </button>
-                </div>
-            </div>
+   <div class="bg-gray-800/50 border-b border-gray-700/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col sm:flex-row items-center justify-between py-4">
+            
+            <!-- Nama Developer -->
+            <h1 class="text-2xl font-bold text-white mb-2 sm:mb-0">
+              Dashboard Kreator
+            </h1>
+
+            <!-- Bisa ditambah gimmick kecil kalau mau -->
+            <span class="text-sm text-purple-400 italic">
+                👾 Indie Game Creator
+            </span>
         </div>
     </div>
+</div>
+
     
     <!-- Main Content -->
     <div class="pt-8">

@@ -96,4 +96,10 @@ class ImportGameController extends Controller
         $game = Game::with(['category', 'platform', 'screenshots'])->findOrFail($id);
         return view('games.showgame', compact('game'));
     }
+    public function index()
+{
+    $games = Game::with(['category', 'platform'])->latest()->get();
+    return view('index', compact('games'));
+}
+
 }
