@@ -34,10 +34,6 @@
                     <span class="ml-3">Laporan</span>
                     <span class="ml-auto bg-red-600 text-xs px-2 py-1 rounded-full">12</span>
                 </a>
-                <a href="{{ url('/analisis') }}" class="nav-item flex items-center px-4 py-3 text-sm rounded-lg">
-                    <i class="fas fa-chart-line w-5"></i>
-                    <span class="ml-3">Analytics</span>
-                </a>
                 <a href="{{ url('/management-uang') }}" class="nav-item flex items-center px-4 py-3 text-sm rounded-lg">
                     <i class="fas fa-money-bill-wave w-5"></i>
                     <span class="ml-3">Penarikan</span>

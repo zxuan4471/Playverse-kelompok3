@@ -30,7 +30,63 @@
                 </div>
             </div>
 
-            <!-- Stats Overview -->
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+                <div class="admin-card rounded-xl p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="bg-blue-600 p-3 rounded-full">
+                            <i class="fas fa-gamepad text-white text-xl"></i>
+                        </div>
+                        <span class="trend-up text-sm">
+                            <i class="fas fa-arrow-up"></i> 12%
+                        </span>
+                    </div>
+                    <h3 class="text-gray-400 text-sm mb-1">Total Game</h3>
+                    <p class="stat-number">87</p>
+                    <p class="text-xs text-gray-500 mt-2">9 game baru bulan ini</p>
+                </div>
+                
+                <div class="admin-card rounded-xl p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="bg-purple-600 p-3 rounded-full">
+                            <i class="fas fa-cube text-white text-xl"></i>
+                        </div>
+                        <span class="trend-up text-sm">
+                            <i class="fas fa-arrow-up"></i> 8%
+                        </span>
+                    </div>
+                    <h3 class="text-gray-400 text-sm mb-1">Total Assets</h3>
+                    <p class="stat-number">1,247</p>
+                    <p class="text-xs text-gray-500 mt-2">92 assets baru minggu ini</p>
+                </div>
+                
+                <div class="admin-card rounded-xl p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="bg-green-600 p-3 rounded-full">
+                            <i class="fas fa-download text-white text-xl"></i>
+                        </div>
+                        <span class="trend-up text-sm">
+                            <i class="fas fa-arrow-up"></i> 23%
+                        </span>
+                    </div>
+                    <h3 class="text-gray-400 text-sm mb-1">Total Download</h3>
+                    <p class="stat-number">2.4M</p>
+                    <p class="text-xs text-gray-500 mt-2">452K download bulan ini</p>
+                </div>
+                
+                <div class="admin-card rounded-xl p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="bg-yellow-600 p-3 rounded-full">
+                            <i class="fas fa-hdd text-white text-xl"></i>
+                        </div>
+                        <span class="trend-down text-sm">
+                            <i class="fas fa-arrow-up"></i> 5%
+                        </span>
+                    </div>
+                    <h3 class="text-gray-400 text-sm mb-1">Storage Used</h3>
+                    <p class="stat-number">10.2GB</p>
+                    <p class="text-xs text-gray-500 mt-2">20.4% dari 50GB</p>
+                </div>
+            </div>
 
             <!-- Quick Actions & Recent Activity -->
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
@@ -81,59 +137,63 @@
                 </div>
             </div>
 
-                <!-- Recent Reports -->
-
-            <!-- Management Tables -->
-            <div class="space-y-6">
-            <!-- Admin Actions Panel -->
-            <div class="admin-card rounded-xl p-6 mt-6">
-                <h3 class="text-xl font-bold text-white mb-6">Administrative Actions</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- System Maintenance -->
-                    <div class="bg-gray-900 rounded-lg p-4 border border-gray-800">
-                        <h4 class="font-medium text-white mb-3">System Maintenance</h4>
-                        <div class="space-y-2">
-                            <button class="w-full bg-yellow-600 hover:bg-yellow-700 text-white py-2 px-3 rounded text-sm">
-                                <i class="fas fa-tools mr-2"></i>Schedule Maintenance
-                            </button>
-                            <button class="w-full bg-gray-600 hover:bg-gray-700 text-white py-2 px-3 rounded text-sm">
-                                <i class="fas fa-database mr-2"></i>Backup Database
-                            </button>
-                            <button class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-3 rounded text-sm">
-                                <i class="fas fa-sync mr-2"></i>Clear Cache
-                            </button>
-                        </div>
+            <!-- Charts Section -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                <!-- Revenue Chart -->
+                <div class="admin-card rounded-xl p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-bold text-white">Pendapatan 7 Hari Terakhir</h3>
+                        <select class="bg-gray-800 border border-gray-700 rounded-lg px-3 py-1 text-white text-sm">
+                            <option>7 Hari</option>
+                            <option>30 Hari</option>
+                            <option>90 Hari</option>
+                        </select>
                     </div>
-
-                    <!-- User Management -->
-                    <div class="bg-gray-900 rounded-lg p-4 border border-gray-800">
-                        <h4 class="font-medium text-white mb-3">User Management</h4>
-                        <div class="space-y-2">
-                            <button class="w-full bg-green-600 hover:bg-green-700 text-white py-2 px-3 rounded text-sm">
-                                <i class="fas fa-user-plus mr-2"></i>Bulk Import Users
-                            </button>
-                            <button class="w-full bg-red-600 hover:bg-red-700 text-white py-2 px-3 rounded text-sm">
-                                <i class="fas fa-user-slash mr-2"></i>Mass Suspension
-                            </button>
-                            <button class="w-full bg-purple-600 hover:bg-purple-700 text-white py-2 px-3 rounded text-sm">
-                                <i class="fas fa-mail-bulk mr-2"></i>Send Announcement
-                            </button>
-                        </div>
+                    <div class="revenue-chart">
+                        <div class="chart-bar" style="left: 5%; width: 10%; height: 60%;"></div>
+                        <div class="chart-bar" style="left: 20%; width: 10%; height: 75%;"></div>
+                        <div class="chart-bar" style="left: 35%; width: 10%; height: 45%;"></div>
+                        <div class="chart-bar" style="left: 50%; width: 10%; height: 85%;"></div>
+                        <div class="chart-bar" style="left: 65%; width: 10%; height: 70%;"></div>
+                        <div class="chart-bar" style="left: 80%; width: 10%; height: 90%;"></div>
                     </div>
-
-                    <!-- Content Moderation -->
-                    <div class="bg-gray-900 rounded-lg p-4 border border-gray-800">
-                        <h4 class="font-medium text-white mb-3">Content Moderation</h4>
-                        <div class="space-y-2">
-                            <button class="w-full bg-orange-600 hover:bg-orange-700 text-white py-2 px-3 rounded text-sm">
-                                <i class="fas fa-search mr-2"></i>Auto Scan Content
-                            </button>
-                            <button class="w-full bg-red-600 hover:bg-red-700 text-white py-2 px-3 rounded text-sm">
-                                <i class="fas fa-exclamation-triangle mr-2"></i>Review Flagged
-                            </button>
-                            <button class="w-full bg-gray-600 hover:bg-gray-700 text-white py-2 px-3 rounded text-sm">
-                                <i class="fas fa-shield-alt mr-2"></i>Update Filters
-                            </button>
+                    <div class="flex justify-between mt-4 text-xs text-gray-400">
+                        <span>Sen</span>
+                        <span>Sel</span>
+                        <span>Rab</span>
+                        <span>Kam</span>
+                        <span>Jum</span>
+                        <span>Sab</span>
+                        <span>Min</span>
+                    </div>
+                </div>
+                
+                <!-- Game Categories -->
+                <div class="admin-card rounded-xl p-6">
+                    <h3 class="text-lg font-bold text-white mb-4">Distribusi Game per Kategori</h3>
+                    <div class="flex items-center justify-center">
+                        <div class="pie-chart"></div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 mt-6">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-4 h-4 bg-blue-500 rounded"></div>
+                            <span class="text-sm text-gray-400">Action (30%)</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-4 h-4 bg-purple-500 rounded"></div>
+                            <span class="text-sm text-gray-400">RPG (20%)</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-4 h-4 bg-pink-500 rounded"></div>
+                            <span class="text-sm text-gray-400">Puzzle (20%)</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-4 h-4 bg-yellow-500 rounded"></div>
+                            <span class="text-sm text-gray-400">Racing (20%)</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-4 h-4 bg-green-500 rounded"></div>
+                            <span class="text-sm text-gray-400">Lainnya (10%)</span>
                         </div>
                     </div>
                 </div>
